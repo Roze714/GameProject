@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\lib">
+      <UniqueIdentifier>{176a5867-8a1e-4709-9223-a845fb91d748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Math">
+      <UniqueIdentifier>{db967076-5ee8-4a3d-878e-3b1af4574354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Input">
+      <UniqueIdentifier>{0c924d05-2a03-4a30-a4c6-f57c7adcbd76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Frame">
+      <UniqueIdentifier>{c53c11c4-169e-4441-b9e2-346b13fed491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Fade">
+      <UniqueIdentifier>{62de3da4-f8df-403f-a198-128b4c79d085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game">
+      <UniqueIdentifier>{bf93fc8c-92c2-4576-8fba-c257fe5c9b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Collision">
+      <UniqueIdentifier>{ada7700a-cef9-4b65-b243-847e011e7e37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\System">
+      <UniqueIdentifier>{edfab552-2866-4e29-8ef0-32fbfd2eaa19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Scene">
+      <UniqueIdentifier>{93a3349a-e663-4801-b6ab-ad794336aac9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\fade\Fade.cpp">
+      <Filter>ソース ファイル\lib\Fade</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\math\Collision.cpp">
+      <Filter>ソース ファイル\lib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\input\Input.cpp">
+      <Filter>ソース ファイル\lib\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Frame\Frame.cpp">
+      <Filter>ソース ファイル\lib\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\System\SoundManager.cpp">
+      <Filter>ソース ファイル\game\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\ScenePlay.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneManager.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneGameOver.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneTitle.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Collision\CollisionManager.cpp">
+      <Filter>ソース ファイル\game\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneGameClear.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\lib\fade\Fade.h">
+      <Filter>ソース ファイル\lib\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\math\Collision.h">
+      <Filter>ソース ファイル\lib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\input\Input.h">
+      <Filter>ソース ファイル\lib\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Frame\Frame.h">
+      <Filter>ソース ファイル\lib\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\System\SoundManager.h">
+      <Filter>ソース ファイル\game\System</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\ScenePlay.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneManager.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneGameOver.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneTitle.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Collision\CollisionManager.h">
+      <Filter>ソース ファイル\game\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneGameClear.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
