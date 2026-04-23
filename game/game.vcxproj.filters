@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\lib">
+      <UniqueIdentifier>{45e07fe1-35f2-4a41-ac7c-9d67e77397d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\src">
+      <UniqueIdentifier>{29e28d29-fff6-4138-903e-3052e448fd45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Fade">
+      <UniqueIdentifier>{45cd1c72-a77f-4adc-8d9d-cb49824bba97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Frame">
+      <UniqueIdentifier>{d4c0d090-4649-4598-a6da-fc48ea369134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Input">
+      <UniqueIdentifier>{585ff808-ddc0-4754-ae4f-e65e69b191da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Math">
+      <UniqueIdentifier>{a792d647-a172-4f92-9e6c-0ba32ce442e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\src\Scene">
+      <UniqueIdentifier>{8602e286-73f5-4fbc-9c72-5a3e48e743eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Fade\Fade.cpp">
+      <Filter>ソース ファイル\lib\Fade</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Frame\Frame.cpp">
+      <Filter>ソース ファイル\lib\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Input\Input.cpp">
+      <Filter>ソース ファイル\lib\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Math\Collision.cpp">
+      <Filter>ソース ファイル\lib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src\Scene\SceneClear.cpp">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src\Scene\SceneGame.cpp">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src\Scene\SceneGameover.cpp">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src\Scene\SceneManager.cpp">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\src\Scene\SceneTitle.cpp">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\lib\Fade\Fade.h">
+      <Filter>ソース ファイル\lib\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Frame\Frame.h">
+      <Filter>ソース ファイル\lib\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Input\Input.h">
+      <Filter>ソース ファイル\lib\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Math\Collision.h">
+      <Filter>ソース ファイル\lib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\src\Common.h">
+      <Filter>ソース ファイル\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\src\Scene\SceneBase.h">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\src\Scene\SceneClear.h">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\src\Scene\SceneGame.h">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\src\Scene\SceneGameover.h">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\src\Scene\SceneManager.h">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\src\Scene\SceneTitle.h">
+      <Filter>ソース ファイル\src\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
