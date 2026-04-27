@@ -69,7 +69,7 @@ int		FrameRate::m_lastTime;
 	 }
 
 	 //FPSÇÕèÌÇ…ï\é¶Çë±ÇØÇÈ
-	 DrawFormatString(1000, 16, GetColor(0, 255, 255),
+	 DrawFormatString(1000, 16, GetColor(0, 0, 255),
 		"FPS:%21f", m_frameRate);
  }
 
