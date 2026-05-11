@@ -34,7 +34,7 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	FrameRate::Init();
 	
 	//シーン
-	SceneManager  SceneManager;
+	CSceneManager  CSceneManager;
 
 
 	//ゲームメインループ
@@ -60,10 +60,10 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		//FPSの表示
 		FrameRate::PrintFps();
 
-		SceneManager.Loop();
+		CSceneManager.Loop();
 
 
-		SceneManager.Draw();
+		CSceneManager.Draw();
 		
 
 		//FPS表示

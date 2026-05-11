@@ -1,6 +1,6 @@
 #pragma once
 #include<DxLib.h>
-
+#include "SceneBase.h"
 #include"../Player/Player.h"
 #include"../Camera/CameraManager.h"
 #include"../Enemy/EnemyManager.h"
@@ -8,7 +8,7 @@
 #include"../System/SoundManager.h"
 
 
-class SceneGame
+class CSceneGame : public CSceneBase 
 {
 private:
 	enum tagScene
@@ -26,9 +26,9 @@ private:
 	int m_Hndl;
 
 public:
-	//コンストラクタ・デストラクタ
-	SceneGame();
-	~SceneGame();
+	////コンストラクタ・デストラクタ
+	//CSceneGame();
+	//~CSceneGame();
 
 	//繰り返し行う処理
 	int Loop();
@@ -43,6 +43,6 @@ private:
 	//データのロード
 	void Load();
 	//毎フレーム呼ぶ処理
-	void Step();
+	int Step();
 };
 

@@ -26,7 +26,7 @@ private:
 
 public:
 
-	//コンストラクタ
+	//コンストラクタ・デストラクタ
 	Player();
 	~Player();
 

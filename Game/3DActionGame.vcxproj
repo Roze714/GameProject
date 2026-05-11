@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\game\BackGround\BackGround.cpp" />
     <ClCompile Include="src\game\Collision\CollisionManager.cpp" />
     <ClCompile Include="src\game\Enemy\Enemy.cpp" />
     <ClCompile Include="src\game\Enemy\EnemyManager.cpp" />
@@ -38,6 +39,7 @@
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\game\BackGround\BackGround.h" />
     <ClInclude Include="src\game\Collision\CollisionManager.h" />
     <ClInclude Include="src\game\Common.h" />
     <ClInclude Include="src\game\Enemy\Enemy.h" />

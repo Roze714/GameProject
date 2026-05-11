@@ -15,6 +15,8 @@ public:
 	virtual void Draw() = 0;
 	//		I—¹ˆ—
 	virtual void Exit() = 0;
+	////	ŒJ‚è•Ô‚µs‚¤ˆ—
+	//virtual int Loop() = 0;
 };
 
 

@@ -52,6 +52,9 @@
     <Filter Include="ソース ファイル\game\Scene">
       <UniqueIdentifier>{93a3349a-e663-4801-b6ab-ad794336aac9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\game\BackGround">
+      <UniqueIdentifier>{d3fdb66b-a402-4c73-8e59-b6f5e02c0090}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="src\game\Scene\SceneGameClear.cpp">
       <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\BackGround\BackGround.cpp">
+      <Filter>ソース ファイル\game\BackGround</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="src\game\Scene\SceneBase.h">
       <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\BackGround\BackGround.h">
+      <Filter>ソース ファイル\game\BackGround</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

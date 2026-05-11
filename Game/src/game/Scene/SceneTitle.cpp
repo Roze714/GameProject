@@ -1,152 +1,83 @@
-#include"Scenetitle.h"
+#include "SceneTitle.h"
 #include"../Camera/CameraManager.h"
 #include"../System/SoundManager.h"
 #include"../../lib/Fade/Fade.h"
+#include "../Common.h"
+
+static const char FILE_NAME[] = "data/Image/title/title.png";
 
 //定義関連-------------------------
-#define TITLE_SIZE_X	(640.0f)	//画像サイズ(横)
-#define TITLE_SIZE_Y	(480.0f)	//画像サイズ(縦)
 //---------------------------------
 
 
-//---------------------------------
-//		コンストラクタ
-//---------------------------------
-SceneTitle::SceneTitle()
-{
-	m_SceneID = INIT;
-}
-
-//---------------------------------
-//		デストラクタ
-//---------------------------------
-SceneTitle::~SceneTitle()
-{
-}
+////---------------------------------
+////		コンストラクタ
+////---------------------------------
+//CSceneTitle::CSceneTitle()
+//{
+//}
+//
+////---------------------------------
+////		デストラクタ
+////---------------------------------
+//CSceneTitle::~CSceneTitle()
+//{
+//}
 
 //---------------------------------
 //		初期化
 //---------------------------------
-void SceneTitle::Init(void)
+void CSceneTitle::Init()
 {
-	m_SceneID = INIT;
+	m_Hndl = -1;
 }
+
+//-------------------------------
+//		データロード
+//-------------------------------
+void CSceneTitle::Load()
+{
+	if (m_Hndl == -1)
+		m_Hndl = LoadGraph(FILE_NAME);
+}
+
 
 //---------------------------------
 //		毎フレーム呼ぶ処理
 //---------------------------------
-int SceneTitle::Step()
+int CSceneTitle::Step()
 {
-	switch (m_SceneID)
-	{
-	case SceneTitle::INIT:
-		//初期化==========================
-		m_Hndl = -1;
-		//================================
-		m_SceneID = LOAD;
-		break;
-	case SceneTitle::LOAD:
-		//画像ロード=====================
-		if (m_Hndl == -1)
-		{
-			m_Hndl = LoadGraph("data/Image/title/taitoru.png");
-		}
-		//=====================
-		m_SceneID = MAIN;
-		break;
-	case SceneTitle::MAIN:
-		//決定ボタンを押したら次へ
-		if (CheckHitKey(KEY_INPUT_Z) == true)
-		{
-			m_SceneID = END;
-		}
-		break;
-	case SceneTitle::ENDWAIN:
-		break;
-	case SceneTitle::END:
-		//画像データ削除
-		if (m_Hndl != -1)
-		{
-			DeleteGraph(m_Hndl);
-			m_Hndl = -1;
-		}
-
-		m_SceneID = INIT;
-		return 1;
-	}
-	return 0;
+	int ret = -1;
+	if (CheckHitKey(KEY_INPUT_Z))
+		ret = SCENEID_GAME;
+	return ret;
 }
 
 
 //---------------------------------
 //		描画処理
 //---------------------------------
-void SceneTitle::Draw()
+void CSceneTitle::Draw()
 {
-	switch (m_SceneID)
-	{
-	case SceneTitle::MAIN:
-	case SceneTitle::ENDWAIN:
-		//タイトル画面描画
-		DrawRotaGraph((int)(TITLE_SIZE_X * 1.0f), (int)(TITLE_SIZE_Y * 0.75f),
-			1.35, 0.0, m_Hndl, TRUE);
-		break;
-
-	}
+	DrawGraph(0, 0, m_Hndl, TRUE);
 }
 
-
-
-
-//---------------------------------
-//		繰り返し行う処理
-//---------------------------------
-int SceneTitle::Loop()
+//-------------------------------
+//		終了処理
+//-------------------------------
+void CSceneTitle::Exit()
 {
-	int result = 0;
-	switch (m_SceneID)
+	if (m_Hndl != -1)
 	{
-	case INIT:
-		Init();
-		//初期化==========================
+		DeleteGraph(m_Hndl);
 		m_Hndl = -1;
-		//================================
-		m_SceneID = LOAD;
-		break;
-	case LOAD:
-		//画像ロード=====================
-		if (m_Hndl == -1)
-		{
-			m_Hndl = LoadGraph("data/Image/title/taitoru.png");
-		}
-		//=====================
-		m_SceneID = MAIN;
-		break;
-	case MAIN:
-		Step();
-		//決定ボタンを押したら次へ
-		if (CheckHitKey(KEY_INPUT_Z) == true)
-		{
-			m_SceneID = END;
-		}
-		break;
-		m_SceneID = END;
-		//画像データ削除
-		if (m_Hndl != -1)
-		{
-			DeleteGraph(m_Hndl);
-			m_Hndl = -1;
-		}
-	case END:
-		m_SceneID = INIT;
-		result = 1;
-		break;
-
 	}
-	return result;
 }
 
-
-
-
-
+////---------------------------------
+////		繰り返し行う処理
+////---------------------------------
+//int CSceneTitle::Loop()
+//{
+//}
+//
