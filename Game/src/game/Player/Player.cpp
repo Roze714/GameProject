@@ -5,8 +5,8 @@
 
 //定義関連-----------------------------
 static const VECTOR ZERO = { 0.0f,0.0f };
-//プレイヤーのモデルパス
-static const char PLAYER_MODEL_PATH[] =
+//プレイヤーのイラストパス
+static const char PLAYER_ILLUSTRATION_PATH[] =
 { "data/Image/game/player.png" }; 
 //移動速度
 static const float PL_SPEED = 1.0f;
@@ -16,7 +16,7 @@ static const float PL_SPEED = 1.0f;
 //----------------------
 //コンストラクタ
 //----------------------
-Player::Player()
+CPlayer::CPlayer()
 {
 	Init();
 }
@@ -24,7 +24,7 @@ Player::Player()
 //----------------------
 //デストラクタ
 //----------------------
-Player::~Player()
+CPlayer::~CPlayer()
 {
 	Exit();
 }
@@ -32,7 +32,7 @@ Player::~Player()
 //----------------------
 //初期化
 //----------------------
-void Player::Init()
+void CPlayer::Init()
 {
 	m_vPos = ZERO;
 	m_vSpeed = ZERO;
@@ -51,22 +51,22 @@ void Player::Init()
 //----------------------
 //ロード
 //----------------------
-void Player::Load()
+void CPlayer::Load()
 {
 	if (m_iHndl == -1)
 	{
-		m_iHndl = LoadGraph(PLAYER_MODEL_PATH);
+		m_iHndl = LoadGraph(PLAYER_ILLUSTRATION_PATH);
 	}
 }
 
 //----------------------
 //終了時に破棄
 //----------------------
-void Player::Exit()
+void CPlayer::Exit()
 {
 	if (m_iHndl != -1)
 	{
-		// モデル削除
+		// イラスト削除
 		DeleteGraph(m_iHndl);
 		m_iHndl = -1;
 	}
@@ -75,7 +75,7 @@ void Player::Exit()
 //----------------------
 //毎フレーム呼ぶ処理
 //----------------------
-void Player::Step()
+void CPlayer::Step()
 {
 	
 	//プレイヤーの移動
@@ -102,22 +102,22 @@ void Player::Step()
 	
 }
 
-//----------------------
-//モデルの更新
-//----------------------
-void Player::Updete()
-{
-	MV1SetPosition(m_iHndl, m_vPos);
-	MV1SetRotationXYZ(m_iHndl, m_vRot);
-}
+////----------------------
+////モデルの更新
+////----------------------
+//void CPlayer::Updete()
+//{
+//	MV1SetPosition(m_iHndl, m_vPos);
+//	MV1SetRotationXYZ(m_iHndl, m_vRot);
+//}
 
 //----------------------
 //描画
 //----------------------
-void Player::Draw()
+void CPlayer::Draw()
 {
 
-	MV1DrawModel(m_iHndl);
+	//MV1DrawModel(m_iHndl);
 
 #ifdef DEBUG
 	//当たり判定を目視できる
@@ -131,7 +131,7 @@ void Player::Draw()
 //----------------------
 //当たり判定の座標用
 //----------------------
-VECTOR Player::GetCenter()
+VECTOR CPlayer::GetCenter()
 {
 	//基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -145,7 +145,7 @@ VECTOR Player::GetCenter()
 //----------------------
 //ヒット後の処理
 //----------------------
-void Player::HitCalc()
+void CPlayer::HitCalc()
 {
 	//生存フラグを消す
 	m_isActive = false;

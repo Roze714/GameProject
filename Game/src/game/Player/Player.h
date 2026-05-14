@@ -2,7 +2,7 @@
 #include <DxLib.h>
 
 #include"../../lib/Input/Input.h"
-class Player
+class CPlayer
 {
 private:
 	//プレイヤーの状態
@@ -27,25 +27,25 @@ private:
 public:
 
 	//コンストラクタ・デストラクタ
-	Player();
-	~Player();
+	CPlayer();
+	~CPlayer();
 
 	//初期化
 	//@vPos			:座標
 	//@vRotY		:回転角度
 	void Init();
-	
+
 	//ロード
 	void Load();
-	
+
 	//終了
 	void Exit();
 
 	//毎フレーム呼ぶ処理
 	void Step();
 	
-	//モデルの更新
-	void Updete();
+	////モデルの更新
+	//void Updete();
 
 	//描画
 	void Draw();

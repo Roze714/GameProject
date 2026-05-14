@@ -5,7 +5,7 @@
 static const int ENEMY_NUM = 150;
 
 //敵全体を管理するクラス
-class EnemyManager
+class CEnemyManager
 {
 private:
 	Enemy m_enemy[ENEMY_NUM];		//敵
@@ -13,7 +13,7 @@ private:
 
 public:
 	//コンストラクタ
-	EnemyManager();
+	CEnemyManager();
 
 
 	//初期化

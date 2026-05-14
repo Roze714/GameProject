@@ -34,8 +34,6 @@ public:
 	static bool CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
 		VECTOR circlePos2, int radius2);
 
-
-
 	
 };
 

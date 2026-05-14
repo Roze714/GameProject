@@ -1,16 +1,21 @@
 #include "background.h"
-#include <DxLib.h>
+
 
 
 //定義関数--------------------------------
 #define BACKGROUND_SIZE_X (640.0f)
 #define BACKGROUND_SIZE_Y (480.0f)
 #define MOVE_SPEED (3.0f);
+//背景のイラストパス
+static const char BACKGROUND_ILLUSTRATION_PATH[] =
+{ "data/Image/game/background00.jpg" };
+
 //----------------------------------------
 
 //コンストラクタ
 CBackGround::CBackGround()
 {
+	Init();
 }
 
 //デストラクタ
@@ -29,12 +34,13 @@ void CBackGround::Init()
 	m_Pos.x =BACKGROUND_SIZE_X	* 0.5f;
 	m_Pos.y =BACKGROUND_SIZE_Y * 0.5f;
 }
+
 //画像データをロード
 void CBackGround::Load()
 {
 	if (m_Hndl == -1)
 	{
-		m_Hndl = LoadGraph("data/graphics/game/background00.jpg");
+		m_Hndl = LoadGraph(BACKGROUND_ILLUSTRATION_PATH);
 	}
 }
 

@@ -5,7 +5,7 @@
 
 #include"../Collision/CollisionManager.h"
 
-static const char FILE_NAME[] = "data/Image/game/game.png";
+//static const char FILE_NAME[] = "data/Image/game/game.png";
 
 
 //’è‹`ŠÖ˜A-------------------------
@@ -32,9 +32,10 @@ static const char FILE_NAME[] = "data/Image/game/game.png";
 void CSceneGame::Init()
 {
 	m_Hndl = -1;
-	m_Field.Init();
+	
 	m_Player.Init();
-	m_Enemy.Init();;
+	m_Enemy.Init();
+	m_BackGround.Init();
 }
 
 //-------------------------------
@@ -42,12 +43,12 @@ void CSceneGame::Init()
 //-------------------------------
 void CSceneGame::Load()
 {
-	if (m_Hndl == -1)
-		m_Hndl = LoadGraph(FILE_NAME);
+	
 
 	m_Player.Load();
 	m_Enemy.Load();
-	m_Field.Load();
+	m_BackGround.Load();
+
 }
 
 //---------------------------------
@@ -66,7 +67,7 @@ int CSceneGame::Step()
 
 	m_Player.Step();
 	m_Enemy.Step();
-	m_Field.Step();
+	m_BackGround.Step();
 
 
 	CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
@@ -77,10 +78,10 @@ int CSceneGame::Step()
 	}
 
 
-	m_Player.Updete();
+	/*m_Player.Updete();*/
 	m_Enemy.Updete();
 
-	m_Field.Updete();
+	
 
 }
 
@@ -89,9 +90,10 @@ int CSceneGame::Step()
 //---------------------------------
 void CSceneGame::Draw()
 {
-	m_Field.Draw();
+	
 	m_Player.Draw();
 	m_Enemy.Draw();
+	m_BackGround.Draw();
 	DrawGraph(0, 0, m_Hndl, TRUE);
 }
 
@@ -102,8 +104,7 @@ void CSceneGame::Exit()
 {
 	m_Enemy.Exit();
 	m_Player.Exit();
-
-	m_Field.Exit();
+	m_BackGround.Exit();
 
 	if (m_Hndl != -1)
 	{

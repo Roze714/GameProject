@@ -6,7 +6,7 @@
 #include"../Enemy/EnemyManager.h"
 #include"../Field/Field.h"
 #include"../System/SoundManager.h"
-
+#include"../BackGround/BackGround.h"
 
 class CSceneGame : public CSceneBase 
 {
@@ -19,10 +19,10 @@ private:
 		END		//データの終了
 	};
 
-	Player m_Player;					//プレイヤー
-	EnemyManager m_Enemy;				//敵
-	Field m_Field;						//背景
-	tagScene m_SceneID;		//シーン保存
+	CPlayer m_Player;					//プレイヤー
+	CEnemyManager m_Enemy;				//敵
+	CBackGround m_BackGround;			//背景
+	tagScene m_SceneID;					//シーン保存
 	int m_Hndl;
 
 public:

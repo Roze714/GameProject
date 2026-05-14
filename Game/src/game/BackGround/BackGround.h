@@ -1,4 +1,6 @@
 #pragma once
+#include <DxLib.h>
+
 class CBackGround
 {
 
@@ -15,14 +17,19 @@ public:
 
 	//データの初期化
 	void Init();
+
 	//画像データをロード
 	void Load();
+
 	//毎フレーム処理を行う
 	void Step();
+
 	//画像描画
 	void Draw();
+
 	//終了前に行う
 	void Exit();
+
 };
 
 

@@ -27,8 +27,8 @@ public:
 	void Exit();
 
 
-	//ŒJ‚è•Ô‚µs‚¤ˆ—
-	int Loop();
+	////ŒJ‚è•Ô‚µs‚¤ˆ—
+	//int Loop();
 
 
 };

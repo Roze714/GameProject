@@ -3,10 +3,9 @@
 
 
 
-
 //プレイヤーと敵の当たり判定
 void CollisionManager::CheckHitPlayerToEnemy(
-	Player& player, EnemyManager& enemy)
+	CPlayer& player, CEnemyManager& enemy)
 {
 	//プレイヤーが死んでいたら何もしない
 	if (player.IsActive() == false)return;
@@ -40,7 +39,7 @@ void CollisionManager::CheckHitPlayerToEnemy(
 
 //プレイヤーとゴールの当たり判定
  void CollisionManager::CheckHitPlayerToGoal(
-	 Player& player, Goal& goal)
+	 CPlayer& player, Goal& goal)
 {
 	 //それぞれの座標と半径を所得
 	 VECTOR PlayerPos = player.GetCenter();

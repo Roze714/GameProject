@@ -10,7 +10,7 @@ static const int WAIME_TIME = 10;
 //----------------------
 //コンストラクタ
 //----------------------
-EnemyManager::EnemyManager()
+CEnemyManager::CEnemyManager()
 {
 	Init();
 }
@@ -18,7 +18,7 @@ EnemyManager::EnemyManager()
 //-------------
 //初期化
 //-------------
-void EnemyManager::Init()
+void CEnemyManager::Init()
 {
 	for (int i = 0; i < ENEMY_NUM; i++)
 		m_enemy[i].Init();
@@ -28,7 +28,7 @@ void EnemyManager::Init()
 //---------------------
 //更新
 //---------------------
-void  EnemyManager::Step()
+void  CEnemyManager::Step()
 {
 	for (int i = 0; i < ENEMY_NUM; i++)
 		m_enemy[i].Step();
@@ -44,7 +44,7 @@ void  EnemyManager::Step()
 //---------------------
 //敵の更新
 //---------------------
-void EnemyManager::Updete()
+void CEnemyManager::Updete()
 {
 	for (int i = 0; i < ENEMY_NUM; i++)
 		m_enemy[i].Updete();
@@ -53,7 +53,7 @@ void EnemyManager::Updete()
 //---------------------
 //ロード
 //---------------------
-void EnemyManager::Load()
+void CEnemyManager::Load()
 {
 	//オリジナルモデル読み込み
 	int iHndl = MV1LoadModel(ENEMY_MODEL_PATH);
@@ -68,7 +68,7 @@ void EnemyManager::Load()
 //---------------------
 //終了
 //---------------------
-void EnemyManager::Exit()
+void CEnemyManager::Exit()
 {
 	for (int i = 0; i < ENEMY_NUM; i++)
 		m_enemy[i].Exit();
@@ -77,7 +77,7 @@ void EnemyManager::Exit()
 //---------------------
 //描画
 //---------------------
-void EnemyManager::Draw()
+void CEnemyManager::Draw()
 {
 	for (int i = 0; i < ENEMY_NUM; i++)
 		m_enemy[i].Draw();
@@ -86,7 +86,7 @@ void EnemyManager::Draw()
 //------------------------------------------
 ////敵をリクエスト
 //------------------------------------------
-void EnemyManager::Request()
+void CEnemyManager::Request()
 {
 	//横はランダム、奥行きは固定
 	VECTOR pos = { (float)GetRand(200) - 200.0f,0.0f,200.0f };
