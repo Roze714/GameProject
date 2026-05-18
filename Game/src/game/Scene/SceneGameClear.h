@@ -10,8 +10,8 @@ private:
 	int m_Hndl;
 
 public:
-	////コンストラクタ・デストラクタ
-	//CSceneGameClear();
+	//コンストラクタ・デストラクタ
+	CSceneGameClear();
 	//~CSceneGameClear();
 
 	//		初期化

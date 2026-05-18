@@ -75,7 +75,7 @@ void CollisionManager::CheckHitPlayerToEnemy(
 
 //プレイヤーとゴールの当たり判定
  void CollisionManager::CheckHitPlayerToGoal(
-	 CPlayer& player, Goal& goal)
+	 CPlayer& player, CGoal& goal)
 {
 	 //それぞれの座標と半径を所得
 	 VECTOR PlayerPos = player.GetCenter();

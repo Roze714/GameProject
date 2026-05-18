@@ -1,7 +1,7 @@
 #pragma once
 #include <DxLib.h>
 
-class Goal
+class CGoal
 {
 private:
 	VECTOR m_vPos;				//座標
@@ -11,8 +11,8 @@ private:
 public:
 
 	//コンストラクタ・デストラクタ
-	Goal();
-	~Goal();
+	CGoal();
+	~CGoal();
 
 	//初期化
 	//@vPos			:座標

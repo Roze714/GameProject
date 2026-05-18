@@ -56,10 +56,6 @@ void CollisionManager::CheckHitPlayerToEnemy(
 		 //‚¨ŒÝ‚¢“–‚½‚Á‚½!!
 		 player.HitCalc();
 		 goal.HitCalc();
-
 	 }
 }
-
-
- 
 

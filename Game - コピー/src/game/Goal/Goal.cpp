@@ -3,11 +3,12 @@
 #define DEBUG
 
 //定義関連-----------------------------
-static const VECTOR ZERO = { 0.0f,0.0f };
+static const VECTOR ZERO = { 0.0f,0.0f,0.0f };
 //当たり判定
 
 static const char GOAL_MODEL_PATH[]
-= { "data/Flag.png" };
+= { "data/model/Flag/Flag.png" };
+
 
 //--------------------------------------
 
@@ -15,7 +16,7 @@ static const char GOAL_MODEL_PATH[]
 //----------------------
 //コンストラクタ
 //----------------------
-Goal::Goal()
+CGoal::CGoal()
 {
 	Init();
 }
@@ -23,7 +24,7 @@ Goal::Goal()
 //----------------------
 //デストラクタ
 //----------------------
-Goal::~Goal()
+CGoal::~CGoal()
 {
 	Exit();			//念のためモデルデータを破棄
 }
@@ -31,7 +32,7 @@ Goal::~Goal()
 //----------------------
 //初期化
 //----------------------
-void Goal::Init()
+void CGoal::Init()
 {
 	m_vPos = ZERO;				//座標
 	m_iHndl = -1;				//モデルハンドル
@@ -42,19 +43,19 @@ void Goal::Init()
 //----------------------
 //ロード
 //----------------------
-void Goal::Load()
+void CGoal::Load()
 {
 	if (m_iHndl == -1)
 	{
 		m_iHndl = MV1LoadModel(GOAL_MODEL_PATH);
 	}
-	m_vPos= { 0.0f,0.0f };
+	m_vPos= { 0.0f,0.0f,750.0f };
 }
 
 //----------------------
 //終了時に破棄
 //----------------------
-void Goal::Exit()
+void CGoal::Exit()
 {
 	if (m_iHndl != -1)
 	{
@@ -66,7 +67,7 @@ void Goal::Exit()
 //----------------------
 //毎フレーム呼ぶ処理
 //----------------------
-void Goal::Step()
+void CGoal::Step()
 {
 	//呼び出されていない場合は終了
 	if (!m_isActive)return;
@@ -76,7 +77,7 @@ void Goal::Step()
 //----------------------
 //モデルの更新
 //----------------------
-void Goal::Updete()
+void CGoal::Updete()
 {
 	//座標を設定する
 	MV1SetPosition(m_iHndl, m_vPos);
@@ -86,7 +87,7 @@ void Goal::Updete()
 //----------------------
 //描画
 //----------------------
-void Goal::Draw()
+void CGoal::Draw()
 {
 	
 		MV1DrawModel(m_iHndl);
@@ -106,7 +107,7 @@ void Goal::Draw()
 //----------------------
 //当たり判定の座標用
 //----------------------
-VECTOR Goal::GetCenter()
+VECTOR CGoal::GetCenter()
 {
 	//基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -120,7 +121,7 @@ VECTOR Goal::GetCenter()
 //----------------------
 //ヒット後の処理
 //----------------------
-void Goal::HitCalc()
+void CGoal::HitCalc()
 {
 	//生存フラグを消す
 	m_isActive = false;

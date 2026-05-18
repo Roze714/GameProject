@@ -19,9 +19,6 @@
     <Filter Include="ソース ファイル\lib\Math">
       <UniqueIdentifier>{db967076-5ee8-4a3d-878e-3b1af4574354}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\lib\Input">
-      <UniqueIdentifier>{0c924d05-2a03-4a30-a4c6-f57c7adcbd76}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\lib\Frame">
       <UniqueIdentifier>{c53c11c4-169e-4441-b9e2-346b13fed491}</UniqueIdentifier>
     </Filter>
@@ -49,14 +46,14 @@
     <Filter Include="ソース ファイル\game\Scene">
       <UniqueIdentifier>{93a3349a-e663-4801-b6ab-ad794336aac9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\game\BackGround">
-      <UniqueIdentifier>{d3fdb66b-a402-4c73-8e59-b6f5e02c0090}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\game\Shot">
       <UniqueIdentifier>{6a0f0e61-7543-4f67-b582-83a8b09c19dc}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\game\Camera">
       <UniqueIdentifier>{f0a748d9-de7f-40b7-9cf4-1baa57778248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Field">
+      <UniqueIdentifier>{aa5038f8-f17f-4826-8f68-bdff052ef1c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -68,9 +65,6 @@
     </ClCompile>
     <ClCompile Include="src\lib\math\Collision.cpp">
       <Filter>ソース ファイル\lib\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\input\Input.cpp">
-      <Filter>ソース ファイル\lib\Input</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\Frame\Frame.cpp">
       <Filter>ソース ファイル\lib\Frame</Filter>
@@ -108,9 +102,6 @@
     <ClCompile Include="src\game\Scene\SceneGameClear.cpp">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\BackGround\BackGround.cpp">
-      <Filter>ソース ファイル\game\BackGround</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\Shot\Shot.cpp">
       <Filter>ソース ファイル\game\Shot</Filter>
     </ClCompile>
@@ -126,6 +117,9 @@
     <ClCompile Include="src\game\Camera\PlayCamera.cpp">
       <Filter>ソース ファイル\game\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\Field\Field.cpp">
+      <Filter>ソース ファイル\game\Field</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\lib\fade\Fade.h">
@@ -133,9 +127,6 @@
     </ClInclude>
     <ClInclude Include="src\lib\math\Collision.h">
       <Filter>ソース ファイル\lib\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\lib\input\Input.h">
-      <Filter>ソース ファイル\lib\Input</Filter>
     </ClInclude>
     <ClInclude Include="src\lib\Frame\Frame.h">
       <Filter>ソース ファイル\lib\Frame</Filter>
@@ -179,9 +170,6 @@
     <ClInclude Include="src\game\Scene\SceneBase.h">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\BackGround\BackGround.h">
-      <Filter>ソース ファイル\game\BackGround</Filter>
-    </ClInclude>
     <ClInclude Include="src\game\Shot\Shot.h">
       <Filter>ソース ファイル\game\Shot</Filter>
     </ClInclude>
@@ -196,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="src\game\Camera\PlayCamera.h">
       <Filter>ソース ファイル\game\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Field\Field.h">
+      <Filter>ソース ファイル\game\Field</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

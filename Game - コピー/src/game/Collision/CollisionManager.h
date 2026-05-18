@@ -20,7 +20,7 @@ public:
 
 	//プレイヤーとゴールの当たり判定
 	static void CheckHitPlayerToGoal(
-		CPlayer& player, Goal& goal);
+		CPlayer& player, CGoal& goal);
 
 public:
 	

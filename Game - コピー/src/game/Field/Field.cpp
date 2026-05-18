@@ -17,7 +17,7 @@ static const char* MODEL_PATH[] = {
 //----------------------
 //コンストラクタ
 //----------------------
-Field::Field()
+CField::CField()
 {
 	Init();
 }
@@ -25,7 +25,7 @@ Field::Field()
 //----------------------
 //デストラクタ
 //----------------------
-Field::~Field()
+CField::~CField()
 {
 	Exit();
 }
@@ -33,7 +33,7 @@ Field::~Field()
 //----------------------
 //初期化
 //----------------------
-void Field::Init()
+void CField::Init()
 {
 	for (int i = 0; i < OBJECT_NUM; i++)
 	{
@@ -45,7 +45,7 @@ void Field::Init()
 //----------------------
 //ロード
 //----------------------
-void Field::Load()
+void CField::Load()
 {
 	for (int i = 0; i < OBJECT_NUM; i++)
 	{
@@ -67,7 +67,7 @@ void Field::Load()
 //----------------------
 //終了時に破棄
 //----------------------
-void Field::Exit()
+void CField::Exit()
 {
 	for (int i = 0; i < OBJECT_NUM; i++)
 	{
@@ -82,7 +82,7 @@ void Field::Exit()
 //----------------------
 //毎フレーム呼ぶ処理
 //----------------------
-void Field::Step()
+void CField::Step()
 {
 	//天球回転用
 	m_skyRotY += 0.01f;
@@ -91,7 +91,7 @@ void Field::Step()
 //----------------------
 //モデルの更新
 //----------------------
-void Field::Updete()
+void CField::Updete()
 {
 	for (int i = 0; i < OBJECT_NUM; i++)
 	{
@@ -104,7 +104,7 @@ void Field::Updete()
 //----------------------
 //描画
 //----------------------
-void Field::Draw()
+void CField::Draw()
 {
 	for (int i = 0; i < OBJECT_NUM; i++)
 	{

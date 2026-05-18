@@ -1,13 +1,15 @@
 #pragma once
 #include<DxLib.h>
 #include "SceneBase.h"
+
 #include"../Player/Player.h"
 #include"../Camera/CameraManager.h"
 #include"../Enemy/EnemyManager.h"
 #include"../Field/Field.h"
 #include"../System/SoundManager.h"
-#include"../BackGround/BackGround.h"
+#include"../Goal/Goal.h"
 #include"../Shot/ShotManager.h"
+
 class CSceneGame : public CSceneBase 
 {
 private:
@@ -19,18 +21,19 @@ private:
 		END		//データの終了
 	};
 
-	CPlayer m_Player;					//プレイヤー
-	ShotManager m_Shot;					//弾
-	CEnemyManager m_Enemy;				//敵
-	CameraManager m_CameraManager;		//カメラ
-	CBackGround m_BackGround;			//背景
-	tagScene m_SceneID;					//シーン保存
+	CPlayer			m_Player;					//プレイヤー
+	ShotManager		m_Shot;						//弾
+	CEnemyManager	m_Enemy;					//敵
+	CameraManager	m_CameraManager;			//カメラ
+	CField			m_Field;					//フィールド
+	CGoal			m_Goal;						//ゴール
+	tagScene		m_SceneID;					//シーン保存
 	int m_Hndl;
 
 public:
-	////コンストラクタ・デストラクタ
-	//CSceneGame();
-	//~CSceneGame();
+	//コンストラクタ・デストラクタ
+	CSceneGame();
+	~CSceneGame();
 
 	//繰り返し行う処理
 	int Loop();

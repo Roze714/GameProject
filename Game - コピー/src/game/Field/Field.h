@@ -2,7 +2,7 @@
 #include <DxLib.h>
 
 
-class Field
+class CField
 {
 private:
 	enum tag0bject {
@@ -17,8 +17,8 @@ private:
 public:
 
 	//コンストラクタ
-	Field();
-	~Field();
+	CField();
+	~CField();
 
 	//初期化
 	void Init();

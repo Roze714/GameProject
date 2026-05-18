@@ -22,7 +22,11 @@ static const float ROTATE_SPEED = 0.1f;
 //----------------------
 CPlayer::CPlayer()
 {
-	Init();
+	m_vPos = ZERO;
+	m_vRot = ZERO;
+	m_vSpeed = ZERO;
+	m_eState = PLAYER_NORMAL;
+	m_iHndl = -1;
 }
 
 //----------------------
@@ -46,7 +50,7 @@ void CPlayer::Init()
 	m_iHndl = -1;
 	//float jumpPow = 0.0f;
 	m_vRot = ZERO;
-
+	m_vRot = { 0.0f, 3.1459265f, 0.0f }; // 南向きに設定
 
 
 
@@ -59,7 +63,7 @@ void CPlayer::Load()
 {
 	if (m_iHndl == -1)
 	{
-		m_iHndl = LoadGraph(PLAYER_MODEL_PATH);
+		m_iHndl = MV1LoadModel(PLAYER_MODEL_PATH);
 	}
 }
 
@@ -98,13 +102,25 @@ void CPlayer::Step(ShotManager& shot)
 	}
 
 
+	//プレイヤーの回転処理
+	if (CheckHitKey(KEY_INPUT_D))
+	{
+		m_vRot.y += ROTATE_SPEED;
+	}
+	else if (CheckHitKey(KEY_INPUT_A))
+	{
+		m_vRot.y -= ROTATE_SPEED;
+	}
+
+
+
 	//前進
-	if (CheckHitKey(KEY_INPUT_UP))
+	if (CheckHitKey(KEY_INPUT_W))
 	{
 		speed = -PL_SPEED;
 	}
 	//後退
-	if (CheckHitKey(KEY_INPUT_DOWN))
+	if (CheckHitKey(KEY_INPUT_S))
 	{
 		speed = PL_SPEED;
 	}
@@ -134,7 +150,7 @@ void CPlayer::Updete()
 void CPlayer::Draw()
 {
 
-	//MV1DrawModel(m_iHndl);
+	MV1DrawModel(m_iHndl);
 
 #ifdef DEBUG
 	//当たり判定を目視できる

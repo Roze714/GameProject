@@ -9,8 +9,8 @@ private:
 
 public:
 
-	////コンストラクタ・デストラクタ
-	//CSceneTitle();
+	//コンストラクタ・デストラクタ
+	CSceneTitle();
 	//~CSceneTitle();
 
 	//		初期化

@@ -26,8 +26,8 @@ private:
 	int m_Hndl;
 
 public:
-	////コンストラクタ・デストラクタ
-	//CSceneGame();
+	//コンストラクタ・デストラクタ
+	CSceneGame();
 	//~CSceneGame();
 
 	//繰り返し行う処理

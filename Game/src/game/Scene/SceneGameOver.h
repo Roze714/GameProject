@@ -11,8 +11,8 @@ private:
 	int m_Hndl;
 
 public:
-	////コンストラクタ・デストラクタ
-	//CSceneGameover();
+	//コンストラクタ・デストラクタ
+	CSceneGameover();
 	//~CSceneGameover();
 
 	//		初期化

@@ -12,13 +12,14 @@
 //---------------------------------
 
 
-////---------------------------------
-////		コンストラクタ
-////---------------------------------
-//CSceneGame::CSceneGame()
-//{
-//}
-//
+//---------------------------------
+//		コンストラクタ
+//---------------------------------
+CSceneGame::CSceneGame()
+{
+	Init();
+}
+
 ////---------------------------------
 ////		デストラクタ
 ////---------------------------------
@@ -56,15 +57,13 @@ void CSceneGame::Load()
 //---------------------------------
 int CSceneGame::Step()
 {
-
 	int ret = -1;
 	if (CheckHitKey(KEY_INPUT_X))
 		ret = SCENEID_GAMECLEAR;
 	if (CheckHitKey(KEY_INPUT_C))
 		ret = SCENEID_GAMEOVER;
 	return ret;
-
-
+	
 	m_Player.Step();
 	m_Enemy.Step();
 	m_BackGround.Step();
@@ -78,7 +77,7 @@ int CSceneGame::Step()
 	}
 
 
-	/*m_Player.Updete();*/
+	//m_Player.Updete();
 	m_Enemy.Updete();
 
 	

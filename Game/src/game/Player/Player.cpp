@@ -34,18 +34,16 @@ CPlayer::~CPlayer()
 //----------------------
 void CPlayer::Init()
 {
-	m_vPos = ZERO;
+	m_vPos.x = 320.0f;
+	m_vPos.y = 400.0f;
 	m_vSpeed = ZERO;
 	m_eState = PLAYER_NORMAL;
 	m_isActive = true;
 	m_Radius = 3.0f;
 	m_iHndl = -1;
 	//float jumpPow = 0.0f;
-	m_vPos = ZERO;
 
-
-
-
+	
 }
 
 //----------------------
@@ -91,13 +89,24 @@ void CPlayer::Step()
 	{
 		speed = PL_SPEED;
 	}
+	
+	if (CheckHitKey(KEY_INPUT_RIGHT))
+	{
+		speed += PL_SPEED;
+	}
+	else if (CheckHitKey(KEY_INPUT_LEFT))
+	{
+		speed -= PL_SPEED;
+	}
 
-	//移動速度を三角関数で計算する
-	m_vSpeed.x = sinf(m_vRot.y) * speed;
-	m_vSpeed.y = 0.0f;
-	m_vSpeed.z = cosf(m_vRot.y) * speed;
-	//計算した速度を座標に足し算する
-	m_vPos = VAdd(m_vPos, m_vSpeed);
+
+
+	////移動速度を三角関数で計算する
+	//m_vSpeed.x = sinf(m_vRot.y) * speed;
+	//m_vSpeed.y = 0.0f;
+	//m_vSpeed.z = cosf(m_vRot.y) * speed;
+	////計算した速度を座標に足し算する
+	//m_vPos = VAdd(m_vPos, m_vSpeed);
 
 	
 }
@@ -119,12 +128,10 @@ void CPlayer::Draw()
 
 	//MV1DrawModel(m_iHndl);
 
-#ifdef DEBUG
-	//当たり判定を目視できる
-	DrawSphere3D(GetCenter(), m_Radius,
-		16, GetColor(255, 0, 0),
-		GetColor(255, 0, 0), FALSE);
-#endif // DEBUG
+	//2D画像表示
+	//プレイヤーの画像表示
+	DrawRotaGraph((int)m_vPos.x, (int)m_vPos.y,
+		1.0, 0.0, m_iHndl, TRUE);
 
 }
 
