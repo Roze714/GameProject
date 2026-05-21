@@ -139,6 +139,17 @@ int CSceneGame::Step()
 		m_CameraManager.ChangeCamera(CameraManager::ID_PLAY);
 	}
 
+	
+	
+
+	//当たり判定処理
+	CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
+	CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
+	//プレイヤーの生存フラグが消えたら、ゲーム終了へ
+	if (m_Player.IsActive() == false)
+	{
+		m_SceneID = END;
+	}
 
 	m_Player.Updete();
 	m_Enemy.Updete();
@@ -149,24 +160,19 @@ int CSceneGame::Step()
 	m_CameraManager.Step(m_Player.GetPos(), m_Player.GetPosY());
 	m_CameraManager.Updete();
 
-	
 
-	int ret = -1;
+
+
+
+	/*int ret = -1;
 	if (CheckHitKey(KEY_INPUT_X))
 		ret = SCENEID_GAMECLEAR;
 	if (CheckHitKey(KEY_INPUT_C))
 		ret = SCENEID_GAMEOVER;
-	return ret;
+	return ret;*/
 
 
-	//当たり判定処理
-	CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
-	CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
-	//プレイヤーの生存フラグが消えたら、ゲーム終了へ
-	if (m_Player.IsActive() == false)
-	{
-		m_SceneID = END;
-	}
+
 }
 
 

@@ -91,7 +91,7 @@ void CPlayer::Step(ShotManager& shot)
 
 
 	//’e‚Ì”­Ë
-	if (CheckHitKey(KEY_INPUT_Z))
+	if (CheckHitKey(KEY_INPUT_E))
 	{
 		VECTOR speed;
 		//ˆÚ“®‘¬“x‚ğOŠpŠÖ”‚ÅŒvZ‚·‚é
