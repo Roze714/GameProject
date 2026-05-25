@@ -3,6 +3,7 @@
 #include"PlayCamera.h"
 #include"DebugCamera.h"
 
+//カメラ全体を管理するクラス
 class CameraManager
 {
 public:
@@ -17,7 +18,7 @@ public:
 private:
 	PlayCamera m_Play;		//プレイヤーカメラ
 	DebugCamera m_Debug;	//デバックカメラ
-	tagCAMERA_ID m_id;		//現在のカメラID
+	tagCAMERA_ID m_Id;		//現在のカメラID
 
 public:
 	//コンストラクタ
@@ -37,9 +38,9 @@ public:
 
 
 	//カメラタイプ変更
-	void ChangeCamera(tagCAMERA_ID id) { m_id = id; }
+	void ChangeCamera(tagCAMERA_ID id) { m_Id = id; }
 	//カメラのタイプ取得
-	tagCAMERA_ID GetID() { return m_id; }
+	tagCAMERA_ID GetID() { return m_Id; }
 
 };
 

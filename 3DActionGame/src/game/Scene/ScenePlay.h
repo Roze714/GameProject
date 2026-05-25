@@ -4,12 +4,13 @@
 #include"../Player/Player.h"
 #include"../Camera/CameraManager.h"
 #include"../Enemy/EnemyManager.h"
+#include"../Enemy/Enemy2Manager.h"
 #include"../Field/Field.h"
 #include"../System/SoundManager.h"
 #include"../Goal/Goal.h"
 #include"../Shot/ShotManager.h"
 
-
+//プレイ管理用クラス
 class ScenePlay
 {
 private:
@@ -32,6 +33,7 @@ private:
 	Player			m_Player;					//プレイヤー
 	ShotManager		m_Shot;						//弾
 	EnemyManager	m_Enemy;					//敵
+	Enemy2Manager	m_Enemy2;					//敵2
 	CameraManager	m_CameraManager;			//カメラ
 	Field			m_Field;					//フィールド
 	Goal			m_Goal;						//ゴール
@@ -40,7 +42,7 @@ private:
 
 
 	tagResult		m_Result = NONE;
-	tagScene		m_Scene;			//状態
+	tagScene		m_Scene;					//状態
 
 public:
 	//コンストラクタ・デストラクタ

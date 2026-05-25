@@ -13,9 +13,9 @@ static const float FORCUS_OFFSET_Y=30;
 //----------------------
 PlayCamera::PlayCamera()
 {
-	m_cameraPos = ZERO;
-	m_targetPos = ZERO;
-	m_upVec = ZERO;
+	m_CameraPos = ZERO;
+	m_TargetPos = ZERO;
+	m_UpVec = ZERO;
 }
 
 //-------------
@@ -23,9 +23,9 @@ PlayCamera::PlayCamera()
 //-------------
 void PlayCamera::Init()
 {
-	m_cameraPos = ZERO;
-	m_targetPos = ZERO;
-	m_upVec = { 0.0f,0.1f,0.0f };
+	m_CameraPos = ZERO;
+	m_TargetPos = ZERO;
+	m_UpVec = { 0.0f,0.1f,0.0f };
 }
 
 //---------------------
@@ -46,11 +46,11 @@ void  PlayCamera::Step(VECTOR focus, float m_vRotY)
 	v.x = sinf(m_vRotY) * CAMERA_LENGTH;
 	v.y = CAMERA_OFFSET_Y;
 	v.z = cosf(m_vRotY) * CAMERA_LENGTH;
-	m_cameraPos = VAdd(focus, v);
+	m_CameraPos = VAdd(focus, v);
 
-	m_targetPos = focus;
-	m_targetPos.y += FORCUS_OFFSET_Y;
-	SetCameraPositionAndTargetAndUpVec(m_cameraPos, m_targetPos, m_upVec);
+	m_TargetPos = focus;
+	m_TargetPos.y += FORCUS_OFFSET_Y;
+	SetCameraPositionAndTargetAndUpVec(m_CameraPos, m_TargetPos, m_UpVec);
 
 }
 

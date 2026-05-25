@@ -3,6 +3,8 @@
 #include"SceneTitle.h"
 #include"SceneGameClear.h"
 #include"SceneGameOver.h"
+
+//シーンマネージャー管理用クラス
 class SceneManager
 {
 private:

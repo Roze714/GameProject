@@ -1,7 +1,7 @@
 #pragma once
 #include <DxLib.h>
 
-
+//ステージ管理用クラス
 class Field
 {
 private:

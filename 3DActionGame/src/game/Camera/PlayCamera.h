@@ -1,12 +1,13 @@
 #pragma once
 #include<DxLib.h>
 
+//プレイカメラ管理用クラス
 class PlayCamera
 {
 private:
-	VECTOR m_cameraPos;			//カメラの視点
-	VECTOR m_targetPos;			//注視点
-	VECTOR m_upVec;				//カメラ上方向
+	VECTOR m_CameraPos;			//カメラの視点
+	VECTOR m_TargetPos;			//注視点
+	VECTOR m_UpVec;				//カメラ上方向
 
 public:
 	//コンストラクタ

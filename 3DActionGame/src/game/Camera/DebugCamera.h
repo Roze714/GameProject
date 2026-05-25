@@ -1,6 +1,7 @@
 #pragma once
 #include<DxLib.h>
 
+//デバック管理用クラス
 class DebugCamera
 {
 private:

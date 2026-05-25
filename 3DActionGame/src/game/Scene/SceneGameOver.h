@@ -2,7 +2,7 @@
 #include<DxLib.h>
 
 
-
+//ゲームオーバー管理用クラス
 class SceneGameOver
 {
 private:

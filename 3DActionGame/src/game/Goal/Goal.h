@@ -1,6 +1,7 @@
 #pragma once
 #include <DxLib.h>
 
+//ゴール管理用クラス
 class Goal
 {
 private:

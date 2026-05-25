@@ -5,9 +5,6 @@
 
 //定義関連-----------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
-//仮プレイヤーのモデルパス
-//static const char PLAYER_MODEL_PATH[] =
-//		{ "data/model/player/kari/kari.x" };
 
 //プレイヤーのモデルパス
 static const char PLAYER_MODEL_PATH[] =
@@ -50,12 +47,9 @@ void Player::Init()
 	m_isActive = true;
 	m_Radius = 3.0f;
 	m_iHndl = -1;
-	//float jumpPow = 0.0f;
+	float jumpPow = 0.0f;
 	m_vPos = ZERO;
 	m_vRot = { 0.0f, 3.1459265f, 0.0f }; // 南向きに設定
-
-
-
 }
 
 //----------------------
@@ -87,8 +81,6 @@ void Player::Exit()
 //----------------------
 void Player::Step(ShotManager& shot)
 {
-	
-
 	//キー入力
 	//弾の発射
 	if (CheckHitKey(KEY_INPUT_Z))
@@ -100,7 +92,6 @@ void Player::Step(ShotManager& shot)
 		speed.z = cosf(m_vRot.y) * -SHOT_SPEED;
 		shot.RequestPlayerShot(m_vPos, speed);
 	}
-
 
 	//プレイヤーの回転処理
 	if (CheckHitKey(KEY_INPUT_D))
@@ -116,15 +107,14 @@ void Player::Step(ShotManager& shot)
 	
 	float speed = 0.0f;			//実際の進む速度
 
-	
 	//キー入力
 	//前進
-	if (CheckHitKey(KEY_INPUT_UP))
+	if (CheckHitKey(KEY_INPUT_W))
 	{
 		speed = -PL_SPEED;
 	}
 	//後退
-	if (CheckHitKey(KEY_INPUT_DOWN))
+	if (CheckHitKey(KEY_INPUT_S))
 	{
 		speed = PL_SPEED;
 	}
@@ -136,20 +126,19 @@ void Player::Step(ShotManager& shot)
 	//計算した速度を座標に足し算する
 	m_vPos = VAdd(m_vPos, m_vSpeed);
 
-	
 
 
-	//// ジャンプ力加算
-	//m_vPos.y += JumpPow;
-	//// 重力計算
-	//JumpPow -= 0.01f;
-	//if (JumpPow < -1.0f) JumpPow = -1.0f;	// 落下速度制限
-	//// 地面に接地していたら強制的にジャンプ力を0に
-	//if (m_vPos.y < 1.0f)
-	//{
-	//	m_vPos.y = 1.0f;
-	//	JumpPow = 0.0f;
-	//}
+	//ジャンプ力加算
+	m_vPos.y += JumpPow;
+	//重力計算
+	JumpPow -= 0.01f;
+	if (JumpPow < -1.0f) JumpPow = -1.0f;	// 落下速度制限
+	//地面に接地していたら強制的にジャンプ力を0に
+	if (m_vPos.y < 1.0f)
+	{
+		m_vPos.y = 1.0f;
+		JumpPow = 0.0f;
+	}
 }
 
 //----------------------

@@ -2,7 +2,7 @@
 #include<DxLib.h>
 
 
-
+//ゲームクリア管理用クラス
 class SceneGameClear
 {
 private:

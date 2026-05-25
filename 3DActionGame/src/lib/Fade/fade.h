@@ -1,5 +1,7 @@
 #pragma once
 
+
+//フェード管理用クラス
 class CFade
 {
 public:

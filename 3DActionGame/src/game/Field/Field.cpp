@@ -1,18 +1,13 @@
 #include"Field.h"
 #include<math.h>
 
-
-
-
 //定義関連-----------------------------
-
 //フィールドのモデルパス
 static const char* MODEL_PATH[] = {
 	"data/model/field/field.x" ,
 	"data/model/sky/sky.mv1",
 };
 //--------------------------------------
-
 
 //----------------------
 //コンストラクタ
@@ -98,7 +93,6 @@ void Field::Updete()
 		VECTOR rot = { 0.0f,m_skyRotY,0.0f };
 		MV1SetRotationXYZ(m_Hndl[SKY], rot);
 	}
-	
 }
 
 //----------------------
@@ -111,5 +105,4 @@ void Field::Draw()
 		MV1DrawModel(m_Hndl[i]);
 	}
 }
-
 

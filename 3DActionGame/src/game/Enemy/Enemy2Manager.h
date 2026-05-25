@@ -1,20 +1,19 @@
 #pragma once
-#include"Enemy.h"
 #include"Enemy2.h"
 
 //敵の最大数
-static const int ENEMY_NUM = 150;
+static const int ENEMY2_NUM = 150;
 
 //敵全体を管理するクラス
-class EnemyManager
+class Enemy2Manager
 {
 private:
-	Enemy m_Enemy[ENEMY_NUM];		//敵
+	Enemy2 m_Enemy2[ENEMY2_NUM];		//敵
 	int m_waitCount;				//敵が出るまでの時間
 
 public:
 	//コンストラクタ
-	EnemyManager();
+	Enemy2Manager();
 
 
 	//初期化
@@ -40,7 +39,7 @@ public:
 
 	//敵1体分の情報
 	//@id:配列番号
-	Enemy& GetShot(int id) { return m_Enemy[id]; }
+	Enemy2& GetShot(int id) { return m_Enemy2[id]; }
 };
 
 

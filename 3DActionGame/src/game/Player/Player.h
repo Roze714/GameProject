@@ -2,6 +2,8 @@
 #include <DxLib.h>
 #include"../Shot/ShotManager.h"
 #include"../../lib/Input/Input.h"
+
+//プレイヤー管理用クラス
 class Player
 {
 private:

@@ -1,6 +1,7 @@
 #pragma once
 #include <DxLib.h>
 
+//’eŠÇ——pƒNƒ‰ƒX
 class Shot
 {
 private:

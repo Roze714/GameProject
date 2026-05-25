@@ -67,7 +67,6 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 		
 		
-		
 		SceneManager.Draw();
 		
 		XINPUT_STATE input;

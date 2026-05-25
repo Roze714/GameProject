@@ -16,7 +16,6 @@ ScenePlay::ScenePlay()
 //----------------------
 //デストラクタ
 //----------------------
-
 ScenePlay::~ScenePlay()
 {
 	Exit();
@@ -61,6 +60,7 @@ void ScenePlay::Draw()
 	m_Player.Draw();
 	m_Shot.Draw();
 	m_Enemy.Draw();
+	m_Enemy2.Draw();
 	m_Goal.Draw();
 }
 
@@ -75,6 +75,7 @@ void ScenePlay::Init()
 	m_Player.Init();
 	m_Shot.Init();
 	m_Enemy.Init();
+	m_Enemy2.Init();
 	m_Goal.Init();
 }
 
@@ -84,6 +85,7 @@ void ScenePlay::Init()
 void ScenePlay::Exit()
 {
 	m_Enemy.Exit();
+	m_Enemy2.Exit();
 	m_Player.Exit();
 	m_Shot.Exit();
 	m_Field.Exit();
@@ -99,6 +101,7 @@ void ScenePlay::Load()
 	m_Player.Load();
 	m_Shot.Load();
 	m_Enemy.Load();
+	m_Enemy2.Load();
 	m_Field.Load();
 	m_Goal.Load();
 }
@@ -114,6 +117,7 @@ void  ScenePlay::Step()
 		m_Player.Step(m_Shot);
 		m_Shot.Step();
 		m_Enemy.Step();
+		m_Enemy2.Step();
 		m_Field.Step();
 		m_Goal.Step();
 	}
@@ -130,11 +134,11 @@ void  ScenePlay::Step()
 	}
 
 
-
-
 	//当たり判定処理
 	CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
+	CollisionManager::CheckHitShotToEnemy2(m_Shot, m_Enemy2);
 	CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
+	CollisionManager::CheckHitPlayerToEnemy2(m_Player, m_Enemy2);
 	//プレイヤーの生存フラグが消えたら、ゲーム終了へ
 	if (m_Player.IsActive() == false)
 	{
@@ -143,13 +147,13 @@ void  ScenePlay::Step()
 
 	m_Player.Updete();
 	m_Enemy.Updete();
+	m_Enemy2.Updete();
 	m_Shot.Updete();
 	m_Field.Updete();
 	m_Goal.Updete();
 	//カメラ更新処理
 	m_CameraManager.Step(m_Player.GetPos(), m_Player.GetPosY());
 	m_CameraManager.Updete();
-
 
 
 }

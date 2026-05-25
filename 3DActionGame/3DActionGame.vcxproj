@@ -24,10 +24,11 @@
     <ClCompile Include="src\game\Camera\PlayCamera.cpp" />
     <ClCompile Include="src\game\Collision\CollisionManager.cpp" />
     <ClCompile Include="src\game\Enemy\Enemy.cpp" />
+    <ClCompile Include="src\game\Enemy\Enemy2.cpp" />
     <ClCompile Include="src\game\Enemy\EnemyManager.cpp" />
+    <ClCompile Include="src\game\Enemy\Enemy2Manager.cpp" />
     <ClCompile Include="src\game\Field\Field.cpp" />
     <ClCompile Include="src\game\Goal\Goal.cpp" />
-    <ClCompile Include="src\game\Item\Item.cpp" />
     <ClCompile Include="src\game\Player\Player.cpp" />
     <ClCompile Include="src\game\Scene\SceneGameClear.cpp" />
     <ClCompile Include="src\game\Scene\ScenePlay.cpp" />
@@ -49,10 +50,11 @@
     <ClInclude Include="src\game\Camera\PlayCamera.h" />
     <ClInclude Include="src\game\Collision\CollisionManager.h" />
     <ClInclude Include="src\game\Enemy\Enemy.h" />
+    <ClInclude Include="src\game\Enemy\Enemy2.h" />
     <ClInclude Include="src\game\Enemy\EnemyManager.h" />
+    <ClInclude Include="src\game\Enemy\Enemy2Manager.h" />
     <ClInclude Include="src\game\Field\Field.h" />
     <ClInclude Include="src\game\Goal\Goal.h" />
-    <ClInclude Include="src\game\Item\Item.h" />
     <ClInclude Include="src\game\Player\Player.h" />
     <ClInclude Include="src\game\Scene\SceneGameClear.h" />
     <ClInclude Include="src\game\Scene\ScenePlay.h" />

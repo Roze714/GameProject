@@ -15,7 +15,7 @@ static const float FORCUS_OFFSET_Y=30;
 CameraManager::CameraManager()
 {
 	//初期カメラはプレイカメラ
-	m_id = ID_PLAY;
+	m_Id = ID_PLAY;
 }
 
 //-------------
@@ -34,7 +34,7 @@ void CameraManager::Init()
 //---------------------
 void  CameraManager::Step(VECTOR focus, float m_vRotY)
 {
-	switch (m_id)
+	switch (m_Id)
 	{
 	//メインカメラ
 	case ID_PLAY:
@@ -50,7 +50,7 @@ void  CameraManager::Step(VECTOR focus, float m_vRotY)
 //カメラの更新
 void  CameraManager::Updete()
 {
-	switch (m_id)
+	switch (m_Id)
 	{
 		//メインカメラ
 	case ID_PLAY:

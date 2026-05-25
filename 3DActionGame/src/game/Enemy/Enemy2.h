@@ -2,7 +2,7 @@
 #include <DxLib.h>
 
 //敵管理用クラス
-class Enemy
+class Enemy2
 {
 private:
 	VECTOR	m_vPos;				//座標
@@ -13,8 +13,8 @@ private:
 public:
 
 	//コンストラクタ・デストラクタ
-	Enemy();
-	~Enemy();
+	Enemy2();
+	~Enemy2();
 
 	//初期化
 	//@vPos			:座標

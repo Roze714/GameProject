@@ -40,8 +40,48 @@ void CollisionManager::CheckHitShotToEnemy
 	}
 }
 
+//--------------------------------
+//プレイヤーの弾と敵2の当たり判定
+//--------------------------------
+ void CollisionManager::CheckHitShotToEnemy2(
+	ShotManager& shot, Enemy2Manager& enemy2)
+ {
+	for (int shotID = 0; shotID < PL_SHOT_NUM; shotID++)
+	{
+		Shot& oneShot = shot.GetShot(shotID);
+		if (oneShot.IsActive() == false) continue;
 
+		//敵の数だけループ
+		for (int enemyID = 0; enemyID < ENEMY2_NUM; enemyID++)
+		{
+			//敵１袋分の情報を取得し、生存確認
+			Enemy2& oneEnemy = enemy2.GetShot(enemyID);
+			if (oneEnemy.IsActive() == false)continue;
+
+			//それぞれの座標と半径を所得
+			VECTOR shotPos = oneShot.GetCenter();
+			float shotRadius = oneShot.GetRadius();
+			VECTOR enemy2Pos = oneEnemy.GetCenter();
+			float enemy2Radius = oneEnemy.GetRadius();
+
+			//当たり判定開始
+			bool isHIt = Collision::CheckHitSphereToSphere(
+				shotPos, shotRadius, enemy2Pos, enemy2Radius);
+
+			if (isHIt == true)
+			{
+				//お互い当たった!!
+				oneShot.HitCalc();
+				oneEnemy.HitCalc();
+
+			}
+		}
+	}
+}
+
+//--------------------------------
 //プレイヤーと敵の当たり判定
+//--------------------------------
 void CollisionManager::CheckHitPlayerToEnemy(
 	Player& player, EnemyManager& enemy)
 {
@@ -75,7 +115,45 @@ void CollisionManager::CheckHitPlayerToEnemy(
 	}
 }
 
+//--------------------------------
+//プレイヤーと敵2の当たり判定
+//--------------------------------
+void CollisionManager::CheckHitPlayerToEnemy2(
+	Player& player, Enemy2Manager& enemy2)
+{
+	//プレイヤーが死んでいたら何もしない
+	if (player.IsActive() == false)return;
+
+	//敵の数だけループ
+	for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
+	{
+		//敵１袋分の情報を取得し、生存確認
+		Enemy2& oneEnemy = enemy2.GetShot(enemyID);
+		if (oneEnemy.IsActive() == false)continue;
+
+		//それぞれの座標と半径を所得
+		VECTOR playerPos = player.GetCenter();
+		float playerRadius = player.GetRadius();
+		VECTOR enemy2Pos = oneEnemy.GetCenter();
+		float enemy2Radius = oneEnemy.GetRadius();
+
+		//当たり判定開始
+		bool isHIt = Collision::CheckHitSphereToSphere(
+			playerPos, playerRadius, enemy2Pos, enemy2Radius);
+
+		if (isHIt == true)
+		{
+			//お互い当たった!!
+			player.HitCalc();
+			oneEnemy.HitCalc();
+
+		}
+	}
+}
+
+//--------------------------------
 //プレイヤーとゴールの当たり判定
+//--------------------------------
  void CollisionManager::CheckHitPlayerToGoal(
 	 Player& player, Goal& goal)
 {
@@ -97,7 +175,4 @@ void CollisionManager::CheckHitPlayerToEnemy(
 
 	 }
 }
-
-
- 
 

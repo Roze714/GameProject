@@ -1,7 +1,7 @@
 #pragma once
 #include<DxLib.h>
 
-
+//タイトル管理用クラス
 class SceneTitle
 {
 private:
