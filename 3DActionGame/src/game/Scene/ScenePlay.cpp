@@ -58,7 +58,7 @@ void ScenePlay::Draw()
 {
 	m_Field.Draw();
 	m_Player.Draw();
-	m_Shot.Draw();
+	/*m_Shot.Draw();*/
 	m_Enemy.Draw();
 	m_Enemy2.Draw();
 	m_Goal.Draw();
@@ -73,7 +73,7 @@ void ScenePlay::Init()
 	m_CameraManager.Init();
 	m_Field.Init();
 	m_Player.Init();
-	m_Shot.Init();
+	/*m_Shot.Init();*/
 	m_Enemy.Init();
 	m_Enemy2.Init();
 	m_Goal.Init();
@@ -87,7 +87,7 @@ void ScenePlay::Exit()
 	m_Enemy.Exit();
 	m_Enemy2.Exit();
 	m_Player.Exit();
-	m_Shot.Exit();
+	/*m_Shot.Exit();*/
 	m_Field.Exit();
 	m_Goal.Exit();
 
@@ -99,7 +99,7 @@ void ScenePlay::Exit()
 void ScenePlay::Load()
 {
 	m_Player.Load();
-	m_Shot.Load();
+	/*m_Shot.Load();*/
 	m_Enemy.Load();
 	m_Enemy2.Load();
 	m_Field.Load();
@@ -114,8 +114,8 @@ void  ScenePlay::Step()
 
 	if (m_CameraManager.GetID() == CameraManager::ID_PLAY)
 	{
-		m_Player.Step(m_Shot);
-		m_Shot.Step();
+		m_Player.Step();
+		/*m_Shot.Step();*/
 		m_Enemy.Step();
 		m_Enemy2.Step();
 		m_Field.Step();
@@ -135,8 +135,8 @@ void  ScenePlay::Step()
 
 
 	//当たり判定処理
-	CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
-	CollisionManager::CheckHitShotToEnemy2(m_Shot, m_Enemy2);
+	/*CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
+	CollisionManager::CheckHitShotToEnemy2(m_Shot, m_Enemy2);*/
 	CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
 	CollisionManager::CheckHitPlayerToEnemy2(m_Player, m_Enemy2);
 	//プレイヤーの生存フラグが消えたら、ゲーム終了へ
@@ -148,7 +148,7 @@ void  ScenePlay::Step()
 	m_Player.Updete();
 	m_Enemy.Updete();
 	m_Enemy2.Updete();
-	m_Shot.Updete();
+	/*m_Shot.Updete();*/
 	m_Field.Updete();
 	m_Goal.Updete();
 	//カメラ更新処理

@@ -7,7 +7,7 @@ static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 //“–‚½‚è”»’è
 
 static const char GOAL_MODEL_PATH[]
-= { "data/Flag.png" };
+= { "data/model/Flag/Flag.x" };
 
 //--------------------------------------
 

@@ -46,9 +46,6 @@
     <Filter Include="ソース ファイル\game\Field">
       <UniqueIdentifier>{cccb2be1-2941-4f64-825a-2560516bd638}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\game\Shot">
-      <UniqueIdentifier>{4516885e-1b32-4e0d-9326-2ac44f6e88aa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\game\System">
       <UniqueIdentifier>{edfab552-2866-4e29-8ef0-32fbfd2eaa19}</UniqueIdentifier>
     </Filter>
@@ -77,12 +74,6 @@
     </ClCompile>
     <ClCompile Include="src\game\System\SoundManager.cpp">
       <Filter>ソース ファイル\game\System</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\Shot\Shot.cpp">
-      <Filter>ソース ファイル\game\Shot</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\Shot\ShotManager.cpp">
-      <Filter>ソース ファイル\game\Shot</Filter>
     </ClCompile>
     <ClCompile Include="src\game\Scene\ScenePlay.cpp">
       <Filter>ソース ファイル\game\Scene</Filter>
@@ -148,12 +139,6 @@
     </ClInclude>
     <ClInclude Include="src\game\System\SoundManager.h">
       <Filter>ソース ファイル\game\System</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Shot\Shot.h">
-      <Filter>ソース ファイル\game\Shot</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Shot\ShotManager.h">
-      <Filter>ソース ファイル\game\Shot</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Scene\ScenePlay.h">
       <Filter>ソース ファイル\game\Scene</Filter>

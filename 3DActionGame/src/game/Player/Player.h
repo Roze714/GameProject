@@ -1,7 +1,7 @@
 #pragma once
 #include <DxLib.h>
-#include"../Shot/ShotManager.h"
-#include"../../lib/Input/Input.h"
+//#include"../Shot/ShotManager.h"
+//#include"../../lib/Input/Input.h"
 
 //プレイヤー管理用クラス
 class Player
@@ -44,7 +44,7 @@ public:
 	void Exit();
 
 	//毎フレーム呼ぶ処理
-	void Step(ShotManager& shot);
+	void Step();
 	
 	//モデルの更新
 	void Updete();

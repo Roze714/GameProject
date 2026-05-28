@@ -79,19 +79,19 @@ void Player::Exit()
 //----------------------
 //毎フレーム呼ぶ処理
 //----------------------
-void Player::Step(ShotManager& shot)
+void Player::Step()
 {
-	//キー入力
-	//弾の発射
-	if (CheckHitKey(KEY_INPUT_Z))
-	{
-		VECTOR speed;
-		//移動速度を三角関数で計算する
-		speed.x = sinf(m_vRot.y) * -SHOT_SPEED;
-		speed.y = 0.0f;
-		speed.z = cosf(m_vRot.y) * -SHOT_SPEED;
-		shot.RequestPlayerShot(m_vPos, speed);
-	}
+	
+	////弾の発射
+	//if (CheckHitKey(KEY_INPUT_E))
+	//{
+	//	VECTOR speed;
+	//	//移動速度を三角関数で計算する
+	//	speed.x = sinf(m_vRot.y) * -SHOT_SPEED;
+	//	speed.y = 0.0f;
+	//	speed.z = cosf(m_vRot.y) * -SHOT_SPEED;
+	//	shot.RequestPlayerShot(m_vPos, speed);
+	//}
 
 	//プレイヤーの回転処理
 	if (CheckHitKey(KEY_INPUT_D))
@@ -107,7 +107,7 @@ void Player::Step(ShotManager& shot)
 	
 	float speed = 0.0f;			//実際の進む速度
 
-	//キー入力
+	
 	//前進
 	if (CheckHitKey(KEY_INPUT_W))
 	{

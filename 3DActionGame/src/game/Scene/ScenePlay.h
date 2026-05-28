@@ -8,7 +8,7 @@
 #include"../Field/Field.h"
 #include"../System/SoundManager.h"
 #include"../Goal/Goal.h"
-#include"../Shot/ShotManager.h"
+//#include"../Shot/ShotManager.h"
 
 //プレイ管理用クラス
 class ScenePlay
@@ -31,7 +31,7 @@ private:
 
 
 	Player			m_Player;					//プレイヤー
-	ShotManager		m_Shot;						//弾
+	//ShotManager		m_Shot;						//弾
 	EnemyManager	m_Enemy;					//敵
 	Enemy2Manager	m_Enemy2;					//敵2
 	CameraManager	m_CameraManager;			//カメラ
