@@ -69,23 +69,7 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		
 		SceneManager.Draw();
 		
-		XINPUT_STATE input;
-		// “ü—Íó‘Ô‚ğæ“¾
-		GetJoypadXInputState(DX_INPUT_PAD1, &input);
-		// ‰æ–Ê‚É XINPUT_STATE ‚Ì’†g‚ğ•`‰æ
-		int Color = GetColor(0, 255, 255);
-		DrawFormatString(0, 0, Color, "LeftTrigger:%d RightTrigger:%d",
-			input.LeftTrigger, input.RightTrigger);
-		DrawFormatString(0, 16, Color, "ThumbLX:%d ThumbLY:%d",
-			input.ThumbLX, input.ThumbLY);
-		DrawFormatString(0, 32, Color, "ThumbRX:%d ThumbRY:%d",
-			input.ThumbRX, input.ThumbRY);
-		DrawString(0, 64, "Button", Color);
-		for (int i = 0; i < 16; i++)
-		{
-			DrawFormatString(64 + i % 8 * 64, 64 + i / 8 * 16, Color,
-				"%2d:%d", i, input.Buttons[i]);
-		}
+		
 
 
 		//FPS•\¦
