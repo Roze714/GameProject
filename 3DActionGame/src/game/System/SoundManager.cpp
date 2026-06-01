@@ -22,7 +22,6 @@ void SoundManager::Load()
 		"Data/Sound/se_explore.mp3"
 	};
 
-	//
 	for (int i = 0; i < SOUND_NUM; i++)
 	{
 		int hndl = LoadSoundMem(filePath[i]);
@@ -55,7 +54,6 @@ bool SoundManager::Play(tagID id,
 	int ret = PlaySoundMem(m_hndl[id], type, isStart);
 	if (ret == -1)return false;
 	else return true;
-	
 }
 
 //---------------------
@@ -86,7 +84,6 @@ void SoundManager::StopAll()
 	 int result = CheckSoundMem(m_hndl[id]);
 	 if (result == 1)return true;
 	 else return false;
-	 
 }
 
 

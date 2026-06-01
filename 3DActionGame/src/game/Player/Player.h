@@ -1,10 +1,10 @@
 #pragma once
 #include <DxLib.h>
-//#include"../Shot/ShotManager.h"
-//#include"../../lib/Input/Input.h"
 
-//プレイヤー管理用クラス
-class Player
+#include"../Shot/ShotManager.h"
+
+#include"../../lib/Input/Input.h"
+class CPlayer
 {
 private:
 	//プレイヤーの状態
@@ -28,23 +28,23 @@ private:
 
 public:
 
-	//コンストラクタ
-	Player();
-	~Player();
+	//コンストラクタ・デストラクタ
+	CPlayer();
+	~CPlayer();
 
 	//初期化
 	//@vPos			:座標
 	//@vRotY		:回転角度
 	void Init();
-	
+
 	//ロード
 	void Load();
-	
+
 	//終了
 	void Exit();
 
 	//毎フレーム呼ぶ処理
-	void Step();
+	void Step(ShotManager& shot);
 	
 	//モデルの更新
 	void Updete();

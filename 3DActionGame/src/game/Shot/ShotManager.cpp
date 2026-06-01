@@ -19,7 +19,7 @@ ShotManager::ShotManager()
 void ShotManager::Init()
 {
 	for (int i = 0; i < PL_SHOT_NUM; i++)
-		m_PlayerShot[i].Init();
+		m_playerShot[i].Init();
 }
 
 //---------------------
@@ -28,7 +28,7 @@ void ShotManager::Init()
 void  ShotManager::Step()
 {
 	for (int i = 0; i < PL_SHOT_NUM; i++)
-		m_PlayerShot[i].Step();
+		m_playerShot[i].Step();
 }
 //---------------------
 //弾の更新
@@ -36,7 +36,7 @@ void  ShotManager::Step()
 void ShotManager::Updete()
 {
 	for (int i = 0; i < PL_SHOT_NUM; i++)
-		m_PlayerShot[i].Updete();
+		m_playerShot[i].Updete();
 }
 
 //---------------------
@@ -48,7 +48,7 @@ void ShotManager::Load()
 	int iHndl = MV1LoadModel(PLSHOT_MODEL_PATH);
 	//モデルを複製
 	for (int i = 0; i < PL_SHOT_NUM; i++)
-		m_PlayerShot[i].Load(iHndl);
+		m_playerShot[i].Load(iHndl);
 	//オリジナル削除
 	MV1DeleteModel(iHndl);
 }
@@ -59,7 +59,7 @@ void ShotManager::Load()
 void ShotManager::Exit()
 {
 	for (int i = 0; i < PL_SHOT_NUM; i++)
-		m_PlayerShot[i].Exit();
+		m_playerShot[i].Exit();
 }
 
 //---------------------
@@ -68,7 +68,7 @@ void ShotManager::Exit()
 void ShotManager::Draw()
 {
 	for (int i = 0; i < PL_SHOT_NUM; i++)
-		m_PlayerShot[i].Draw();
+		m_playerShot[i].Draw();
 }
 
 
@@ -81,7 +81,7 @@ void ShotManager::RequestPlayerShot(
 	for (int i = 0; i < PL_SHOT_NUM; i++)
 	{
 		//弾を発射
-		if (m_PlayerShot[i].Request(pos, speed))
+		if (m_playerShot[i].Request(pos, speed))
 		{
 			//ショットの音
 			SoundManager::Play(SoundManager::SE_PESHOT);
@@ -90,6 +90,3 @@ void ShotManager::RequestPlayerShot(
 		}
 	}
 }
-
-
-

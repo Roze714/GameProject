@@ -2,14 +2,13 @@
 
 #include <DxLib.h>
 
-//当たり判定管理用クラス
 class Collision
 {
 public:
 
-	//***********************
-	//		2D用関数
-	//***********************
+	//*****************
+	//	2D用関数
+	//*****************
 
 	// 点と四角の当たり判定
 	//	dotPos		:	点の座標
@@ -35,10 +34,10 @@ public:
 	static bool CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
 		VECTOR circlePos2, int radius2);
 
-
-	//***********************
+	
+	//*****************
 	//		3D用関数
-	//***********************
+	//*****************
 
 	// 立方体同士の当たり判定
 	//	pos			:	箱の中心座標
@@ -53,6 +52,8 @@ public:
 	//	@return		:	true=当たった　false=当たっていない
 	static bool CheckHitSphereToSphere(VECTOR spherePos1, float radius1,
 		VECTOR spherePos2, float radius2);
+
+
 
 };
 

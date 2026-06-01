@@ -16,7 +16,10 @@ float SHOT_SPEED = 2.0f;
 //----------------------
 Shot::Shot()
 {
-	Init();
+	
+	m_vPos = ZERO;
+	m_iHndl = -1;
+	m_isActive = false;			//ç≈èâÇÕï\é¶ÇµÇ»Ç¢
 }
 
 //----------------------

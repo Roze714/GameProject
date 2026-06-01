@@ -2,19 +2,17 @@
 #include<math.h>
 #define DEBUG
 
-
 //定義関連-----------------------------
-static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
-
-//プレイヤーのモデルパス
+static const VECTOR ZERO = { 0.0f,0.0f };
+//プレイヤーのイラストパス
 static const char PLAYER_MODEL_PATH[] =
-{ "data/model/player/player.pmx" };
-//回転角度
-static const float ROTATE_SPEED = 0.05f;
+{ "data/model/player/player.pmx" }; 
 //移動速度
 static const float PL_SPEED = 1.0f;
 //弾の移動速度
 static const float SHOT_SPEED = 1.0f;
+//回転角度
+static const float ROTATE_SPEED = 0.1f;
 
 //--------------------------------------
 
@@ -22,15 +20,19 @@ static const float SHOT_SPEED = 1.0f;
 //----------------------
 //コンストラクタ
 //----------------------
-Player::Player()
+CPlayer::CPlayer()
 {
-	Init();
+	m_vPos = ZERO;
+	m_vRot = ZERO;
+	m_vSpeed = ZERO;
+	m_eState = PLAYER_NORMAL;
+	m_iHndl = -1;
 }
 
 //----------------------
 //デストラクタ
 //----------------------
-Player::~Player()
+CPlayer::~CPlayer()
 {
 	Exit();
 }
@@ -38,24 +40,26 @@ Player::~Player()
 //----------------------
 //初期化
 //----------------------
-void Player::Init()
+void CPlayer::Init()
 {
 	m_vPos = ZERO;
-	m_vRot = { 0.0f,0.0f ,0.0f };
 	m_vSpeed = ZERO;
 	m_eState = PLAYER_NORMAL;
 	m_isActive = true;
 	m_Radius = 3.0f;
 	m_iHndl = -1;
-	float jumpPow = 0.0f;
-	m_vPos = ZERO;
+	//float jumpPow = 0.0f;
+	m_vRot = ZERO;
 	m_vRot = { 0.0f, 3.1459265f, 0.0f }; // 南向きに設定
+
+
+
 }
 
 //----------------------
 //ロード
 //----------------------
-void Player::Load()
+void CPlayer::Load()
 {
 	if (m_iHndl == -1)
 	{
@@ -66,32 +70,37 @@ void Player::Load()
 //----------------------
 //終了時に破棄
 //----------------------
-void Player::Exit()
+void CPlayer::Exit()
 {
 	if (m_iHndl != -1)
 	{
 		// モデル削除
-		MV1DeleteModel(m_iHndl);		
-		m_iHndl = -1;
+		MV1DeleteModel(m_iHndl);
+		m_iHndl = -1;;
 	}
 }
 
 //----------------------
 //毎フレーム呼ぶ処理
 //----------------------
-void Player::Step()
+void CPlayer::Step(ShotManager& shot)
 {
 	
-	////弾の発射
-	//if (CheckHitKey(KEY_INPUT_E))
-	//{
-	//	VECTOR speed;
-	//	//移動速度を三角関数で計算する
-	//	speed.x = sinf(m_vRot.y) * -SHOT_SPEED;
-	//	speed.y = 0.0f;
-	//	speed.z = cosf(m_vRot.y) * -SHOT_SPEED;
-	//	shot.RequestPlayerShot(m_vPos, speed);
-	//}
+	//プレイヤーの移動
+	float speed = 0.0f;			//実際の進む速度
+
+
+	//弾の発射
+	if (CheckHitKey(KEY_INPUT_E))
+	{
+		VECTOR speed;
+		//移動速度を三角関数で計算する
+		speed.x = sinf(m_vRot.y) * -SHOT_SPEED;
+		speed.y = 0.0f;
+		speed.z = cosf(m_vRot.y) * -SHOT_SPEED;
+		shot.RequestPlayerShot(m_vPos, speed);
+	}
+
 
 	//プレイヤーの回転処理
 	if (CheckHitKey(KEY_INPUT_D))
@@ -103,11 +112,8 @@ void Player::Step()
 		m_vRot.y -= ROTATE_SPEED;
 	}
 
-	//プレイヤーの移動
-	
-	float speed = 0.0f;			//実際の進む速度
 
-	
+
 	//前進
 	if (CheckHitKey(KEY_INPUT_W))
 	{
@@ -126,25 +132,13 @@ void Player::Step()
 	//計算した速度を座標に足し算する
 	m_vPos = VAdd(m_vPos, m_vSpeed);
 
-
-
-	//ジャンプ力加算
-	m_vPos.y += JumpPow;
-	//重力計算
-	JumpPow -= 0.01f;
-	if (JumpPow < -1.0f) JumpPow = -1.0f;	// 落下速度制限
-	//地面に接地していたら強制的にジャンプ力を0に
-	if (m_vPos.y < 1.0f)
-	{
-		m_vPos.y = 1.0f;
-		JumpPow = 0.0f;
-	}
+	
 }
 
 //----------------------
 //モデルの更新
 //----------------------
-void Player::Updete()
+void CPlayer::Updete()
 {
 	MV1SetPosition(m_iHndl, m_vPos);
 	MV1SetRotationXYZ(m_iHndl, m_vRot);
@@ -153,7 +147,7 @@ void Player::Updete()
 //----------------------
 //描画
 //----------------------
-void Player::Draw()
+void CPlayer::Draw()
 {
 
 	MV1DrawModel(m_iHndl);
@@ -170,7 +164,7 @@ void Player::Draw()
 //----------------------
 //当たり判定の座標用
 //----------------------
-VECTOR Player::GetCenter()
+VECTOR CPlayer::GetCenter()
 {
 	//基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -184,7 +178,7 @@ VECTOR Player::GetCenter()
 //----------------------
 //ヒット後の処理
 //----------------------
-void Player::HitCalc()
+void CPlayer::HitCalc()
 {
 	//生存フラグを消す
 	m_isActive = false;

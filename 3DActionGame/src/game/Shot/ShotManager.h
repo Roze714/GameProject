@@ -8,7 +8,7 @@ static const int PL_SHOT_NUM=50;
 class ShotManager
 {
 private:
-	Shot m_PlayerShot[PL_SHOT_NUM];
+	Shot m_playerShot[PL_SHOT_NUM];
 
 public:
 	//コンストラクタ
@@ -43,7 +43,7 @@ public:
 
 	//弾1発分の情報
 	//@id:配列番号
-	Shot& GetShot(int id) { return m_PlayerShot[id]; }
+	Shot& GetShot(int id) { return m_playerShot[id]; }
 };
 
 
