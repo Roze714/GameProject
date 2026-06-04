@@ -16,8 +16,8 @@ private:
 		NUM
 	};
 
-	tagScene m_SceneID;		//シーン保存
-	int m_Hndl;
+	tagScene m_Scene;		//シーン保存
+	int		 m_Hndl;
 
 public:
 	//コンストラクタ・デストラクタ

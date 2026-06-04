@@ -16,7 +16,7 @@ static const char TITLE_IMAGE_PATH[] =
 //---------------------------------
 SceneTitle::SceneTitle()
 {
-	m_SceneID = INIT;
+	m_Scene = INIT;
 }
 
 //---------------------------------
@@ -31,7 +31,7 @@ SceneTitle::~SceneTitle()
 //---------------------------------
 void SceneTitle::Init(void)
 {
-	m_SceneID = INIT;
+	m_Scene = INIT;
 }
 
 //---------------------------------
@@ -39,13 +39,13 @@ void SceneTitle::Init(void)
 //---------------------------------
 int SceneTitle::Step()
 {
-	switch (m_SceneID)
+	switch (m_Scene)
 	{
 	case SceneTitle::INIT:
 		//初期化==========================
 		m_Hndl = -1;
 		//================================
-		m_SceneID = LOAD;
+		m_Scene = LOAD;
 		break;
 	case SceneTitle::LOAD:
 		//画像ロード=====================
@@ -54,13 +54,13 @@ int SceneTitle::Step()
 			m_Hndl = LoadGraph(TITLE_IMAGE_PATH);
 		}
 		//=====================
-		m_SceneID = MAIN;
+		m_Scene = MAIN;
 		break;
 	case SceneTitle::MAIN:
 		//決定ボタンを押したら次へ
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
-			m_SceneID = END;
+			m_Scene = END;
 		}
 		break;
 	case SceneTitle::ENDWAIN:
@@ -73,7 +73,7 @@ int SceneTitle::Step()
 			m_Hndl = -1;
 		}
 
-		m_SceneID = INIT;
+		m_Scene = INIT;
 		return 1;
 	}
 	return 0;
@@ -85,7 +85,7 @@ int SceneTitle::Step()
 //---------------------------------
 void SceneTitle::Draw()
 {
-	switch (m_SceneID)
+	switch (m_Scene)
 	{
 	case SceneTitle::MAIN:
 	case SceneTitle::ENDWAIN:
@@ -106,14 +106,14 @@ void SceneTitle::Draw()
 int SceneTitle::Loop()
 {
 	int result = 0;
-	switch (m_SceneID)
+	switch (m_Scene)
 	{
 	case INIT:
 		Init();
 		//初期化==========================
 		m_Hndl = -1;
 		//================================
-		m_SceneID = LOAD;
+		m_Scene = LOAD;
 		break;
 	case LOAD:
 		//画像ロード=====================
@@ -122,17 +122,17 @@ int SceneTitle::Loop()
 			m_Hndl = LoadGraph(TITLE_IMAGE_PATH);
 		}
 		//=====================
-		m_SceneID = MAIN;
+		m_Scene = MAIN;
 		break;
 	case MAIN:
 		Step();
 		//決定ボタンを押したら次へ
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
-			m_SceneID = END;
+			m_Scene = END;
 		}
 		break;
-		m_SceneID = END;
+		m_Scene = END;
 		//画像データ削除
 		if (m_Hndl != -1)
 		{
@@ -140,12 +140,14 @@ int SceneTitle::Loop()
 			m_Hndl = -1;
 		}
 	case END:
-		m_SceneID = INIT;
+		m_Scene = INIT;
 		result = 1;
 		break;
 
 	}
 	return result;
+
+
 }
 
 

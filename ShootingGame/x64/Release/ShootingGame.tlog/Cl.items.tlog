@@ -1,0 +1,17 @@
+C:\Users\2409424\Desktop\ShootingGame\src\game\background.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\background.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\effect.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\effect.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\enemy.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\enemy.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\enemyshot.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\enemyshot.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\hitcheck.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\hitcheck.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\main.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\main.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\player.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\player.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\sceneresult.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\sceneresult.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\scene.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\scene.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\scenegame.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\scenegame.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\scenetitle.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\scenetitle.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\shot.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\shot.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\soundmanager.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\soundmanager.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\collision.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\collision.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\fade.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\fade.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\frame.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\frame.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\input.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Release\input.obj

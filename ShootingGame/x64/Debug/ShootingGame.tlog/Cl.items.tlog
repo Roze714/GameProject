@@ -1,0 +1,17 @@
+C:\Users\2409424\Desktop\ShootingGame\src\game\background.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\background.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\effect.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\effect.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\enemy.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\enemy.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\enemyshot.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\enemyshot.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\hitcheck.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\hitcheck.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\main.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\main.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\player.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\player.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\sceneresult.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\sceneresult.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\scene.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\scene.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\scenegame.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\scenegame.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\scenetitle.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\scenetitle.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\shot.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\shot.obj
+C:\Users\2409424\Desktop\ShootingGame\src\game\soundmanager.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\soundmanager.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\collision.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\collision.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\fade.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\fade.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\frame.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\frame.obj
+C:\Users\2409424\Desktop\ShootingGame\src\lib\input.cpp;C:\Users\2409424\Desktop\ShootingGame\x64\Debug\input.obj
