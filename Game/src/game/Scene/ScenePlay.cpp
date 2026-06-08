@@ -16,6 +16,7 @@ ScenePlay::ScenePlay()
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
+
 ScenePlay::~ScenePlay()
 {
 	Exit();
@@ -56,13 +57,11 @@ int ScenePlay::Loop()
 //------------------------------------------------
 void ScenePlay::Draw()
 {
-	
-	//m_Player.Draw();
-	//m_Shot.Draw();
-	//m_Enemy.Draw();
-	m_BackGround.Draw();
-
-	
+	m_Field.Draw();
+	m_Player.Draw();
+	m_Shot.Draw();
+	m_Enemy.Draw();
+	m_Goal.Draw();
 }
 
 //------------------------------------------------
@@ -71,12 +70,12 @@ void ScenePlay::Draw()
 void ScenePlay::Init()
 {
 	m_Hndl = -1;
-	
-	//m_Player.Init();
-	//m_Shot.Init();
-	//m_Enemy.Init();
-	m_BackGround.Init();
-	
+	m_CameraManager.Init();
+	m_Field.Init();
+	m_Player.Init();
+	m_Shot.Init();
+	m_Enemy.Init();
+	m_Goal.Init();
 }
 
 //------------------------------------------------
@@ -84,10 +83,11 @@ void ScenePlay::Init()
 //------------------------------------------------
 void ScenePlay::Exit()
 {
-	//m_Enemy.Exit();
-	//m_Player.Exit();
-	//m_Shot.Exit();
-	m_BackGround.Exit();
+	m_Enemy.Exit();
+	m_Player.Exit();
+	m_Shot.Exit();
+	m_Field.Exit();
+	m_Goal.Exit();
 
 }
 
@@ -96,10 +96,11 @@ void ScenePlay::Exit()
 //------------------------------------------------
 void ScenePlay::Load()
 {
-	//m_Player.Load();
-	//m_Shot.Load();
-	//m_Enemy.Load();
-	m_BackGround.Load();
+	m_Player.Load();
+	m_Shot.Load();
+	m_Enemy.Load();
+	m_Field.Load();
+	m_Goal.Load();
 }
 
 //------------------------------------------------
@@ -107,22 +108,44 @@ void ScenePlay::Load()
 //------------------------------------------------
 void  ScenePlay::Step()
 {
-	//m_Player.Step();
-	//m_Shot.Step();
-	//m_Enemy.Step();
-	m_BackGround.Step();
 
-	//当たり判定処理
-	//CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
-	//CollisionManager::CheckHitShotToEnemy2(m_Shot, m_Enemy2);
-	//CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
-	//CollisionManager::CheckHitPlayerToEnemy2(m_Player, m_Enemy2);
-	//プレイヤーの生存フラグが消えたら、ゲーム終了へ
+	if (m_CameraManager.GetID() == CameraManager::ID_PLAY)
+	{
+		m_Player.Step(m_Shot);
+		m_Shot.Step();
+		m_Enemy.Step();
+		m_Field.Step();
+		m_Goal.Step();
+	}
+
+	// カメラ切り替え
+	if (CheckHitKey(KEY_INPUT_N))
+	{
+		m_CameraManager.ChangeCamera(CameraManager::ID_DEBUG);
+	}
+	if (CheckHitKey(KEY_INPUT_M))
+	{
+		m_CameraManager.ChangeCamera(CameraManager::ID_PLAY);
+	}
+
+	// 当たり判定処理
+	CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
+	CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
+	// プレイヤーの生存フラグが消えたら、ゲーム終了へ
 	if (m_Player.IsActive() == false)
 	{
 		m_SceneID = END;
 	}
 
-	
+	m_Player.Updete();
+	m_Enemy.Updete();
+	m_Shot.Updete();
+	m_Field.Updete();
+	m_Goal.Updete();
+
+	// カメラ更新処理
+	m_CameraManager.Step(m_Player.GetPos(), m_Player.GetPosY());
+	m_CameraManager.Updete();
+
 }
 

@@ -1,6 +1,7 @@
 #include "Input.h"
 #include <DxLib.h>
 
+
 //キー入力
 typedef struct {
 	XINPUT_STATE m_nowInput;
@@ -11,8 +12,6 @@ typedef struct {
 
 //キー入力用にグローバル変数を作成
 static INPUT_DATA g_inputData;
-
-
 
 
 //---------------------

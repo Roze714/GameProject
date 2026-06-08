@@ -109,3 +109,4 @@ bool	CFade::IsEnd(void)
 
 	return isRet;
 }
+

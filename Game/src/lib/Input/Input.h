@@ -22,10 +22,6 @@ public:
 	~Input();
 
 
-private:
-
-	
-
 
 
 private:

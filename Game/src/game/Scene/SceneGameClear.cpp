@@ -9,32 +9,32 @@
 //---------------------------------
 
 
-//---------------------------------
+ //-------------------------------------
 //		コンストラクタ
-//---------------------------------
+ //-------------------------------------
 SceneGameClear::SceneGameClear()
 {
 	m_SceneID = INIT;
 }
 
-//---------------------------------
+//-------------------------------------
 //		デストラクタ
-//---------------------------------
+ //-------------------------------------
 SceneGameClear::~SceneGameClear()
 {
 }
 
-//---------------------------------
+//-------------------------------------
 //		初期化
-//---------------------------------
+//-------------------------------------
 void SceneGameClear::Init(void)
 {
 	m_SceneID = INIT;
 }
 
-//---------------------------------
+//-------------------------------------
 //		毎フレーム呼ぶ処理
-//---------------------------------
+ //-------------------------------------
 int SceneGameClear::Step()
 {
 	switch (m_SceneID)
@@ -46,16 +46,16 @@ int SceneGameClear::Step()
 		m_SceneID = LOAD;
 		break;
 	case SceneGameClear::LOAD:
-		//画像ロード=====================
+		//画像ロード=========================================
 		if (m_Hndl == -1)
 		{
 			m_Hndl = LoadGraph("data/Image/kuria.png");
 		}
-		//=====================
+		//===================================================
 		m_SceneID = MAIN;
 		break;
 	case SceneGameClear::MAIN:
-		//決定ボタンを押したら次へ
+		//　決定ボタンを押したら次へ
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
 			m_SceneID = END;
@@ -64,7 +64,7 @@ int SceneGameClear::Step()
 	case SceneGameClear::ENDWAIN:
 		break;
 	case SceneGameClear::END:
-		//画像データ削除
+		//　画像データ削除
 		if (m_Hndl != -1)
 		{
 			DeleteGraph(m_Hndl);
@@ -78,10 +78,9 @@ int SceneGameClear::Step()
 	return 0;
 }
 
-
-//---------------------------------
+//-------------------------------------
 //		描画処理
-//---------------------------------
+//-------------------------------------
 void SceneGameClear::Draw()
 {
 	switch (m_SceneID)
@@ -96,12 +95,9 @@ void SceneGameClear::Draw()
 	}
 }
 
-
-
-
-//---------------------------------
+//-------------------------------------
 //		繰り返し行う処理
-//---------------------------------
+//-------------------------------------
 int SceneGameClear::Loop()
 {
 	int result = 0;
@@ -115,24 +111,24 @@ int SceneGameClear::Loop()
 		m_SceneID = LOAD;
 		break;
 	case LOAD:
-		//画像ロード=====================
+		//画像ロード=========================================
 		if (m_Hndl == -1)
 		{
 			m_Hndl = LoadGraph("data/Image/kuria.png");
 		}
-		//=====================
+		//===================================================
 		m_SceneID = MAIN;
 		break;
 	case MAIN:
 		Step();
-		//決定ボタンを押したら次へ
+		//　決定ボタンを押したら次へ
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
 			m_SceneID = END;
 		}
 		break;
 		m_SceneID = END;
-		//画像データ削除
+		//　画像データ削除
 		if (m_Hndl != -1)
 		{
 			DeleteGraph(m_Hndl);
@@ -146,6 +142,4 @@ int SceneGameClear::Loop()
 	}
 	return result;
 }
-
-
 

@@ -1,8 +1,8 @@
-#include "Collision.h"
+#include "collision.h"
 
-//---------------------------------
-// “_‚ÆŽlŠp‚Ì“–‚½‚è”»’è
-//---------------------------------
+//------------------------------------------------
+//		“_‚ÆŽlŠp‚Ì“–‚½‚è”»’è
+//------------------------------------------------
 bool Collision::ChekHitDotToSquare(VECTOR dotPos, VECTOR squarePos,
 	int width, int height)
 {
@@ -22,9 +22,9 @@ bool Collision::ChekHitDotToSquare(VECTOR dotPos, VECTOR squarePos,
 }
 
 
-//---------------------------------
-// ‹éŒ`“¯Žm‚Ì“–‚½‚è”»’è
-//---------------------------------
+//------------------------------------------------
+//		‹éŒ`“¯Žm‚Ì“–‚½‚è”»’è
+//------------------------------------------------
 bool  Collision::CheckHitSquareToSquare(VECTOR squarePos1, int width1, int height1,
 	VECTOR squarePos2, int width2, int height2)
 {
@@ -49,9 +49,9 @@ bool  Collision::CheckHitSquareToSquare(VECTOR squarePos1, int width1, int heigh
 }
 
 
-//---------------------------------
-// ‰~“¯Žm‚Ì“–‚½‚è”»’è
-//---------------------------------
+//------------------------------------------------
+//		‰~“¯Žm‚Ì“–‚½‚è”»’è
+//------------------------------------------------
 bool  Collision::CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
 	VECTOR circlePos2, int radius2)
 {
@@ -75,9 +75,9 @@ bool  Collision::CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
 	else return false;
 }
 
-//---------------------------------
-// —§•û‘Ì“¯Žm‚Ì“–‚½‚è”»’è
-//---------------------------------
+//------------------------------------------------
+//		—§•û‘Ì“¯Žm‚Ì“–‚½‚è”»’è
+//------------------------------------------------
 bool  Collision::CheckHitBoxToBox(VECTOR pos1, VECTOR size1,
 	VECTOR pos2, VECTOR size2)
 {
@@ -106,9 +106,9 @@ bool  Collision::CheckHitBoxToBox(VECTOR pos1, VECTOR size1,
 	else return false;
 }
 
-//---------------------------------
-// ‹…“¯Žm‚Ì“–‚½‚è”»’è
-//---------------------------------
+//------------------------------------------------
+//		‹…“¯Žm‚Ì“–‚½‚è”»’è
+//------------------------------------------------
 bool  Collision::CheckHitSphereToSphere(VECTOR spherePos1, float radius1,
 	VECTOR spherePos2, float radius2)
 {

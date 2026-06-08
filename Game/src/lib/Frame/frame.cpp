@@ -68,7 +68,7 @@ int		FrameRate::m_lastTime;
 		 m_updateFrameRateTime = m_currentTime;
 	 }
 
-	 //FPS‚Íí‚É•\¦‚ğ‘±‚¯‚é
+	 // FPS‚Íí‚É•\¦‚ğ‘±‚¯‚é
 	 DrawFormatString(1000, 16, GetColor(0, 255, 255),
 		"FPS:%21f", m_frameRate);
  }

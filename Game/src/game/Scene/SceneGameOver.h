@@ -2,9 +2,8 @@
 #include<DxLib.h>
 
 
-//ゲームオーバー管理用クラス
-class SceneGameOver
-{
+// ゲームオーバー管理用クラス
+class SceneGameOver{
 private:
 	enum tagScene
 	{
@@ -21,24 +20,24 @@ private:
 	int m_Hndl;
 
 public:
-	//コンストラクタ・デストラクタ
+	// コンストラクタ・デストラクタ
 	SceneGameOver();
 	~SceneGameOver();
 
-	//繰り返し行う処理
+	// 繰り返し行う処理
 	int Loop();
 
-	//描画処理
+	// 描画処理
 	void Draw();
 
 private:
-	//初期化
+	// 初期化
 	void Init(void);
 
-	////終了処理
+	//// 終了処理
 	//void Exit();
 
-	//毎フレーム呼ぶ処理
+	// 毎フレーム呼ぶ処理
 	int Step();
 };
 

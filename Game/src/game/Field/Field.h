@@ -1,39 +1,38 @@
 #pragma once
 #include <DxLib.h>
 
-
-class CField
+// フィールドを管理するクラス
+class Field
 {
 private:
 	enum tag0bject {
-		FIELD,		//フィールド
-		SKY,		//天球
+		FIELD,						// フィールド
+		SKY,						// 天球
 
-		OBJECT_NUM			//オブジェクト総数
+		OBJECT_NUM					// オブジェクト総数
 	};
-	int m_Hndl[OBJECT_NUM];				//モデルハンドル
+	int m_Hndl[OBJECT_NUM];			// モデルハンドル
 	float m_skyRotY;
 	
 public:
 
-	//コンストラクタ
-	CField();
-	~CField();
+	// コンストラクタ
+	Field();
+	~Field();
 
-	//初期化
+	// 初期化
 	void Init();
-	//ロード
+	// ロード
 	void Load();
-	//終了
+	// 終了
 	void Exit();
-	//毎フレーム呼ぶ処理
+	// 毎フレーム呼ぶ処理
 	void Step();
-	//モデルの更新
+	// モデルの更新
 	void Updete();
-	//描画
+	// 描画
 	void Draw();
 
-	
 };
 
 
