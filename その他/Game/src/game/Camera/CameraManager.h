@@ -3,8 +3,8 @@
 #include"PlayCamera.h"
 #include"DebugCamera.h"
 
-class CameraManager
-{
+// カメラ全体を管理するクラス
+class CCameraManager{
 public:
 	enum tagCAMERA_ID
 	{
@@ -15,30 +15,29 @@ public:
 	};
 
 private:
-	PlayCamera m_Play;		//プレイヤーカメラ
-	DebugCamera m_Debug;	//デバックカメラ
+	CPlayCamera m_Play;		//プレイヤーカメラ
+	CDebugCamera m_Debug;	//デバックカメラ
 	tagCAMERA_ID m_id;		//現在のカメラID
 
 public:
-	//コンストラクタ
-	CameraManager();
+	// コンストラクタ
+	CCameraManager();
 
 
-	//初期化
+	// 初期化
 	void Init();
 
-	//カメラの座標設定
-	//@focus:プレイヤーの座標
-	//@rotY:プレイヤーの角度
+	// カメラの座標設定
+	// @focus	:	プレイヤーの座標
+	// @rotY	:	プレイヤーの角度
 	void Step(VECTOR focus, float m_vRotY);
 
-	//カメラの更新
+	// カメラの更新
 	void Updete();
 
-
-	//カメラタイプ変更
+	// カメラタイプ変更
 	void ChangeCamera(tagCAMERA_ID id) { m_id = id; }
-	//カメラのタイプ取得
+	// カメラのタイプ取得
 	tagCAMERA_ID GetID() { return m_id; }
 
 };

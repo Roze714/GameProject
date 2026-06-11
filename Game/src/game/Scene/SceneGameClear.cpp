@@ -9,43 +9,43 @@
 //---------------------------------
 
 
- //-------------------------------------
-//		コンストラクタ
- //-------------------------------------
-SceneGameClear::SceneGameClear()
+//-------------------------------------
+// 		コンストラクタ
+//-------------------------------------
+CSceneGameClear::CSceneGameClear()
 {
 	m_SceneID = INIT;
 }
 
 //-------------------------------------
 //		デストラクタ
- //-------------------------------------
-SceneGameClear::~SceneGameClear()
+//-------------------------------------
+CSceneGameClear::~CSceneGameClear()
 {
 }
 
 //-------------------------------------
 //		初期化
 //-------------------------------------
-void SceneGameClear::Init(void)
+void CSceneGameClear::Init(void)
 {
 	m_SceneID = INIT;
 }
 
 //-------------------------------------
 //		毎フレーム呼ぶ処理
- //-------------------------------------
-int SceneGameClear::Step()
+//-------------------------------------
+int CSceneGameClear::Step()
 {
 	switch (m_SceneID)
 	{
-	case SceneGameClear::INIT:
+	case CSceneGameClear::INIT:
 		//初期化==========================
 		m_Hndl = -1;
 		//================================
 		m_SceneID = LOAD;
 		break;
-	case SceneGameClear::LOAD:
+	case CSceneGameClear::LOAD:
 		//画像ロード=========================================
 		if (m_Hndl == -1)
 		{
@@ -54,16 +54,16 @@ int SceneGameClear::Step()
 		//===================================================
 		m_SceneID = MAIN;
 		break;
-	case SceneGameClear::MAIN:
+	case CSceneGameClear::MAIN:
 		//　決定ボタンを押したら次へ
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
 			m_SceneID = END;
 		}
 		break;
-	case SceneGameClear::ENDWAIN:
+	case CSceneGameClear::ENDWAIN:
 		break;
-	case SceneGameClear::END:
+	case CSceneGameClear::END:
 		//　画像データ削除
 		if (m_Hndl != -1)
 		{
@@ -81,12 +81,12 @@ int SceneGameClear::Step()
 //-------------------------------------
 //		描画処理
 //-------------------------------------
-void SceneGameClear::Draw()
+void CSceneGameClear::Draw()
 {
 	switch (m_SceneID)
 	{
-	case SceneGameClear::MAIN:
-	case SceneGameClear::ENDWAIN:
+	case CSceneGameClear::MAIN:
+	case CSceneGameClear::ENDWAIN:
 		//リザルト画面描画
 		DrawRotaGraph((int)(GAMECLEAR_SIZE_X * 1.0f), (int)(GAMECLEAR_SIZE_Y * 0.75f),
 			1.35, 0.0, m_Hndl, TRUE);
@@ -98,7 +98,7 @@ void SceneGameClear::Draw()
 //-------------------------------------
 //		繰り返し行う処理
 //-------------------------------------
-int SceneGameClear::Loop()
+int CSceneGameClear::Loop()
 {
 	int result = 0;
 	switch (m_SceneID)

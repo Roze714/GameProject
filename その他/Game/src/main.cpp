@@ -24,56 +24,52 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	// ＤＸライブラリ初期化処理
 	if (DxLib_Init() == -1) return -1;
 
-	//一番最初に１回だけやる処理
+	// 一番最初に１回だけやる処理
 	SetDrawScreen(DX_SCREEN_BACK);
-	//当たり判定の球をきれいに表示
+	// 当たり判定の球をきれいに表示
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
 
-	//FPS関連の初期化
-	FrameRate::Init();
+	// FPS関連の初期化
+	CFrameRate::Init();
 	
-	//シーン
-	SceneManager  SceneManager;
+	// シーン
+	CSceneManager  SceneManager;
 
 
-	//カメラのニアーファー設定
+	// カメラのニアーファー設定
 	SetCameraNearFar(1.0f, 1000.0f);
 
-	//ゲームメインループ
+	// ゲームメインループ
 	while (ProcessMessage() != -1)
 	{
 
-		Sleep(1);	//システムに処理を返す
+		Sleep(1);	// システムに処理を返す
 
-		//エスケープキーが押されたら終了
+		// エスケープキーが押されたら終了
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) break;
-		//フレームを進めていいか判断
-		if (!FrameRate::CheckNext()) continue;
+		// フレームを進めていいか判断
+		if (!CFrameRate::CheckNext()) continue;
 
 
 		ClearDrawScreen();	// 画面クリア
 
-		//フレームレート計算
-		FrameRate::Calc();
+		// フレームレート計算
+		CFrameRate::Calc();
 
 
-		//ここにゲームの本体を書く
+		// ここにゲームの本体を書く
 		
-		//FPSの表示
-		FrameRate::PrintFps();
+		// FPSの表示
+		CFrameRate::PrintFps();
 
 		SceneManager.Loop();
 
-		
-		
 		SceneManager.Draw();
 		
-		
 
-
-		//FPS表示
-		FrameRate::PrintFps();
+		// FPS表示
+		CFrameRate::PrintFps();
 		
 		ScreenFlip();		// 描画切り替え
 

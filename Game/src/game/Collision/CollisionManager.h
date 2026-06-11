@@ -6,20 +6,20 @@
 
 
 // 各種オブジェクトの当たり判定
-class CollisionManager{
+class CCollisionManager{
 public:
 	// プレイヤーの弾と敵の当たり判定
 	static void CheckHitShotToEnemy(
-		ShotManager& shot, EnemyManager& enemy);
+		CShotManager& shot, CEnemyManager& enemy);
 
 	// プレイヤーと敵の当たり判定
 	static void CheckHitPlayerToEnemy(
-		Player& player, EnemyManager& enemy);
+		CPlayer& player, CEnemyManager& enemy);
 
 
 	// プレイヤーとゴールの当たり判定
 	static void CheckHitPlayerToGoal(
-		Player& player, Goal& goal);
+		CPlayer& player, CGoal& goal);
 
 };
 

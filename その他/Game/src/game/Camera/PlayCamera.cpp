@@ -1,47 +1,50 @@
 #include "PlayCamera.h"
 #include<math.h>
 
+//定義関連-------------------------------------------------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
-//カメラとプレイヤーの距離
+// カメラとプレイヤーの距離
 static const float CAMERA_LENGTH=40;
-//カメラの高さ(今回は固定)
+// カメラの高さ(今回は固定)
 static const float CAMERA_OFFSET_Y=50;
-//カメラの注視点の高さ(今回は固定)
+// カメラの注視点の高さ(今回は固定)
 static const float FORCUS_OFFSET_Y=30;
-//----------------------
-//コンストラクタ
-//----------------------
-PlayCamera::PlayCamera()
+//----------------------------------------------------------------------------
+
+//------------------------------------------------
+//		コンストラクタ
+//------------------------------------------------
+CPlayCamera::CPlayCamera()
 {
 	m_cameraPos = ZERO;
 	m_targetPos = ZERO;
 	m_upVec = ZERO;
 }
 
-//-------------
-//初期化
-//-------------
-void PlayCamera::Init()
+//------------------------------------------------
+//		初期化
+//------------------------------------------------
+void CPlayCamera::Init()
 {
 	m_cameraPos = ZERO;
 	m_targetPos = ZERO;
 	m_upVec = { 0.0f,0.1f,0.0f };
 }
 
-//---------------------
-//ニアーファー設定
-//---------------------
-void PlayCamera::SetNearFar(float n,float f)
+//------------------------------------------------
+//		ニアーファー設定
+//------------------------------------------------
+void CPlayCamera::SetNearFar(float n,float f)
 {
 	SetCameraNearFar(n, f);
 }
 
-//---------------------
-//更新
-//---------------------
-void  PlayCamera::Step(VECTOR focus, float m_vRotY)
+//------------------------------------------------
+//		更新
+//------------------------------------------------
+void  CPlayCamera::Step(VECTOR focus, float m_vRotY)
 {
-	//カメラの位置を設定する
+	// カメラの位置を設定する
 	VECTOR v;
 	v.x = sinf(m_vRotY) * CAMERA_LENGTH;
 	v.y = CAMERA_OFFSET_Y;
@@ -54,8 +57,10 @@ void  PlayCamera::Step(VECTOR focus, float m_vRotY)
 
 }
 
-//カメラの更新
-void  PlayCamera::Updete()
+//------------------------------------------------
+//		カメラの更新
+//------------------------------------------------
+void  CPlayCamera::Updete()
 {
 }
 

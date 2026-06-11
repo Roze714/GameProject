@@ -4,7 +4,7 @@
 #include"DebugCamera.h"
 
 // カメラ全体を管理するクラス
-class CameraManager{
+class CCameraManager{
 public:
 	enum tagCAMERA_ID
 	{
@@ -15,13 +15,13 @@ public:
 	};
 
 private:
-	PlayCamera m_Play;		//プレイヤーカメラ
-	DebugCamera m_Debug;	//デバックカメラ
+	CPlayCamera m_Play;		//プレイヤーカメラ
+	CDebugCamera m_Debug;	//デバックカメラ
 	tagCAMERA_ID m_id;		//現在のカメラID
 
 public:
 	// コンストラクタ
-	CameraManager();
+	CCameraManager();
 
 
 	// 初期化
@@ -34,7 +34,6 @@ public:
 
 	// カメラの更新
 	void Updete();
-
 
 	// カメラタイプ変更
 	void ChangeCamera(tagCAMERA_ID id) { m_id = id; }

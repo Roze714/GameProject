@@ -2,7 +2,7 @@
 
 #include <DxLib.h>
 
-class Collision{
+class CCollision{
 public:
 
 	//**********************************

@@ -1,44 +1,43 @@
 #pragma once
 #include<DxLib.h>
 
-//タイトル管理用クラス
-class SceneTitle
-{
+
+//タイトルシーンを管理するクラス
+class CSceneTitle{
 private:
 	enum tagScene
 	{
-		INIT,		//初期化
-		LOAD,		//ロード
+		INIT,		// 初期化
+		LOAD,		// ロード
 		MAIN,		
 		ENDWAIN,	
-		END,		//破棄
+		END,		// 破棄
 
 		NUM
 	};
 
-	tagScene m_Scene;		//シーン保存
-	int		 m_Hndl;
+	tagScene m_SceneID;		// シーン保存
+	int m_Hndl;
 
 public:
-	//コンストラクタ・デストラクタ
-	SceneTitle();
-	~SceneTitle();
+	// コンストラクタ・デストラクタ
+	CSceneTitle();
+	~CSceneTitle();
 
-	//繰り返し行う処理
+	// 繰り返し行う処理
 	int Loop();
 
-	//描画処理
+	// 描画処理
 	void Draw();
 
 private:
-	//初期化
+	// 初期化
 	void Init(void);
 
-	////終了処理
+	//// 終了処理
 	//void Exit();
 	
-	//毎フレーム呼ぶ処理
+	// 毎フレーム呼ぶ処理
 	int Step();
 };
-
 

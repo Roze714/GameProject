@@ -2,7 +2,7 @@
 #include<DxLib.h>
 
 // デバックカメラを管理するクラス
-class DebugCamera{
+class CDebugCamera{
 private:
 	
 	VECTOR m_vPos;				// 座標
@@ -12,7 +12,7 @@ private:
 public:
 
 	// コンストラクタ
-	DebugCamera();
+	CDebugCamera();
 	
 
 	// 初期化

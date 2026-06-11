@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\game">
+      <UniqueIdentifier>{7e862db9-0d72-41a1-b8f8-8d63bd69a042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Collision">
+      <UniqueIdentifier>{6421d1e3-42e9-4780-9902-c81892bdaa68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Scene">
+      <UniqueIdentifier>{a0a0545f-0b6d-4a9d-8b07-56e4fd54bc3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\System">
+      <UniqueIdentifier>{714bf0b0-4622-483e-a715-3b0d54761344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib">
+      <UniqueIdentifier>{1b9d1906-2107-4905-9038-2e00e8256fa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Fade">
+      <UniqueIdentifier>{51e9e429-cf43-4216-9d9f-7716e0a22711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Frame">
+      <UniqueIdentifier>{6cc19a35-92f2-41e5-888e-a489e7a59b82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\lib\Math">
+      <UniqueIdentifier>{ae453dbb-7d53-4013-b45a-b229b7476b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Enemy">
+      <UniqueIdentifier>{76fb6133-61bd-4164-834c-2642d9ab9097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Player">
+      <UniqueIdentifier>{1ed2a15b-bfdc-48e7-b858-91aced3db353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\BackGround">
+      <UniqueIdentifier>{af338fec-04f2-4948-a953-acf41e4add51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Collision\CollisionManager.cpp">
+      <Filter>ソース ファイル\game\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneGameClear.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneGameOver.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneManager.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\ScenePlay.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneTitle.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\System\SoundManager.cpp">
+      <Filter>ソース ファイル\game\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Fade\Fade.cpp">
+      <Filter>ソース ファイル\lib\Fade</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Frame\Frame.cpp">
+      <Filter>ソース ファイル\lib\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\Math\Collision.cpp">
+      <Filter>ソース ファイル\lib\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy.cpp">
+      <Filter>ソース ファイル\game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\EnemyManager.cpp">
+      <Filter>ソース ファイル\game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Player\Player.cpp">
+      <Filter>ソース ファイル\game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ファイル\shooting3D\src\src\BackGround\BackGround.cpp">
+      <Filter>ソース ファイル\game\BackGround</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\game\Collision\CollisionManager.h">
+      <Filter>ソース ファイル\game\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneBase.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneGameClear.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneGameOver.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneManager.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\ScenePlay.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneTitle.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\System\SoundManager.h">
+      <Filter>ソース ファイル\game\System</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Fade\Fade.h">
+      <Filter>ソース ファイル\lib\Fade</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Frame\Frame.h">
+      <Filter>ソース ファイル\lib\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Math\Collision.h">
+      <Filter>ソース ファイル\lib\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy.h">
+      <Filter>ソース ファイル\game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\EnemyManager.h">
+      <Filter>ソース ファイル\game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Player\Player.h">
+      <Filter>ソース ファイル\game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ファイル\shooting3D\src\src\BackGround\BackGround.h">
+      <Filter>ソース ファイル\game\BackGround</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

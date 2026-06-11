@@ -4,30 +4,30 @@
 
 
 
-//----------------------
-//コンストラクタ
-//----------------------
-SceneManager::SceneManager()
+//------------------------------------------------
+//		コンストラクタ
+//------------------------------------------------
+CSceneManager::CSceneManager()
 {
 	m_ID = TITLE;
-	////音の管理
+	//// 音の管理
 	//SoundManager::Init();
 	//SoundManager::Load();
 }
 
-//----------------------
-//デストラクタ
-//----------------------
+//------------------------------------------------
+//		デストラクタ
+//------------------------------------------------
 
-SceneManager::~SceneManager()
+CSceneManager::~CSceneManager()
 {
 	//SoundManager::Exit();
 }
 
-//----------------------
-//毎フレーム呼ぶ処理
-//----------------------
-int SceneManager::Loop()
+//------------------------------------------------
+//		毎フレーム呼ぶ処理
+//------------------------------------------------
+int CSceneManager::Loop()
 {
 	int result = 0;
 	switch (m_ID)
@@ -41,38 +41,28 @@ int SceneManager::Loop()
 	case PLAY:
 		if (m_ScenePlay.Loop() != 0)
 		{
-			m_ID = GAMECLEAR;
-		}
-		else if (m_ScenePlay.Loop() !=0)
-		{
-			m_ID = GAMEOVER;
+			m_ID = RESULT;
 		}
 		break;
-	case GAMECLEAR:
-		if (m_SceneGameClear.Loop() != 0)
+	case RESULT:
+		if (m_SceneResult.Loop() != 0)
 		{
 			m_ID = TITLE;
 		}
 		break;
-	case GAMEOVER:
-		if (m_SceneGameOver.Loop() != 0)
-		{
-			m_ID = TITLE;
-		}
-
-		break;
+	
 	}
 	
-	//フェードの更新
+	// フェードの更新
 	CFade::GetInstance()->Update();
 
 
 	return result;
 }
-//----------------------
-//更新処理
-//----------------------
-void SceneManager::Draw()
+//------------------------------------------------
+//		更新処理
+//------------------------------------------------
+void CSceneManager::Draw()
 {
 	switch (m_ID)
 	{
@@ -84,12 +74,8 @@ void SceneManager::Draw()
 		m_ScenePlay.Draw();
 		break;
 
-	case GAMECLEAR:
-		m_SceneGameClear.Draw();
-		break;
-
-	case GAMEOVER:
-		m_SceneGameOver.Draw();
+	case RESULT:
+		m_SceneResult.Draw();
 		break;
 	}
 }

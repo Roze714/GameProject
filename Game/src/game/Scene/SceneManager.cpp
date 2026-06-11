@@ -7,7 +7,7 @@
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-SceneManager::SceneManager()
+CSceneManager::CSceneManager()
 {
 	m_ID = TITLE;
 	//// 音の管理
@@ -19,7 +19,7 @@ SceneManager::SceneManager()
 //		デストラクタ
 //------------------------------------------------
 
-SceneManager::~SceneManager()
+CSceneManager::~CSceneManager()
 {
 	//SoundManager::Exit();
 }
@@ -27,7 +27,7 @@ SceneManager::~SceneManager()
 //------------------------------------------------
 //		毎フレーム呼ぶ処理
 //------------------------------------------------
-int SceneManager::Loop()
+int CSceneManager::Loop()
 {
 	int result = 0;
 	switch (m_ID)
@@ -72,7 +72,7 @@ int SceneManager::Loop()
 //------------------------------------------------
 //		更新処理
 //------------------------------------------------
-void SceneManager::Draw()
+void CSceneManager::Draw()
 {
 	switch (m_ID)
 	{

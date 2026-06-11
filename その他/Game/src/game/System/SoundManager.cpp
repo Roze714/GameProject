@@ -1,20 +1,19 @@
 #include "SoundManager.h"
 
-vector<int> SoundManager::m_hndl;
+vector<int> CSoundManager::m_hndl;
 
-//-------------
-//初期化
-//-------------
-void SoundManager::Init()
+//------------------------------------------------
+//		初期化
+//------------------------------------------------
+void CSoundManager::Init()
 {
 	m_hndl.clear();
 }
 
-
-//---------------------
-//ロード
-//---------------------
-void SoundManager::Load()
+//------------------------------------------------
+//		ロード
+//------------------------------------------------
+void CSoundManager::Load()
 {
 	const char* filePath[SOUND_NUM] = {
 		"Data/Sound/bgm00.mp3",
@@ -22,7 +21,7 @@ void SoundManager::Load()
 		"Data/Sound/se_explore.mp3"
 	};
 
-	//
+	
 	for (int i = 0; i < SOUND_NUM; i++)
 	{
 		int hndl = LoadSoundMem(filePath[i]);
@@ -31,10 +30,10 @@ void SoundManager::Load()
 	}
 }
 
-//---------------------
-//終了
-//---------------------
-void SoundManager::Exit()
+//------------------------------------------------
+//		終了
+//------------------------------------------------
+void CSoundManager::Exit()
 {
 	for (int i = 0; i < m_hndl.size(); i++)
 	{
@@ -46,10 +45,10 @@ void SoundManager::Exit()
 	}
 }
 
-//---------------------
-//音楽再生
-//---------------------
-bool SoundManager::Play(tagID id,
+//------------------------------------------------
+//		音楽再生
+//------------------------------------------------
+bool CSoundManager::Play(tagID id,
 	int type,bool isStart)
 {
 	int ret = PlaySoundMem(m_hndl[id], type, isStart);
@@ -59,18 +58,18 @@ bool SoundManager::Play(tagID id,
 }
 
 //---------------------
-//音楽停止
+//		音楽停止
 //---------------------
 
-int SoundManager::Stop(tagID id)
+int CSoundManager::Stop(tagID id)
 {
 	return StopSoundMem(m_hndl[id]);
 }
 
-//---------------------
-//全音楽停止
-//---------------------
-void SoundManager::StopAll()
+//------------------------------------------------
+//		全音楽停止
+//------------------------------------------------
+void CSoundManager::StopAll()
 {
 	for (int i = 0; i < m_hndl.size(); i++)
 	{
@@ -78,10 +77,10 @@ void SoundManager::StopAll()
 	}
 }
 
-//---------------------
-// 音楽を再生中か
-//---------------------
- bool SoundManager::IsPlay(tagID id)
+//------------------------------------------------
+//		音楽を再生中か
+//------------------------------------------------
+ bool CSoundManager::IsPlay(tagID id)
 {
 	 int result = CheckSoundMem(m_hndl[id]);
 	 if (result == 1)return true;

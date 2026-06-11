@@ -4,7 +4,7 @@
 #include"../../lib/Input/Input.h"
 
 // プレイヤーを管理するクラス
-class Player{
+class CPlayer{
 private:
 	// プレイヤーの状態
 	enum tagPlayerState {
@@ -28,8 +28,8 @@ private:
 public:
 
 	// コンストラクタ
-	Player();
-	~Player();
+	CPlayer();
+	~CPlayer();
 
 	// 初期化
 	// @vPos			:		座標
@@ -43,7 +43,7 @@ public:
 	void Exit();
 
 	// 毎フレーム呼ぶ処理
-	void Step(ShotManager& shot);
+	void Step(CShotManager& shot);
 	
 	// モデルの更新
 	void Updete();

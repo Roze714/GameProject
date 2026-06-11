@@ -2,7 +2,7 @@
 #include<DxLib.h>
 
 // プレイカメラを管理するクラス
-class PlayCamera{
+class CPlayCamera{
 private:
 	VECTOR m_cameraPos;			// カメラの視点
 	VECTOR m_targetPos;			// 注視点
@@ -10,7 +10,7 @@ private:
 
 public:
 	// コンストラクタ
-	PlayCamera();
+	CPlayCamera();
 	
 
 	// 初期化

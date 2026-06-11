@@ -3,7 +3,7 @@
 
 
 //タイトルシーンを管理するクラス
-class SceneTitle{
+class CSceneTitle{
 private:
 	enum tagScene
 	{
@@ -21,8 +21,8 @@ private:
 
 public:
 	// コンストラクタ・デストラクタ
-	SceneTitle();
-	~SceneTitle();
+	CSceneTitle();
+	~CSceneTitle();
 
 	// 繰り返し行う処理
 	int Loop();

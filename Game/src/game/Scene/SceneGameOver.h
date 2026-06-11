@@ -3,7 +3,7 @@
 
 
 // ゲームオーバー管理用クラス
-class SceneGameOver{
+class CSceneGameOver{
 private:
 	enum tagScene
 	{
@@ -21,8 +21,8 @@ private:
 
 public:
 	// コンストラクタ・デストラクタ
-	SceneGameOver();
-	~SceneGameOver();
+	CSceneGameOver();
+	~CSceneGameOver();
 
 	// 繰り返し行う処理
 	int Loop();

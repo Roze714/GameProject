@@ -14,7 +14,7 @@ static const float FORCUS_OFFSET_Y=30;
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-PlayCamera::PlayCamera()
+CPlayCamera::CPlayCamera()
 {
 	m_cameraPos = ZERO;
 	m_targetPos = ZERO;
@@ -24,7 +24,7 @@ PlayCamera::PlayCamera()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void PlayCamera::Init()
+void CPlayCamera::Init()
 {
 	m_cameraPos = ZERO;
 	m_targetPos = ZERO;
@@ -34,7 +34,7 @@ void PlayCamera::Init()
 //------------------------------------------------
 //		ニアーファー設定
 //------------------------------------------------
-void PlayCamera::SetNearFar(float n,float f)
+void CPlayCamera::SetNearFar(float n,float f)
 {
 	SetCameraNearFar(n, f);
 }
@@ -42,7 +42,7 @@ void PlayCamera::SetNearFar(float n,float f)
 //------------------------------------------------
 //		更新
 //------------------------------------------------
-void  PlayCamera::Step(VECTOR focus, float m_vRotY)
+void  CPlayCamera::Step(VECTOR focus, float m_vRotY)
 {
 	// カメラの位置を設定する
 	VECTOR v;
@@ -60,7 +60,7 @@ void  PlayCamera::Step(VECTOR focus, float m_vRotY)
 //------------------------------------------------
 //		カメラの更新
 //------------------------------------------------
-void  PlayCamera::Updete()
+void  CPlayCamera::Updete()
 {
 }
 

@@ -31,22 +31,22 @@ public:
 
 	//フェード関連------------------------------------
 	// フェード削除
-	void		Reset(void) { m_fade = FadeState::FADE_NON; }
+	void Reset(void) { m_fade = FadeState::FADE_NON; }
 	// フェードリクエスト
 	//	@speed		:	フェードの速度　0～255
 	//	@isFadeIn	:	true=フェードイン　else=フェードアウト
-	void		RequestFade(float	speed, bool isFadeIn);
+	void RequestFade(float	speed, bool isFadeIn);
 	// 更新処理
-	void		Update(void);
+	void Update(void);
 	// 描画処理
-	void		Draw(void);
+	void Draw(void);
 	// 終了判定
-	//	@return :	true=終了	else=まだ終了ではない
-	bool		IsEnd(void);
+	//	@return		:	true=終了	else=まだ終了ではない
+	bool IsEnd(void);
 	// 現在のフェードの状態取得
 	FadeState	GetState(void) { return m_fade; }
 	// ウィンドウサイズ設定
-	void		SetWindowSize(int x, int y) { m_windowX = x; }
+	void SetWindowSize(int x, int y) { m_windowX = x; }
 	//------------------------------------------------
 
 
@@ -59,10 +59,4 @@ private:
 	CFade(const CFade& other);
 	CFade& operator= (const CFade& other);
 };
-
-
-
-
-
-
 

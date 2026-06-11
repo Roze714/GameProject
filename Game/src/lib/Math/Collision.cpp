@@ -3,7 +3,7 @@
 //------------------------------------------------
 //		点と四角の当たり判定
 //------------------------------------------------
-bool Collision::ChekHitDotToSquare(VECTOR dotPos, VECTOR squarePos,
+bool CCollision::ChekHitDotToSquare(VECTOR dotPos, VECTOR squarePos,
 	int width, int height)
 {
 	// 四角形の上下左右それぞれの座標を計算する
@@ -25,7 +25,7 @@ bool Collision::ChekHitDotToSquare(VECTOR dotPos, VECTOR squarePos,
 //------------------------------------------------
 //		矩形同士の当たり判定
 //------------------------------------------------
-bool  Collision::CheckHitSquareToSquare(VECTOR squarePos1, int width1, int height1,
+bool  CCollision::CheckHitSquareToSquare(VECTOR squarePos1, int width1, int height1,
 	VECTOR squarePos2, int width2, int height2)
 {
 	// 四角形の上下左右それぞれの座標を計算する
@@ -52,7 +52,7 @@ bool  Collision::CheckHitSquareToSquare(VECTOR squarePos1, int width1, int heigh
 //------------------------------------------------
 //		円同士の当たり判定
 //------------------------------------------------
-bool  Collision::CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
+bool  CCollision::CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
 	VECTOR circlePos2, int radius2)
 {
 	// 円1から円2までの距離を計算
@@ -78,7 +78,7 @@ bool  Collision::CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
 //------------------------------------------------
 //		立方体同士の当たり判定
 //------------------------------------------------
-bool  Collision::CheckHitBoxToBox(VECTOR pos1, VECTOR size1,
+bool  CCollision::CheckHitBoxToBox(VECTOR pos1, VECTOR size1,
 	VECTOR pos2, VECTOR size2)
 {
 	// 四角形の上下左右手前奥それぞれの座標を計算する
@@ -109,7 +109,7 @@ bool  Collision::CheckHitBoxToBox(VECTOR pos1, VECTOR size1,
 //------------------------------------------------
 //		球同士の当たり判定
 //------------------------------------------------
-bool  Collision::CheckHitSphereToSphere(VECTOR spherePos1, float radius1,
+bool  CCollision::CheckHitSphereToSphere(VECTOR spherePos1, float radius1,
 	VECTOR spherePos2, float radius2)
 {
 	// 球1から球2までの距離を計算

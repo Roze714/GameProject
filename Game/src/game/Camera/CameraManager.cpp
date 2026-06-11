@@ -13,7 +13,7 @@ static const float FORCUS_OFFSET_Y=30;
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-CameraManager::CameraManager()
+CCameraManager::CCameraManager()
 {
 	// 初期カメラはプレイカメラ
 	m_id = ID_PLAY;
@@ -22,7 +22,7 @@ CameraManager::CameraManager()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void CameraManager::Init()
+void CCameraManager::Init()
 {
 	// それぞれのカメラを初期化
 	m_Play.Init();
@@ -33,7 +33,7 @@ void CameraManager::Init()
 //------------------------------------------------
 //		更新
 //------------------------------------------------
-void  CameraManager::Step(VECTOR focus, float m_vRotY)
+void  CCameraManager::Step(VECTOR focus, float m_vRotY)
 {
 	switch (m_id)
 	{
@@ -51,7 +51,7 @@ void  CameraManager::Step(VECTOR focus, float m_vRotY)
 //------------------------------------------------
 //		カメラの更新
 //------------------------------------------------
-void  CameraManager::Updete()
+void  CCameraManager::Updete()
 {
 	switch (m_id)
 	{

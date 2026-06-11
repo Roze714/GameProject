@@ -31,10 +31,10 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	SetWriteZBuffer3D(TRUE);
 
 	// FPS関連の初期化
-	FrameRate::Init();
+	CFrameRate::Init();
 	
 	// シーン
-	SceneManager  SceneManager;
+	CSceneManager  SceneManager;
 
 
 	// カメラのニアーファー設定
@@ -49,19 +49,19 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		// エスケープキーが押されたら終了
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) break;
 		// フレームを進めていいか判断
-		if (!FrameRate::CheckNext()) continue;
+		if (!CFrameRate::CheckNext()) continue;
 
 
 		ClearDrawScreen();	// 画面クリア
 
 		// フレームレート計算
-		FrameRate::Calc();
+		CFrameRate::Calc();
 
 
 		// ここにゲームの本体を書く
 		
 		// FPSの表示
-		FrameRate::PrintFps();
+		CFrameRate::PrintFps();
 
 		SceneManager.Loop();
 
@@ -69,7 +69,7 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		
 
 		// FPS表示
-		FrameRate::PrintFps();
+		CFrameRate::PrintFps();
 		
 		ScreenFlip();		// 描画切り替え
 

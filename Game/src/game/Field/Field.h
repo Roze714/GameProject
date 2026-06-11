@@ -2,7 +2,7 @@
 #include <DxLib.h>
 
 // フィールドを管理するクラス
-class Field
+class CField
 {
 private:
 	enum tag0bject {
@@ -17,19 +17,24 @@ private:
 public:
 
 	// コンストラクタ
-	Field();
-	~Field();
+	CField();
+	~CField();
 
 	// 初期化
 	void Init();
+
 	// ロード
 	void Load();
+
 	// 終了
 	void Exit();
+
 	// 毎フレーム呼ぶ処理
 	void Step();
+
 	// モデルの更新
 	void Updete();
+
 	// 描画
 	void Draw();
 

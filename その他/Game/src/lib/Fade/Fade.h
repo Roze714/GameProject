@@ -1,9 +1,7 @@
 #pragma once
 
-
-//フェード管理用クラス
-class CFade
-{
+// フェード管理用クラス
+class CFade{
 public:
 	enum class FadeState {
 		FADE_NON,		//フェードなし
@@ -22,49 +20,43 @@ private:
 
 public:
 	//シングルトン------------------------------------
-	//		インスタンス取得
+	// インスタンス取得
 	static CFade*	GetInstance(void);
 
-	//		メモリ確保
+	// メモリ確保
 	static void		Alloc(void);
-	//		メモリ解放
+	// メモリ解放
 	static void		Release(void);
 	//------------------------------------------------
 
 	//フェード関連------------------------------------
-	//		フェード削除
-	void		Reset(void) { m_fade = FadeState::FADE_NON; }
-	//		フェードリクエスト
+	// フェード削除
+	void Reset(void) { m_fade = FadeState::FADE_NON; }
+	// フェードリクエスト
 	//	@speed		:	フェードの速度　0～255
 	//	@isFadeIn	:	true=フェードイン　else=フェードアウト
-	void		RequestFade(float	speed, bool isFadeIn);
-	//		更新処理
-	void		Update(void);
-	//		描画処理
-	void		Draw(void);
-	//		終了判定
-	//	@return :	true=終了	else=まだ終了ではない
-	bool		IsEnd(void);
-	//		現在のフェードの状態取得
+	void RequestFade(float	speed, bool isFadeIn);
+	// 更新処理
+	void Update(void);
+	// 描画処理
+	void Draw(void);
+	// 終了判定
+	//	@return		:	true=終了	else=まだ終了ではない
+	bool IsEnd(void);
+	// 現在のフェードの状態取得
 	FadeState	GetState(void) { return m_fade; }
-	//		ウィンドウサイズ設定
-	void		SetWindowSize(int x, int y) { m_windowX = x; }
+	// ウィンドウサイズ設定
+	void SetWindowSize(int x, int y) { m_windowX = x; }
 	//------------------------------------------------
 
 
 private:
-	//		コンストラクタ・デストラクタ
+	// コンストラクタ・デストラクタ
 	CFade();
 	~CFade();
 
-	//		コピーコンストラクタ・代入演算子
+	// コピーコンストラクタ・代入演算子
 	CFade(const CFade& other);
 	CFade& operator= (const CFade& other);
 };
-
-
-
-
-
-
 

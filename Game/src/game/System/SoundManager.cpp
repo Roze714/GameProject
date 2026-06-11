@@ -1,11 +1,11 @@
 #include "SoundManager.h"
 
-vector<int> SoundManager::m_hndl;
+vector<int> CSoundManager::m_hndl;
 
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void SoundManager::Init()
+void CSoundManager::Init()
 {
 	m_hndl.clear();
 }
@@ -13,7 +13,7 @@ void SoundManager::Init()
 //------------------------------------------------
 //		ロード
 //------------------------------------------------
-void SoundManager::Load()
+void CSoundManager::Load()
 {
 	const char* filePath[SOUND_NUM] = {
 		"Data/Sound/bgm00.mp3",
@@ -33,7 +33,7 @@ void SoundManager::Load()
 //------------------------------------------------
 //		終了
 //------------------------------------------------
-void SoundManager::Exit()
+void CSoundManager::Exit()
 {
 	for (int i = 0; i < m_hndl.size(); i++)
 	{
@@ -48,7 +48,7 @@ void SoundManager::Exit()
 //------------------------------------------------
 //		音楽再生
 //------------------------------------------------
-bool SoundManager::Play(tagID id,
+bool CSoundManager::Play(tagID id,
 	int type,bool isStart)
 {
 	int ret = PlaySoundMem(m_hndl[id], type, isStart);
@@ -61,7 +61,7 @@ bool SoundManager::Play(tagID id,
 //		音楽停止
 //---------------------
 
-int SoundManager::Stop(tagID id)
+int CSoundManager::Stop(tagID id)
 {
 	return StopSoundMem(m_hndl[id]);
 }
@@ -69,7 +69,7 @@ int SoundManager::Stop(tagID id)
 //------------------------------------------------
 //		全音楽停止
 //------------------------------------------------
-void SoundManager::StopAll()
+void CSoundManager::StopAll()
 {
 	for (int i = 0; i < m_hndl.size(); i++)
 	{
@@ -80,7 +80,7 @@ void SoundManager::StopAll()
 //------------------------------------------------
 //		音楽を再生中か
 //------------------------------------------------
- bool SoundManager::IsPlay(tagID id)
+ bool CSoundManager::IsPlay(tagID id)
 {
 	 int result = CheckSoundMem(m_hndl[id]);
 	 if (result == 1)return true;

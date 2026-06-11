@@ -4,19 +4,19 @@
 //------------------------------------------------
 //		プレイヤーの弾と敵の当たり判定
 //------------------------------------------------
-void CollisionManager::CheckHitShotToEnemy
-(ShotManager& shot, EnemyManager& enemy)
+void CCollisionManager::CheckHitShotToEnemy
+(CShotManager& shot, CEnemyManager& enemy)
 {
 	for (int shotID = 0; shotID < PL_SHOT_NUM; shotID++)
 	{
-		Shot& oneShot = shot.GetShot(shotID);
+		CShot& oneShot = shot.GetShot(shotID);
 		if (oneShot.IsActive() == false) continue;
 
 		// 敵の数だけループ
 		for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
 		{
 			// 敵１袋分の情報を取得し、生存確認
-			Enemy& oneEnemy = enemy.GetShot(enemyID);
+			CEnemy& oneEnemy = enemy.GetShot(enemyID);
 			if (oneEnemy.IsActive() == false)continue;
 
 			// それぞれの座標と半径を所得
@@ -26,7 +26,7 @@ void CollisionManager::CheckHitShotToEnemy
 			float enemyRadius = oneEnemy.GetRadius();
 
 			// 当たり判定開始
-			bool isHIt = Collision::CheckHitSphereToSphere(
+			bool isHIt = CCollision::CheckHitSphereToSphere(
 				shotPos, shotRadius, enemyPos, enemyRadius);
 
 			if (isHIt == true)
@@ -43,8 +43,8 @@ void CollisionManager::CheckHitShotToEnemy
 //------------------------------------------------
 //		プレイヤーと敵の当たり判定
 //------------------------------------------------
-void CollisionManager::CheckHitPlayerToEnemy(
-	Player& player, EnemyManager& enemy)
+void CCollisionManager::CheckHitPlayerToEnemy(
+	CPlayer& player, CEnemyManager& enemy)
 {
 	// プレイヤーが死んでいたら何もしない
 	if (player.IsActive() == false)return;
@@ -53,7 +53,7 @@ void CollisionManager::CheckHitPlayerToEnemy(
 	for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
 	{
 		// 敵１袋分の情報を取得し、生存確認
-		Enemy& oneEnemy = enemy.GetShot(enemyID);
+		CEnemy& oneEnemy = enemy.GetShot(enemyID);
 		if (oneEnemy.IsActive() == false)continue;
 
 		// それぞれの座標と半径を所得
@@ -63,7 +63,7 @@ void CollisionManager::CheckHitPlayerToEnemy(
 		float enemyRadius = oneEnemy.GetRadius();
 
 		// 当たり判定開始
-		bool isHIt = Collision::CheckHitSphereToSphere(
+		bool isHIt = CCollision::CheckHitSphereToSphere(
 			playerPos, playerRadius, enemyPos, enemyRadius);
 
 		if (isHIt == true)
@@ -75,11 +75,12 @@ void CollisionManager::CheckHitPlayerToEnemy(
 		}
 	}
 }
+
 //------------------------------------------------
 //		プレイヤーとゴールの当たり判定
 //------------------------------------------------
- void CollisionManager::CheckHitPlayerToGoal(
-	 Player& player, Goal& goal)
+ void CCollisionManager::CheckHitPlayerToGoal(
+	 CPlayer& player, CGoal& goal)
 {
 	 // それぞれの座標と半径を所得
 	 VECTOR PlayerPos = player.GetCenter();
@@ -88,7 +89,7 @@ void CollisionManager::CheckHitPlayerToEnemy(
 	 float GoalRadius = goal.GetRadius();
 
 	 // 当たり判定開始
-	 bool isHIt = Collision::CheckHitSphereToSphere(
+	 bool isHIt = CCollision::CheckHitSphereToSphere(
 		 PlayerPos, PlayerRadius, GoalPos, GoalRadius);
 
 	 if (isHIt == true)

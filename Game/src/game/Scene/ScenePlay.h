@@ -10,7 +10,7 @@
 #include"../Shot/ShotManager.h"
 
 //プレイシーンを管理するクラス
-class ScenePlay{
+class CScenePlay{
 private:
 	enum tagScene {
 		INIT,	// データの初期化
@@ -28,12 +28,12 @@ private:
 	};
 
 
-	Player			m_Player;					// プレイヤー
-	ShotManager		m_Shot;						// 弾
-	EnemyManager	m_Enemy;					// 敵
-	CameraManager	m_CameraManager;			// カメラ
-	Field			m_Field;					// フィールド
-	Goal			m_Goal;						// ゴール
+	CPlayer			m_Player;					// プレイヤー
+	CShotManager	m_Shot;						// 弾
+	CEnemyManager	m_Enemy;					// 敵
+	CCameraManager	m_CameraManager;			// カメラ
+	CField			m_Field;					// フィールド
+	CGoal			m_Goal;						// ゴール
 	tagScene		m_SceneID;					// シーン保存
 	int m_Hndl;
 
@@ -43,21 +43,25 @@ private:
 
 public:
 	// コンストラクタ・デストラクタ
-	ScenePlay();
-	~ScenePlay();
+	CScenePlay();
+	~CScenePlay();
 
 	// 実行処理
 	int Loop();
+
 	// 描画処理
 	void Draw();
 
 private:
 	// 初期化
 	void Init();
+
 	// 終了処理
 	void Exit();
+
 	// データのロード
 	void Load();
+
 	// 毎フレーム呼ぶ処理
 	void Step();
 

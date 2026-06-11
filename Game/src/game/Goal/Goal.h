@@ -2,7 +2,7 @@
 #include <DxLib.h>
 
 // ゴールを管理するクラス
-class Goal{
+class CGoal{
 private:
 	VECTOR m_vPos;				// 座標
 	float m_Radius;				// 半径
@@ -11,8 +11,8 @@ private:
 public:
 
 	// コンストラクタ・デストラクタ
-	Goal();
-	~Goal();
+	CGoal();
+	~CGoal();
 
 	// 初期化
 	// @vPos			:		座標
@@ -39,8 +39,10 @@ public:
 
 	// 座標所得
 	VECTOR GetPosition() { return m_vPos; }
+
 	// 当たり判定の座標用
 	VECTOR GetCenter();
+
 	// 当たり判定の半径サイズを取得
 	float GetRadius() { return m_Radius; }
 

@@ -36,6 +36,7 @@ void	CFade::Release(void)
 		m_instance = nullptr;
 	}
 }
+
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
@@ -43,6 +44,7 @@ CFade::CFade(void):m_cut(0.0f),m_spd(0.0f),m_fade(FadeState::FADE_NON),
 					m_windowX(1280),m_windowY(960)
 {
 }
+
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
@@ -59,7 +61,6 @@ void	CFade::RequestFade(float	speed, bool isFadeIn)
 	m_fade = isFadeIn ? FadeState::FADE_IN : FadeState::FADE_OUT;
 	m_cut = isFadeIn ? 255.0f : 0.0f;
 }
-
 
 //------------------------------------------------
 //		更新処理
@@ -78,6 +79,7 @@ void	CFade::Update(void)
 		break;
 	}
 }
+
 //------------------------------------------------
 //		描画処理
 //------------------------------------------------
@@ -89,6 +91,7 @@ void	CFade::Draw(void)
 	DrawBox(0, 0, m_windowX, m_windowY, GetColor(0, 0, 0), TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 }
+
 //------------------------------------------------
 //		終了判定
 //------------------------------------------------

@@ -15,7 +15,7 @@ float RADIUS = 3.0;
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-Enemy::Enemy()
+CEnemy::CEnemy()
 {
 	Init();
 	
@@ -24,7 +24,7 @@ Enemy::Enemy()
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
-Enemy::~Enemy()
+CEnemy::~CEnemy()
 {
 	Exit();			// 念のためモデルデータを破棄
 }
@@ -32,7 +32,7 @@ Enemy::~Enemy()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void Enemy::Init()
+void CEnemy::Init()
 {
 	m_vPos = ZERO;
 	m_iHndl = -1;
@@ -43,7 +43,7 @@ void Enemy::Init()
 //------------------------------------------------
 //		ロード
 //------------------------------------------------
-void Enemy::Load(int orginHndl)
+void CEnemy::Load(int orginHndl)
 {
 	if (m_iHndl == -1)
 	{
@@ -54,7 +54,7 @@ void Enemy::Load(int orginHndl)
 //------------------------------------------------
 //		終了時に破棄
 //------------------------------------------------
-void Enemy::Exit()
+void CEnemy::Exit()
 {
 	if (m_iHndl != -1)
 	{
@@ -67,7 +67,7 @@ void Enemy::Exit()
 //------------------------------------------------
 //		毎フレーム呼ぶ処理
 //------------------------------------------------
-void Enemy::Step()
+void CEnemy::Step()
 {
 	// 呼び出されていない場合は終了
 	if (!m_isActive)return;
@@ -87,7 +87,7 @@ void Enemy::Step()
 //------------------------------------------------
 //		モデルの更新
 //------------------------------------------------
-void Enemy::Updete()
+void CEnemy::Updete()
 {
 	// 座標を設定する
 	MV1SetPosition(m_iHndl, m_vPos);
@@ -97,7 +97,7 @@ void Enemy::Updete()
 //------------------------------------------------
 //		描画
 //------------------------------------------------
-void Enemy::Draw()
+void CEnemy::Draw()
 {
 	if (m_isActive)
 	{
@@ -118,7 +118,7 @@ void Enemy::Draw()
 //------------------------------------------------
 //		敵をリクエスト
 //------------------------------------------------
-bool Enemy::Request(const VECTOR& pos, const VECTOR& speed)
+bool CEnemy::Request(const VECTOR& pos, const VECTOR& speed)
 {
 	// すでに発砲されている弾は失敗
 	if (m_isActive)return false;
@@ -134,7 +134,7 @@ bool Enemy::Request(const VECTOR& pos, const VECTOR& speed)
 //------------------------------------------------
 //		当たり判定の座標用
 //------------------------------------------------
-VECTOR Enemy::GetCenter()
+VECTOR CEnemy::GetCenter()
 {
 	// 基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -148,10 +148,10 @@ VECTOR Enemy::GetCenter()
 //------------------------------------------------
 //		ヒット後の処理
 //------------------------------------------------
-void Enemy::HitCalc()
+void CEnemy::HitCalc()
 {
 	// エネミー爆発音
-	SoundManager::Play(SoundManager::SE_EXPLOSION);
+	CSoundManager::Play(CSoundManager::SE_EXPLOSION);
 	// 生存フラグを消す
 	m_isActive = false;
 }

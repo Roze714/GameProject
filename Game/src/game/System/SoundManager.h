@@ -5,7 +5,7 @@ using namespace std;
 
 
 // BGM・SEを管理するクラス
-class SoundManager{
+class CSoundManager{
 public:
 	enum tagID{
 		BGM_GAME,		// BGMゲーム本編

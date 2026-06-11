@@ -1,33 +1,33 @@
 #include <DxLib.h>
 #include "Frame.h"
 
-static const int FRAME_RATE = 60;									//1秒辺りのフレーム数
-static const int FRAME_RATE_MILLI_SECOND = 1000 / FRAME_RATE;		//何ミリ秒で1フレームか
+static const int FRAME_RATE = 60;									// 1秒辺りのフレーム数
+static const int FRAME_RATE_MILLI_SECOND = 1000 / FRAME_RATE;		// 何ミリ秒で1フレームか
 
 
-double	FrameRate::m_frameRate;
-int		FrameRate::m_count;
-int		FrameRate::m_updateFrameRateTime;
-int		FrameRate::m_currentTime;
-int		FrameRate::m_lastTime;
+double	CFrameRate::m_frameRate;
+int		CFrameRate::m_count;
+int		CFrameRate::m_updateFrameRateTime;
+int		CFrameRate::m_currentTime;
+int		CFrameRate::m_lastTime;
 
 
  //-------------------------------------
  //		フレームレート初期化
  //-------------------------------------
- void FrameRate::Init()
+ void CFrameRate::Init()
  {
 	 // データを初期化しておく
 	 m_count = 0;
 	 m_frameRate = 0.0;
 	 m_currentTime = GetNowCount();
-	 m_lastTime = m_currentTime;	//とりあえず同じ値を格納
+	 m_lastTime = m_currentTime;	// とりあえず同じ値を格納
 	 m_updateFrameRateTime = m_currentTime;
  }
  //-------------------------------------
  //		フレームを進めていいか判断
  //-------------------------------------
- bool FrameRate::CheckNext()
+ bool CFrameRate::CheckNext()
  {
 	 // 現在の時間を取得する
 	 m_currentTime = GetNowCount();
@@ -41,7 +41,7 @@ int		FrameRate::m_lastTime;
  //-------------------------------------
  //		フレームレート計算
  //-------------------------------------
- void FrameRate::Calc()
+ void CFrameRate::Calc()
  {
 	 // 前回の時間を更新
 	 m_lastTime = m_currentTime;
@@ -49,7 +49,7 @@ int		FrameRate::m_lastTime;
 //-------------------------------------
 //		FPS表示
 //-------------------------------------
- void FrameRate::PrintFps()
+ void CFrameRate::PrintFps()
  {
 	 // 1フレーム進んだと判断
 	 m_count++;
@@ -68,7 +68,7 @@ int		FrameRate::m_lastTime;
 		 m_updateFrameRateTime = m_currentTime;
 	 }
 
-	 //FPSは常に表示を続ける
+	 // FPSは常に表示を続ける
 	 DrawFormatString(1000, 16, GetColor(0, 255, 255),
 		"FPS:%21f", m_frameRate);
  }

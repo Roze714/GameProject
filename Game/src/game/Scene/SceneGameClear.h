@@ -3,7 +3,7 @@
 
 
 // ゲームクリア管理用クラス
-class SceneGameClear{
+class CSceneGameClear{
 private:
 	enum tagScene
 	{
@@ -21,8 +21,8 @@ private:
 
 public:
 	//		コンストラクタ・デストラクタ
-	SceneGameClear();
-	~SceneGameClear();
+	CSceneGameClear();
+	~CSceneGameClear();
 
 	//		繰り返し行う処理
 	int Loop();

@@ -1,40 +1,36 @@
 #pragma once
 #include"ScenePlay.h"
 #include"SceneTitle.h"
-#include"SceneGameClear.h"
-#include"SceneGameOver.h"
+#include"SceneResult.h"
 
-//シーンマネージャー管理用クラス
-class SceneManager
-{
+
+// シーン全体を管理するクラス
+class CSceneManager{
 private:
 	enum tagSCENE
 	{
-		TITLE,			//タイトル
-		PLAY,			//ゲーム中
-		GAMECLEAR,		//ゲームクリア
-		GAMEOVER,		//ゲームオーバー
+		TITLE,			// タイトル
+		PLAY,			// ゲーム中
+		RESULT,			// リザルト
 
 		NUM
 	};
-	SceneTitle		m_SceneTitle;			//タイトル
-	ScenePlay		m_ScenePlay;			//ゲーム中
-	SceneGameClear	m_SceneGameClear;		//ゲームクリア
-	SceneGameOver	m_SceneGameOver;		//ゲームオーバー
-
-	tagSCENE		m_ID;						//シーンID
+	CSceneTitle			m_SceneTitle;			// タイトル
+	CScenePlay			m_ScenePlay;			// ゲーム中
+	CSceneResult		m_SceneResult;			// リザルト
+	
+	tagSCENE			m_ID;					// シーンID
 
 
 public:
-	//コンストラクタ・デストラクタ
-	SceneManager();
-	~SceneManager();
+	// コンストラクタ・デストラクタ
+	CSceneManager();
+	~CSceneManager();
 
-	//繰り返し行う
+	// 繰り返し行う
 	int Loop();
-	//描画
+
+	// 描画
 	void Draw();
 };
-
-
 

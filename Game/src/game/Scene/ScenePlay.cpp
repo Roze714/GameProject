@@ -7,7 +7,7 @@
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-ScenePlay::ScenePlay()
+CScenePlay::CScenePlay()
 {
 	m_Scene = INIT;
 }
@@ -17,14 +17,14 @@ ScenePlay::ScenePlay()
 //		デストラクタ
 //------------------------------------------------
 
-ScenePlay::~ScenePlay()
+CScenePlay::~CScenePlay()
 {
 	Exit();
 }
 //------------------------------------------------
 //		実行処理
 //------------------------------------------------
-int ScenePlay::Loop()
+int CScenePlay::Loop()
 {
 	int result = 0;
 	switch (m_Scene)
@@ -35,7 +35,7 @@ int ScenePlay::Loop()
 		break;
 	case LOAD:
 		Load();
-		//SoundManager::Play(SoundManager::BGM_GAME, DX_PLAYTYPE_LOOP);
+		//CSoundManager::Play(CSoundManager::BGM_GAME, DX_PLAYTYPE_LOOP);
 		m_Scene = LOOP;
 		break;
 	case LOOP:
@@ -55,7 +55,7 @@ int ScenePlay::Loop()
 //------------------------------------------------
 //		描画処理
 //------------------------------------------------
-void ScenePlay::Draw()
+void CScenePlay::Draw()
 {
 	m_Field.Draw();
 	m_Player.Draw();
@@ -67,7 +67,7 @@ void ScenePlay::Draw()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void ScenePlay::Init()
+void CScenePlay::Init()
 {
 	m_Hndl = -1;
 	m_CameraManager.Init();
@@ -81,7 +81,7 @@ void ScenePlay::Init()
 //------------------------------------------------
 //		終了処理
 //------------------------------------------------
-void ScenePlay::Exit()
+void CScenePlay::Exit()
 {
 	m_Enemy.Exit();
 	m_Player.Exit();
@@ -94,7 +94,7 @@ void ScenePlay::Exit()
 //------------------------------------------------
 //		データのロード
 //------------------------------------------------
-void ScenePlay::Load()
+void CScenePlay::Load()
 {
 	m_Player.Load();
 	m_Shot.Load();
@@ -106,10 +106,10 @@ void ScenePlay::Load()
 //------------------------------------------------
 //		更新
 //------------------------------------------------
-void  ScenePlay::Step()
+void CScenePlay::Step()
 {
 
-	if (m_CameraManager.GetID() == CameraManager::ID_PLAY)
+	if (m_CameraManager.GetID() == CCameraManager::ID_PLAY)
 	{
 		m_Player.Step(m_Shot);
 		m_Shot.Step();
@@ -121,16 +121,16 @@ void  ScenePlay::Step()
 	// カメラ切り替え
 	if (CheckHitKey(KEY_INPUT_N))
 	{
-		m_CameraManager.ChangeCamera(CameraManager::ID_DEBUG);
+		m_CameraManager.ChangeCamera(CCameraManager::ID_DEBUG);
 	}
 	if (CheckHitKey(KEY_INPUT_M))
 	{
-		m_CameraManager.ChangeCamera(CameraManager::ID_PLAY);
+		m_CameraManager.ChangeCamera(CCameraManager::ID_PLAY);
 	}
 
 	// 当たり判定処理
-	CollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
-	CollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
+	CCollisionManager::CheckHitShotToEnemy(m_Shot, m_Enemy);
+	CCollisionManager::CheckHitPlayerToEnemy(m_Player, m_Enemy);
 	// プレイヤーの生存フラグが消えたら、ゲーム終了へ
 	if (m_Player.IsActive() == false)
 	{

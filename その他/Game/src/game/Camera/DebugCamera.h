@@ -1,29 +1,27 @@
 #pragma once
 #include<DxLib.h>
 
-class DebugCamera
-{
+// デバックカメラを管理するクラス
+class CDebugCamera{
 private:
 	
-	VECTOR m_vPos;				//座標
-	VECTOR m_vRot;				//回転角度
-	
+	VECTOR m_vPos;				// 座標
+	VECTOR m_vRot;				// 回転角度
 	
 
 public:
 
-	//コンストラクタ
-	DebugCamera();
+	// コンストラクタ
+	CDebugCamera();
 	
 
-
-	//初期化
+	// 初期化
 	void Init();
 
-	//カメラの座標設定
+	// カメラの座標設定
 	void Step();
 
-	//カメラの更新
+	// カメラの更新
 	void Updete();
 };
 

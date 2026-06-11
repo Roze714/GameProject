@@ -13,7 +13,7 @@ static const float ROT_SPEED = 0.1f;
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-DebugCamera::DebugCamera()
+CDebugCamera::CDebugCamera()
 {
 	m_vPos = ZERO;
 	m_vRot = ZERO;
@@ -23,7 +23,7 @@ DebugCamera::DebugCamera()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void DebugCamera::Init()
+void CDebugCamera::Init()
 {
 	m_vPos = ZERO;
 	m_vRot = ZERO;
@@ -35,7 +35,7 @@ void DebugCamera::Init()
 //------------------------------------------------
 //		カメラの座標計算
 //------------------------------------------------
-void  DebugCamera::Step()
+void  CDebugCamera::Step()
 {
 	//カメラの回転処理=======================
 	//上下
@@ -91,7 +91,7 @@ void  DebugCamera::Step()
 //------------------------------------------------
 //		カメラの更新
 //------------------------------------------------
-void  DebugCamera::Updete()
+void  CDebugCamera::Updete()
 {
 	SetCameraPositionAndAngle(m_vPos,
 		m_vRot.x, m_vRot.y, m_vRot.z);

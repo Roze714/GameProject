@@ -2,14 +2,12 @@
 
 #include <DxLib.h>
 
-//当たり判定管理用クラス
-class Collision
-{
+class CCollision{
 public:
 
-	//***********************
+	//**********************************
 	//		2D用関数
-	//***********************
+	//**********************************
 
 	// 点と四角の当たり判定
 	//	dotPos		:	点の座標
@@ -36,9 +34,9 @@ public:
 		VECTOR circlePos2, int radius2);
 
 
-	//***********************
+	//**********************************
 	//		3D用関数
-	//***********************
+	//**********************************
 
 	// 立方体同士の当たり判定
 	//	pos			:	箱の中心座標
@@ -54,6 +52,7 @@ public:
 	static bool CheckHitSphereToSphere(VECTOR spherePos1, float radius1,
 		VECTOR spherePos2, float radius2);
 
+	
 };
 
 

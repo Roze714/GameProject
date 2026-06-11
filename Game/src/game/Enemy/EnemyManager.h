@@ -5,14 +5,14 @@
 static const int ENEMY_NUM = 150;
 
 // 敵全体を管理するクラス
-class EnemyManager{
+class CEnemyManager{
 private:
-	Enemy m_enemy[ENEMY_NUM];		// 敵
+	CEnemy m_enemy[ENEMY_NUM];		// 敵
 	int m_waitCount;				// 敵が出るまでの時間
 
 public:
 	// コンストラクタ
-	EnemyManager();
+	CEnemyManager();
 
 
 	// 初期化
@@ -38,7 +38,7 @@ public:
 
 	// 敵1体分の情報
 	// @id	:	配列番号
-	Enemy& GetShot(int id) { return m_enemy[id]; }
+	CEnemy& GetShot(int id) { return m_enemy[id]; }
 };
 
 

@@ -12,7 +12,7 @@
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-SceneTitle::SceneTitle()
+CSceneTitle::CSceneTitle()
 {
 	m_SceneID = INIT;
 }
@@ -20,14 +20,14 @@ SceneTitle::SceneTitle()
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
-SceneTitle::~SceneTitle()
+CSceneTitle::~CSceneTitle()
 {
 }
 
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void SceneTitle::Init(void)
+void CSceneTitle::Init(void)
 {
 	m_SceneID = INIT;
 }
@@ -35,17 +35,17 @@ void SceneTitle::Init(void)
 //------------------------------------------------
 //		毎フレーム呼ぶ処理
 //------------------------------------------------
-int SceneTitle::Step()
+int CSceneTitle::Step()
 {
 	switch (m_SceneID)
 	{
-	case SceneTitle::INIT:
+	case CSceneTitle::INIT:
 		//初期化==========================
 		m_Hndl = -1;
 		//================================
 		m_SceneID = LOAD;
 		break;
-	case SceneTitle::LOAD:
+	case CSceneTitle::LOAD:
 		//画像ロード=====================
 		if (m_Hndl == -1)
 		{
@@ -54,16 +54,16 @@ int SceneTitle::Step()
 		//=====================
 		m_SceneID = MAIN;
 		break;
-	case SceneTitle::MAIN:
+	case CSceneTitle::MAIN:
 		// 決定ボタンを押したら次へ
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
 			m_SceneID = END;
 		}
 		break;
-	case SceneTitle::ENDWAIN:
+	case CSceneTitle::ENDWAIN:
 		break;
-	case SceneTitle::END:
+	case CSceneTitle::END:
 		// 画像データ削除
 		if (m_Hndl != -1)
 		{
@@ -81,12 +81,12 @@ int SceneTitle::Step()
 //------------------------------------------------
 //		描画処理
 //------------------------------------------------
-void SceneTitle::Draw()
+void CSceneTitle::Draw()
 {
 	switch (m_SceneID)
 	{
-	case SceneTitle::MAIN:
-	case SceneTitle::ENDWAIN:
+	case CSceneTitle::MAIN:
+	case CSceneTitle::ENDWAIN:
 		// タイトル画面描画
 		DrawRotaGraph((int)(TITLE_SIZE_X * 1.0f), (int)(TITLE_SIZE_Y * 0.75f),
 			1.35, 0.0, m_Hndl, TRUE);
@@ -101,7 +101,7 @@ void SceneTitle::Draw()
 //------------------------------------------------
 //		繰り返し行う処理
 //------------------------------------------------
-int SceneTitle::Loop()
+int CSceneTitle::Loop()
 {
 	int result = 0;
 	switch (m_SceneID)

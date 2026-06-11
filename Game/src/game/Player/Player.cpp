@@ -22,7 +22,7 @@ static const float SHOT_SPEED = 1.0f;
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-Player::Player()
+CPlayer::CPlayer()
 {
 	Init();
 }
@@ -30,7 +30,7 @@ Player::Player()
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
-Player::~Player()
+CPlayer::~CPlayer()
 {
 	Exit();
 }
@@ -38,7 +38,7 @@ Player::~Player()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void Player::Init()
+void CPlayer::Init()
 {
 	m_vPos = ZERO;
 	m_vRot = { 0.0f,0.0f ,0.0f };
@@ -58,7 +58,7 @@ void Player::Init()
 //------------------------------------------------
 //		ロード
 //------------------------------------------------
-void Player::Load()
+void CPlayer::Load()
 {
 	if (m_iHndl == -1)
 	{
@@ -69,7 +69,7 @@ void Player::Load()
 //------------------------------------------------
 //		終了時に破棄
 //------------------------------------------------
-void Player::Exit()
+void CPlayer::Exit()
 {
 	if (m_iHndl != -1)
 	{
@@ -82,7 +82,7 @@ void Player::Exit()
 //------------------------------------------------
 //		毎フレーム呼ぶ処理
 //------------------------------------------------
-void Player::Step(ShotManager& shot)
+void CPlayer::Step(CShotManager& shot)
 {
 	
 	// 弾の発射
@@ -153,7 +153,7 @@ void Player::Step(ShotManager& shot)
 //------------------------------------------------
 //		モデルの更新
 //------------------------------------------------
-void Player::Updete()
+void CPlayer::Updete()
 {
 	MV1SetPosition(m_iHndl, m_vPos);
 	MV1SetRotationXYZ(m_iHndl, m_vRot);
@@ -162,7 +162,7 @@ void Player::Updete()
 //------------------------------------------------
 //		描画
 //------------------------------------------------
-void Player::Draw()
+void CPlayer::Draw()
 {
 
 	MV1DrawModel(m_iHndl);
@@ -179,7 +179,7 @@ void Player::Draw()
 //------------------------------------------------
 //		当たり判定の座標用
 //------------------------------------------------
-VECTOR Player::GetCenter()
+VECTOR CPlayer::GetCenter()
 {
 	// 基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -193,7 +193,7 @@ VECTOR Player::GetCenter()
 //------------------------------------------------
 //		ヒット後の処理
 //------------------------------------------------
-void Player::HitCalc()
+void CPlayer::HitCalc()
 {
 	// 生存フラグを消す
 	m_isActive = false;

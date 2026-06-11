@@ -12,7 +12,7 @@
 //-------------------------------------
 //		コンストラクタ
 //-------------------------------------
-SceneGameOver::SceneGameOver()
+CSceneGameOver::CSceneGameOver()
 {
 	m_SceneID = INIT;
 }
@@ -20,14 +20,14 @@ SceneGameOver::SceneGameOver()
 //-------------------------------------
 //		デストラクタ
 //-------------------------------------
-SceneGameOver::~SceneGameOver()
+CSceneGameOver::~CSceneGameOver()
 {
 }
 
 //-------------------------------------
 //		初期化
 //-------------------------------------
-void SceneGameOver::Init(void)
+void CSceneGameOver::Init(void)
 {
 	m_SceneID = INIT;
 }
@@ -35,17 +35,17 @@ void SceneGameOver::Init(void)
 //-------------------------------------
 //		毎フレーム呼ぶ処理
 //-------------------------------------
-int SceneGameOver::Step()
+int CSceneGameOver::Step()
 {
 	switch (m_SceneID)
 	{
-	case SceneGameOver::INIT:
+	case CSceneGameOver::INIT:
 		//初期化==========================
 		m_Hndl = -1;
 		//================================
 		m_SceneID = LOAD;
 		break;
-	case SceneGameOver::LOAD:
+	case CSceneGameOver::LOAD:
 		//画像ロード==========================================
 		if (m_Hndl == -1)
 		{
@@ -54,16 +54,16 @@ int SceneGameOver::Step()
 		//====================================================
 		m_SceneID = MAIN;
 		break;
-	case SceneGameOver::MAIN:
+	case CSceneGameOver::MAIN:
 		// 決定ボタンを押したら次へ
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
 			m_SceneID = END;
 		}
 		break;
-	case SceneGameOver::ENDWAIN:
+	case CSceneGameOver::ENDWAIN:
 		break;
-	case SceneGameOver::END:
+	case CSceneGameOver::END:
 		//画像データ削除
 		if (m_Hndl != -1)
 		{
@@ -82,12 +82,12 @@ int SceneGameOver::Step()
 //-------------------------------------
 //		描画処理
 //-------------------------------------
-void SceneGameOver::Draw()
+void CSceneGameOver::Draw()
 {
 	switch (m_SceneID)
 	{
-	case SceneGameOver::MAIN:
-	case SceneGameOver::ENDWAIN:
+	case CSceneGameOver::MAIN:
+	case CSceneGameOver::ENDWAIN:
 		//リザルト画面描画
 		DrawRotaGraph((int)(GAMEOVER_SIZE_X * 1.0f), (int)(GAMEOVER_SIZE_Y * 0.75f),
 			1.35, 0.0, m_Hndl, TRUE);
@@ -101,7 +101,7 @@ void SceneGameOver::Draw()
 //-------------------------------------
 //		繰り返し行う処理
 //-------------------------------------
-int SceneGameOver::Loop()
+int CSceneGameOver::Loop()
 {
 	int result = 0;
 	switch (m_SceneID)

@@ -5,7 +5,7 @@
 #include"SceneGameOver.h"
 
 // シーン全体を管理するクラス
-class SceneManager{
+class CSceneManager{
 private:
 	enum tagSCENE
 	{
@@ -16,24 +16,23 @@ private:
 
 		NUM
 	};
-	SceneTitle		m_SceneTitle;			// タイトル
-	ScenePlay		m_ScenePlay;			// ゲーム中
-	SceneGameClear	m_SceneGameClear;		// ゲームクリア
-	SceneGameOver	m_SceneGameOver;		// ゲームオーバー
-
-	tagSCENE		m_ID;					// シーンID
+	CSceneTitle			m_SceneTitle;			// タイトル
+	CScenePlay			m_ScenePlay;			// ゲーム中
+	CSceneGameClear		m_SceneGameClear;		// ゲームクリア
+	CSceneGameOver		m_SceneGameOver;		// ゲームオーバー
+	
+	tagSCENE			m_ID;					// シーンID
 
 
 public:
 	// コンストラクタ・デストラクタ
-	SceneManager();
-	~SceneManager();
+	CSceneManager();
+	~CSceneManager();
 
 	// 繰り返し行う
 	int Loop();
+
 	// 描画
 	void Draw();
 };
-
-
 
