@@ -28,18 +28,18 @@ private:
 	};
 
 
-	CPlayer			m_Player;					// プレイヤー
-	CShotManager	m_Shot;						// 弾
-	CEnemyManager	m_Enemy;					// 敵
-	CCameraManager	m_CameraManager;			// カメラ
-	CField			m_Field;					// フィールド
-	CGoal			m_Goal;						// ゴール
-	tagScene		m_SceneID;					// シーン保存
+	CPlayer					m_Player;					// プレイヤー
+	CShotManager			m_Shot;						// 弾
+	CEnemyManager			m_Enemy;					// 敵
+	CCameraManager			m_CameraManager;			// カメラ
+	CField					m_Field;					// フィールド
+	CGoal					m_Goal;						// ゴール
+	tagScene				m_SceneID;					// シーン保存
 	int m_Hndl;
 
 
-	tagResult		m_Result = NONE;
-	tagScene		m_Scene;					// 状態
+	tagResult				m_Result = NONE;
+	tagScene				m_Scene;					// 状態
 
 public:
 	// コンストラクタ・デストラクタ

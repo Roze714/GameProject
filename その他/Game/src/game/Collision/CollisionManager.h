@@ -1,6 +1,6 @@
 #pragma once
 #include"../Player/Player.h"
-#include"../Enemy/EnemyManager.h"
+#include"../Enemy/Enemy1/EnemyManager.h"
 #include"../Shot/ShotManager.h"
 
 
@@ -15,9 +15,6 @@ public:
 	// ƒvƒŒƒCƒ„[‚Æ“G‚Ì“–‚½‚è”»’è
 	static void CheckHitPlayerToEnemy(
 		CPlayer& player, CEnemyManager& enemy);
-
-
-	
 
 };
 

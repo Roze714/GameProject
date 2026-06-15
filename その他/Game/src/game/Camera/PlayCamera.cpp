@@ -4,7 +4,7 @@
 //定義関連-------------------------------------------------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 // カメラとプレイヤーの距離
-static const float CAMERA_LENGTH=40;
+static const float CAMERA_LENGTH=60;
 // カメラの高さ(今回は固定)
 static const float CAMERA_OFFSET_Y=50;
 // カメラの注視点の高さ(今回は固定)

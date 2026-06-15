@@ -3,7 +3,7 @@
 
 #include"../Player/Player.h"
 #include"../Camera/CameraManager.h"
-#include"../Enemy/EnemyManager.h"
+#include"../Enemy/Enemy1/EnemyManager.h"
 #include"../Field/Field.h"
 #include"../System/SoundManager.h"
 #include"../Shot/ShotManager.h"

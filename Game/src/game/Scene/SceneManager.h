@@ -16,6 +16,7 @@ private:
 
 		NUM
 	};
+
 	CSceneTitle			m_SceneTitle;			// タイトル
 	CScenePlay			m_ScenePlay;			// ゲーム中
 	CSceneGameClear		m_SceneGameClear;		// ゲームクリア

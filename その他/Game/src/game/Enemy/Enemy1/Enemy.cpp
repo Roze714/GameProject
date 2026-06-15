@@ -1,70 +1,59 @@
-#include"Player.h"
+#include"Enemy.h"
 #include<math.h>
+#include"../../System/SoundManager.h"
 #define DEBUG
 
-
-//定義関連----------------------------------------
+//定義関連-----------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
-// プレイヤーのモデルパス
-static const char PLAYER_MODEL_PATH[] =
-{ "data/model/player/player.pmx" };
-// 移動速度
-static const float PL_SPEED = 1.0f;
-// 回転角度
-static const float ROTATE_SPEED = 0.05f;
-// 弾の移動速度
-static const float SHOT_SPEED = 1.0f;
-//------------------------------------------------
+//移動速度
+float ENEMY_SPEED = 2.0f;
+//当たり判定
+float RADIUS = 3.0;
+//--------------------------------------
 
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-CPlayer::CPlayer()
+CEnemy::CEnemy()
 {
 	Init();
+	
 }
 
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
-CPlayer::~CPlayer()
+CEnemy::~CEnemy()
 {
-	Exit();
+	Exit();			// 念のためモデルデータを破棄
 }
 
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void CPlayer::Init()
+void CEnemy::Init()
 {
 	m_vPos = ZERO;
-	m_vSpeed = ZERO;
-	m_vRot = { 0.0f,0.0f ,0.0f };
-	m_eState = PLAYER_NORMAL;
-	m_isActive = true;
-	m_Radius = 3.0f;
 	m_iHndl = -1;
-	//float jumpPow = 0.0f;
-	m_vPos = ZERO;
-	m_vRot = { 0.0f, 3.1459265f, 0.0f };	// 南向きに設定
-	
+	m_Radius = RADIUS;
+	m_isActive = false;			// 最初は表示しない
 }
 
 //------------------------------------------------
 //		ロード
 //------------------------------------------------
-void CPlayer::Load()
+void CEnemy::Load(int orginHndl)
 {
 	if (m_iHndl == -1)
 	{
-		m_iHndl = MV1LoadModel(PLAYER_MODEL_PATH);
+		m_iHndl = MV1DuplicateModel(orginHndl);
 	}
 }
 
 //------------------------------------------------
 //		終了時に破棄
 //------------------------------------------------
-void CPlayer::Exit()
+void CEnemy::Exit()
 {
 	if (m_iHndl != -1)
 	{
@@ -77,73 +66,74 @@ void CPlayer::Exit()
 //------------------------------------------------
 //		毎フレーム呼ぶ処理
 //------------------------------------------------
-void CPlayer::Step(CShotManager& shot)
+void CEnemy::Step()
 {
+	// 呼び出されていない場合は終了
+	if (!m_isActive)return;
 	
-	// 弾の発射
-	if (CheckHitKey(KEY_INPUT_Z))
-	{
-		VECTOR speed;
-		// 移動速度を三角関数で計算する
-		speed.x = sinf(m_vRot.y) * -SHOT_SPEED;
-		speed.y = 0.0f;
-		speed.z = cosf(m_vRot.y) * -SHOT_SPEED;
-		shot.RequestPlayerShot(m_vPos, speed);
-	}
-
-	// プレイヤーの移動
-	float speed = 0.0f;			// 実際の進む速度
-
-	// 前進
-	if (CheckHitKey(KEY_INPUT_D))
-	{
-		speed = -PL_SPEED;
-	}
-	// 後退
-	if (CheckHitKey(KEY_INPUT_A))
-	{
-		speed = PL_SPEED;
-	}
-
-	// 移動速度を三角関数で計算する
-	m_vSpeed.x = sinf(m_vRot.y) * speed;
-	m_vSpeed.y = 0.0f;
-	m_vSpeed.x = cosf(m_vRot.y) * speed;
-	// 計算した速度を座標に足し算する
+	// 現在の座標に速度を加算する
 	m_vPos = VAdd(m_vPos, m_vSpeed);
 
+	// 範囲外に出たら敵を削除
+	float length = 500.0f;
+	if (m_vPos.x<-length || m_vPos.x>length
+		|| m_vPos.z<-length || m_vPos.z>length)
+	{
+		m_isActive = false;
+	}
 }
 
 //------------------------------------------------
 //		モデルの更新
 //------------------------------------------------
-void CPlayer::Updete()
+void CEnemy::Updete()
 {
+	// 座標を設定する
 	MV1SetPosition(m_iHndl, m_vPos);
-	MV1SetRotationXYZ(m_iHndl, m_vRot);
+	
 }
 
 //------------------------------------------------
 //		描画
 //------------------------------------------------
-void CPlayer::Draw()
+void CEnemy::Draw()
 {
+	if (m_isActive)
+	{
+		MV1DrawModel(m_iHndl);
 
-	MV1DrawModel(m_iHndl);
 
 #ifdef DEBUG
-	//当たり判定を目視できる
-	DrawSphere3D(GetCenter(), m_Radius,
-		16, GetColor(255, 0, 0),
-		GetColor(255, 0, 0), FALSE);
+		// 当たり判定を目視できる
+		DrawSphere3D(GetCenter(), m_Radius,
+			16, GetColor(255, 0, 0),
+			GetColor(255, 0, 0), FALSE);
 #endif // DEBUG
 
+		
+	}
+}
+
+//------------------------------------------------
+//		敵をリクエスト
+//------------------------------------------------
+bool CEnemy::Request(const VECTOR& pos, const VECTOR& speed)
+{
+	// すでに発砲されている弾は失敗
+	if (m_isActive)return false;
+
+	// 必要な情報を渡す
+	m_isActive = true;
+	m_vPos=pos;
+	m_vSpeed = speed;
+
+	return true;
 }
 
 //------------------------------------------------
 //		当たり判定の座標用
 //------------------------------------------------
-VECTOR CPlayer::GetCenter()
+VECTOR CEnemy::GetCenter()
 {
 	// 基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -157,8 +147,10 @@ VECTOR CPlayer::GetCenter()
 //------------------------------------------------
 //		ヒット後の処理
 //------------------------------------------------
-void CPlayer::HitCalc()
+void CEnemy::HitCalc()
 {
+	// エネミー爆発音
+	CSoundManager::Play(CSoundManager::SE_EXPLOSION);
 	// 生存フラグを消す
 	m_isActive = false;
 }
