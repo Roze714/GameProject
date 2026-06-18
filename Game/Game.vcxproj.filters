@@ -52,8 +52,14 @@
     <Filter Include="ソース ファイル\game\Shot">
       <UniqueIdentifier>{a8719ae1-f26d-4455-a848-141bf23594b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\game\Goal">
-      <UniqueIdentifier>{e4192a16-c7d2-434d-968e-aaeb905072cb}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\game\Enemy\Enemy1">
+      <UniqueIdentifier>{47c17718-31d4-421a-8847-f578e5c44c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Enemy\Enemy2">
+      <UniqueIdentifier>{5b94ec18-fe77-4726-982d-8ad4e1725521}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game\Enemy\Enemy3">
+      <UniqueIdentifier>{4176f4a2-ceac-4250-863d-656df4685a5b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -81,22 +87,13 @@
     <ClCompile Include="src\game\Collision\CollisionManager.cpp">
       <Filter>ソース ファイル\game\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\Enemy\Enemy.cpp">
-      <Filter>ソース ファイル\game\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\Enemy\EnemyManager.cpp">
-      <Filter>ソース ファイル\game\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\Field\Field.cpp">
       <Filter>ソース ファイル\game\Field</Filter>
     </ClCompile>
     <ClCompile Include="src\game\Player\Player.cpp">
       <Filter>ソース ファイル\game\Player</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\Scene\SceneGameClear.cpp">
-      <Filter>ソース ファイル\game\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\Scene\SceneGameOver.cpp">
+    <ClCompile Include="src\game\Scene\SceneResult.cpp">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\game\Scene\SceneManager.cpp">
@@ -117,8 +114,23 @@
     <ClCompile Include="src\game\Shot\ShotManager.cpp">
       <Filter>ソース ファイル\game\Shot</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\Goal\Goal.cpp">
-      <Filter>ソース ファイル\game\Goal</Filter>
+    <ClCompile Include="src\game\Enemy\Enemy1\Enemy.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy1\EnemyManager.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy2\Enemy2.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy2\EnemyManager2.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy3\Enemy3.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy3\EnemyManager3.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,22 +155,13 @@
     <ClInclude Include="src\game\Collision\CollisionManager.h">
       <Filter>ソース ファイル\game\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\Enemy\Enemy.h">
-      <Filter>ソース ファイル\game\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Enemy\EnemyManager.h">
-      <Filter>ソース ファイル\game\Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="src\game\Field\Field.h">
       <Filter>ソース ファイル\game\Field</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Player\Player.h">
       <Filter>ソース ファイル\game\Player</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\Scene\SceneGameClear.h">
-      <Filter>ソース ファイル\game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Scene\SceneGameOver.h">
+    <ClInclude Include="src\game\Scene\SceneResult.h">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Scene\SceneManager.h">
@@ -179,8 +182,23 @@
     <ClInclude Include="src\game\Shot\ShotManager.h">
       <Filter>ソース ファイル\game\Shot</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\Goal\Goal.h">
-      <Filter>ソース ファイル\game\Goal</Filter>
+    <ClInclude Include="src\game\Enemy\Enemy1\Enemy.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy1\EnemyManager.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy2\Enemy2.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy2\EnemyManager2.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy3\Enemy3.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy3\EnemyManager3.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

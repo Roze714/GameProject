@@ -1,0 +1,106 @@
+#include "EnemyManager2.h"
+
+
+//定義関連--------------
+static const char ENEMY2_MODEL_PATH[]
+= { "data/model/enemy/enemy.pmx" };
+//敵再出現時間
+static const int WAIME_TIME = 10;
+//----------------------
+
+//----------------------
+//コンストラクタ
+//----------------------
+EnemyManager2::EnemyManager2()
+{
+	Init();
+}
+
+//-------------
+//初期化
+//-------------
+void EnemyManager2::Init()
+{
+	for (int i = 0; i < ENEMY2_NUM; i++)
+		m_Enemy2[i].Init();
+	m_waitCount = 0;
+}
+
+//---------------------
+//更新
+//---------------------
+void  EnemyManager2::Step()
+{
+	for (int i = 0; i < ENEMY2_NUM; i++)
+		m_Enemy2[i].Step();
+	//敵を出現する
+	m_waitCount--;
+	if (m_waitCount <= 0)
+	{
+		Request();
+		m_waitCount = WAIME_TIME;
+	}
+}
+
+//---------------------
+//敵の更新
+//---------------------
+void EnemyManager2::Updete()
+{
+	for (int i = 0; i < ENEMY2_NUM; i++)
+		m_Enemy2[i].Updete();
+}
+
+//---------------------
+//ロード
+//---------------------
+void EnemyManager2::Load()
+{
+	//オリジナルモデル読み込み
+	int iHndl = MV1LoadModel(ENEMY2_MODEL_PATH);
+	//モデルを複製
+	for (int i = 0; i < ENEMY2_NUM; i++)
+		m_Enemy2[i].Load(iHndl);
+	
+	//オリジナル削除
+	MV1DeleteModel(iHndl);
+}
+
+//---------------------
+//終了
+//---------------------
+void EnemyManager2::Exit()
+{
+	for (int i = 0; i < ENEMY2_NUM; i++)
+		m_Enemy2[i].Exit();
+}
+
+//---------------------
+//描画
+//---------------------
+void EnemyManager2::Draw()
+{
+	for (int i = 0; i < ENEMY2_NUM; i++)
+		m_Enemy2[i].Draw();
+}
+
+//------------------------------------------
+////敵をリクエスト
+//------------------------------------------
+void EnemyManager2::Request()
+{
+	//横はランダム、奥行きは固定
+	VECTOR pos = { (float)GetRand(200) + 200.0f,0.0f,200.0f };
+	//速度は手前に進むだけ
+	VECTOR speed = { -3.0f,0.0f,1.5f };
+	for (int i = 0; i < ENEMY2_NUM; i++)
+	{
+		//敵を発射
+		if (m_Enemy2[i].Request(pos, speed))
+		{
+			//一発発射が出来たら終了
+			break;
+		}
+	}
+}
+

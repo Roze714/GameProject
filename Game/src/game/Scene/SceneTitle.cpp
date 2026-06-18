@@ -40,18 +40,18 @@ int CSceneTitle::Step()
 	switch (m_SceneID)
 	{
 	case CSceneTitle::INIT:
-		//初期化==========================
+		//初期化===========================================
 		m_Hndl = -1;
-		//================================
+		//=================================================
 		m_SceneID = LOAD;
 		break;
 	case CSceneTitle::LOAD:
-		//画像ロード=====================
+		//画像ロード=======================================
 		if (m_Hndl == -1)
 		{
 			m_Hndl = LoadGraph("data/title/taitoru.png");
 		}
-		//=====================
+		//=================================================
 		m_SceneID = MAIN;
 		break;
 	case CSceneTitle::MAIN:
@@ -70,7 +70,6 @@ int CSceneTitle::Step()
 			DeleteGraph(m_Hndl);
 			m_Hndl = -1;
 		}
-
 		m_SceneID = INIT;
 		return 1;
 	}
@@ -145,8 +144,4 @@ int CSceneTitle::Loop()
 	}
 	return result;
 }
-
-
-
-
 

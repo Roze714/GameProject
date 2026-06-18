@@ -41,16 +41,26 @@ int CSceneManager::Loop()
 	case PLAY:
 		if (m_ScenePlay.Loop() != 0)
 		{
-			m_ID = RESULT;
+			m_ID = GAMECLEAR;
+		}
+		else if (m_ScenePlay.Loop() !=0)
+		{
+			m_ID = GAMEOVER;
 		}
 		break;
-	case RESULT:
-		if (m_SceneResult.Loop() != 0)
+	case GAMECLEAR:
+		if (m_SceneGameClear.Loop() != 0)
 		{
 			m_ID = TITLE;
 		}
 		break;
-	
+	case GAMEOVER:
+		if (m_SceneGameOver.Loop() != 0)
+		{
+			m_ID = TITLE;
+		}
+
+		break;
 	}
 	
 	// フェードの更新
@@ -59,6 +69,7 @@ int CSceneManager::Loop()
 
 	return result;
 }
+
 //------------------------------------------------
 //		更新処理
 //------------------------------------------------
@@ -74,8 +85,12 @@ void CSceneManager::Draw()
 		m_ScenePlay.Draw();
 		break;
 
-	case RESULT:
-		m_SceneResult.Draw();
+	case GAMECLEAR:
+		m_SceneGameClear.Draw();
+		break;
+
+	case GAMEOVER:
+		m_SceneGameOver.Draw();
 		break;
 	}
 }

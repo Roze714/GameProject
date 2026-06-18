@@ -57,9 +57,9 @@ bool CSoundManager::Play(tagID id,
 	
 }
 
-//---------------------
+//------------------------------------------------
 //		âπäyí‚é~
-//---------------------
+//------------------------------------------------
 
 int CSoundManager::Stop(tagID id)
 {
@@ -85,7 +85,6 @@ void CSoundManager::StopAll()
 	 int result = CheckSoundMem(m_hndl[id]);
 	 if (result == 1)return true;
 	 else return false;
-	 
 }
 
 

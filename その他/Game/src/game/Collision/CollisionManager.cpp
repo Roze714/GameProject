@@ -76,3 +76,28 @@ void CCollisionManager::CheckHitPlayerToEnemy(
 	}
 }
 
+//------------------------------------------------
+//		プレイヤーとゴールの当たり判定
+//------------------------------------------------
+ void CCollisionManager::CheckHitPlayerToGoal(
+	 CPlayer& player, CGoal& goal)
+{
+	 // それぞれの座標と半径を所得
+	 VECTOR PlayerPos = player.GetCenter();
+	 float PlayerRadius = player.GetRadius();
+	 VECTOR GoalPos = goal.GetCenter();
+	 float GoalRadius = goal.GetRadius();
+
+	 // 当たり判定開始
+	 bool isHIt = CCollision::CheckHitSphereToSphere(
+		 PlayerPos, PlayerRadius, GoalPos, GoalRadius);
+
+	 if (isHIt == true)
+	 {
+		 // お互い当たった!!
+		 player.HitCalc();
+		 goal.HitCalc();
+
+	 }
+}
+

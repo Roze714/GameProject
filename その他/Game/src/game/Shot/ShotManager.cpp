@@ -12,6 +12,7 @@ static const char PLSHOT_MODEL_PATH[]
 //------------------------------------------------
 CShotManager::CShotManager()
 {
+	
 }
 
 //------------------------------------------------
@@ -71,6 +72,7 @@ void CShotManager::Draw()
 	for (int i = 0; i < PL_SHOT_NUM; i++)
 		m_PlayerShot[i].Draw();
 }
+
 
 //------------------------------------------------
 //		弾をリクエスト

@@ -1,9 +1,8 @@
 #include"ScenePlay.h"
 #include"../Collision/CollisionManager.h"
+//定義関連===================
+//===========================
 
-
-//定義関連----------------------------------------
-//------------------------------------------------
 
 //------------------------------------------------
 //		コンストラクタ
@@ -13,14 +12,15 @@ CScenePlay::CScenePlay()
 	m_Scene = INIT;
 }
 
+
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
+
 CScenePlay::~CScenePlay()
 {
 	Exit();
 }
-
 //------------------------------------------------
 //		実行処理
 //------------------------------------------------
@@ -61,6 +61,7 @@ void CScenePlay::Draw()
 	m_Player.Draw();
 	m_Shot.Draw();
 	m_Enemy.Draw();
+	m_Goal.Draw();
 }
 
 //------------------------------------------------
@@ -74,6 +75,7 @@ void CScenePlay::Init()
 	m_Player.Init();
 	m_Shot.Init();
 	m_Enemy.Init();
+	m_Goal.Init();
 }
 
 //------------------------------------------------
@@ -85,6 +87,7 @@ void CScenePlay::Exit()
 	m_Player.Exit();
 	m_Shot.Exit();
 	m_Field.Exit();
+	m_Goal.Exit();
 
 }
 
@@ -97,6 +100,7 @@ void CScenePlay::Load()
 	m_Shot.Load();
 	m_Enemy.Load();
 	m_Field.Load();
+	m_Goal.Load();
 }
 
 //------------------------------------------------
@@ -111,6 +115,7 @@ void CScenePlay::Step()
 		m_Shot.Step();
 		m_Enemy.Step();
 		m_Field.Step();
+		m_Goal.Step();
 	}
 
 	// カメラ切り替え
@@ -136,9 +141,11 @@ void CScenePlay::Step()
 	m_Enemy.Updete();
 	m_Shot.Updete();
 	m_Field.Updete();
+	m_Goal.Updete();
 
 	// カメラ更新処理
 	m_CameraManager.Step(m_Player.GetPos(), m_Player.GetPosY());
 	m_CameraManager.Updete();
+
 }
 

@@ -1,8 +1,9 @@
 #pragma once
 #include"../Player/Player.h"
-#include"../Enemy/EnemyManager.h"
+#include"../Enemy/Enemy1/EnemyManager.h"
+#include"../Enemy/Enemy2/EnemyManager2.h"
 #include"../Shot/ShotManager.h"
-#include"../Goal/Goal.h"
+
 
 
 // 各種オブジェクトの当たり判定
@@ -16,12 +17,13 @@ public:
 	static void CheckHitPlayerToEnemy(
 		CPlayer& player, CEnemyManager& enemy);
 
+	// プレイヤーの弾と敵2の当たり判定
+	static void CheckHitShotToEnemy2(
+		CShotManager& shot, CEnemyManager2& enemy2);
 
-	// プレイヤーとゴールの当たり判定
-	static void CheckHitPlayerToGoal(
-		CPlayer& player, CGoal& goal);
+	// プレイヤーと敵2の当たり判定
+	static void CheckHitPlayerToEnemy2(
+		CPlayer& player, CEnemyManager2& enemy2);
 
 };
-
-
 

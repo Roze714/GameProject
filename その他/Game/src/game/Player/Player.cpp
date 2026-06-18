@@ -3,18 +3,21 @@
 #define DEBUG
 
 
-//定義関連----------------------------------------
+//定義関連-----------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 // プレイヤーのモデルパス
 static const char PLAYER_MODEL_PATH[] =
 { "data/model/player/player.pmx" };
-// 移動速度
-static const float PL_SPEED = 1.0f;
 // 回転角度
 static const float ROTATE_SPEED = 0.05f;
+// 移動速度
+static const float PL_SPEED = 1.0f;
+// ジャンプ速度
+static const float PL_JUMP = 2.0f;
 // 弾の移動速度
 static const float SHOT_SPEED = 1.0f;
-//------------------------------------------------
+//--------------------------------------
+
 
 //------------------------------------------------
 //		コンストラクタ
@@ -38,8 +41,8 @@ CPlayer::~CPlayer()
 void CPlayer::Init()
 {
 	m_vPos = ZERO;
-	m_vSpeed = ZERO;
 	m_vRot = { 0.0f,0.0f ,0.0f };
+	m_vSpeed = ZERO;
 	m_eState = PLAYER_NORMAL;
 	m_isActive = true;
 	m_Radius = 3.0f;
@@ -47,7 +50,9 @@ void CPlayer::Init()
 	//float jumpPow = 0.0f;
 	m_vPos = ZERO;
 	m_vRot = { 0.0f, 3.1459265f, 0.0f };	// 南向きに設定
-	
+
+
+
 }
 
 //------------------------------------------------
@@ -91,16 +96,27 @@ void CPlayer::Step(CShotManager& shot)
 		shot.RequestPlayerShot(m_vPos, speed);
 	}
 
+
+	// プレイヤーの回転処理
+	if (CheckHitKey(KEY_INPUT_D))
+	{
+		m_vRot.y += ROTATE_SPEED;
+	}
+	else if (CheckHitKey(KEY_INPUT_A))
+	{
+		m_vRot.y -= ROTATE_SPEED;
+	}
+
 	// プレイヤーの移動
 	float speed = 0.0f;			// 実際の進む速度
 
 	// 前進
-	if (CheckHitKey(KEY_INPUT_D))
+	if (CheckHitKey(KEY_INPUT_UP))
 	{
 		speed = -PL_SPEED;
 	}
 	// 後退
-	if (CheckHitKey(KEY_INPUT_A))
+	if (CheckHitKey(KEY_INPUT_DOWN))
 	{
 		speed = PL_SPEED;
 	}
@@ -108,10 +124,30 @@ void CPlayer::Step(CShotManager& shot)
 	// 移動速度を三角関数で計算する
 	m_vSpeed.x = sinf(m_vRot.y) * speed;
 	m_vSpeed.y = 0.0f;
-	m_vSpeed.x = cosf(m_vRot.y) * speed;
+	m_vSpeed.z = cosf(m_vRot.y) * speed;
 	// 計算した速度を座標に足し算する
 	m_vPos = VAdd(m_vPos, m_vSpeed);
 
+	// プレイヤーのジャンプ
+	float JumpPow = 0.0f;
+	if (CheckHitKey(KEY_INPUT_SPACE))
+	{
+		JumpPow = PL_JUMP;
+	}
+
+	// ジャンプ力加算
+	m_vPos.y += JumpPow;
+	// 重力計算
+	JumpPow -= 0.01f;
+	if (JumpPow < -1.0f) JumpPow = -1.0f;	// 落下速度制限
+	// 地面に接地していたら強制的にジャンプ力を0に
+	if (m_vPos.y < 1.0f)
+	{
+		m_vPos.y = 1.0f;
+		JumpPow = 0.0f;
+	}
+
+	
 }
 
 //------------------------------------------------

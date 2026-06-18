@@ -1,8 +1,8 @@
 #pragma once
 #include"ScenePlay.h"
 #include"SceneTitle.h"
-#include"SceneResult.h"
-
+#include"SceneGameClear.h"
+#include"SceneGameOver.h"
 
 // シーン全体を管理するクラス
 class CSceneManager{
@@ -11,13 +11,16 @@ private:
 	{
 		TITLE,			// タイトル
 		PLAY,			// ゲーム中
-		RESULT,			// リザルト
+		GAMECLEAR,		// ゲームクリア
+		GAMEOVER,		// ゲームオーバー
 
 		NUM
 	};
+
 	CSceneTitle			m_SceneTitle;			// タイトル
 	CScenePlay			m_ScenePlay;			// ゲーム中
-	CSceneResult		m_SceneResult;			// リザルト
+	CSceneGameClear		m_SceneGameClear;		// ゲームクリア
+	CSceneGameOver		m_SceneGameOver;		// ゲームオーバー
 	
 	tagSCENE			m_ID;					// シーンID
 

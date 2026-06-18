@@ -1,7 +1,8 @@
 #pragma once
-
 #include <DxLib.h>
 
+
+//“–‚½‚è”»’è‚ğŠÇ—‚·‚éƒNƒ‰ƒX
 class CCollision{
 public:
 
@@ -54,7 +55,4 @@ public:
 
 	
 };
-
-
-
 

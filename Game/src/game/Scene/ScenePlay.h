@@ -3,10 +3,10 @@
 
 #include"../Player/Player.h"
 #include"../Camera/CameraManager.h"
-#include"../Enemy/EnemyManager.h"
+#include"../Enemy/Enemy1/EnemyManager.h"
+#include"../Enemy/Enemy2/EnemyManager2.h"
 #include"../Field/Field.h"
 #include"../System/SoundManager.h"
-#include"../Goal/Goal.h"
 #include"../Shot/ShotManager.h"
 
 //プレイシーンを管理するクラス
@@ -22,24 +22,24 @@ private:
 
 
 	enum tagResult {
-		NONE,   // 継続中
-		CLEAR,  // ゲームクリア
-		OVER    // ゲームオーバー
+		NONE,		// 継続中
+		RESULT,		// リザルト
+
 	};
 
 
-	CPlayer					m_Player;					// プレイヤー
-	CShotManager			m_Shot;						// 弾
-	CEnemyManager			m_Enemy;					// 敵
-	CCameraManager			m_CameraManager;			// カメラ
-	CField					m_Field;					// フィールド
-	CGoal					m_Goal;						// ゴール
-	tagScene				m_SceneID;					// シーン保存
+	CPlayer			m_Player;					// プレイヤー
+	CShotManager	m_Shot;						// 弾
+	CEnemyManager	m_Enemy;					// 敵
+	CEnemyManager2	m_Enemy2;					// 敵2
+	CCameraManager	m_CameraManager;			// カメラ
+	CField			m_Field;					// フィールド
+	tagScene		m_SceneID;					// シーン保存
 	int m_Hndl;
 
 
-	tagResult				m_Result = NONE;
-	tagScene				m_Scene;					// 状態
+	tagResult		m_Result = NONE;
+	tagScene		m_Scene;					// 状態
 
 public:
 	// コンストラクタ・デストラクタ

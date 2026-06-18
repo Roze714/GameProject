@@ -63,10 +63,11 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		// FPS‚Ì•\¦
 		CFrameRate::PrintFps();
 
-		// ŒvZˆ—
+		//ŒvZˆ—
 		SceneManager.Loop();
 
-		// •`‰æˆ—
+
+		//•`‰æˆ—
 		SceneManager.Draw();
 		
 

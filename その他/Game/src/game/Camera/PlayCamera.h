@@ -11,9 +11,11 @@ private:
 public:
 	// コンストラクタ
 	CPlayCamera();
+	
 
 	// 初期化
 	void Init();
+
 
 	// ニアーファー設定
 	void SetNearFar(float n, float f);

@@ -16,11 +16,13 @@ private:
 
 		VECTOR			m_vPos;				// 座標
 		VECTOR			m_vRot;				// 回転角度
+		VECTOR			m_vSpeed;			// 移動速度
 		float			m_Radius;			// 半径
+		float			JumpPow;			// ジャンプ
 		bool			m_isActive;			// 生存フラグ
 		int				m_iHndl;			// モデルハンドル
 		tagPlayerState	m_eState;			// プレイヤーの状態
-		VECTOR			m_vSpeed;			// 移動速度
+		
 		
 
 public:

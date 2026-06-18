@@ -24,7 +24,6 @@ int		CFrameRate::m_lastTime;
 	 m_lastTime = m_currentTime;	// とりあえず同じ値を格納
 	 m_updateFrameRateTime = m_currentTime;
  }
-
  //-------------------------------------
  //		フレームを進めていいか判断
  //-------------------------------------
@@ -39,7 +38,6 @@ int		CFrameRate::m_lastTime;
 	 if (difTime >= FRAME_RATE_MILLI_SECOND)return true;
 	 else return false;
  }
-
  //-------------------------------------
  //		フレームレート計算
  //-------------------------------------
@@ -48,7 +46,6 @@ int		CFrameRate::m_lastTime;
 	 // 前回の時間を更新
 	 m_lastTime = m_currentTime;
  }
-
 //-------------------------------------
 //		FPS表示
 //-------------------------------------
