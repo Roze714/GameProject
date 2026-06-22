@@ -7,15 +7,15 @@ class Collision
 public:
 
 	//*****************
-	//	2D用関数
+	//		2D用関数
 	//*****************
 
 	// 点と四角の当たり判定
-	//	dotPos		:	点の座標
-	//	squarePos	:	四角形の中心座標
-	//	width		:	四角形の横幅
-	//	height		:	四角形の縦幅
-	//	@return		:	true=当たった　false=当たっていない
+//	dotPos		:	点の座標
+//	squarePos	:	四角形の中心座標
+//	width		:	四角形の横幅
+//	height		:	四角形の縦幅
+//	@return		:	true=当たった　false=当たっていない
 	static bool ChekHitDotToSquare(VECTOR dotPos, VECTOR squarePos,
 		int width, int height);
 
@@ -34,11 +34,10 @@ public:
 	static bool CheckHitCircleToCircle(VECTOR circlePos1, int radius1,
 		VECTOR circlePos2, int radius2);
 
-	
 	//*****************
 	//		3D用関数
 	//*****************
-
+	
 	// 立方体同士の当たり判定
 	//	pos			:	箱の中心座標
 	//	size		:	箱のサイズ
@@ -52,8 +51,7 @@ public:
 	//	@return		:	true=当たった　false=当たっていない
 	static bool CheckHitSphereToSphere(VECTOR spherePos1, float radius1,
 		VECTOR spherePos2, float radius2);
-
-
+private:
 
 };
 

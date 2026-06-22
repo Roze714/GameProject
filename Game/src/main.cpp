@@ -54,6 +54,7 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 		ClearDrawScreen();	// 画面クリア
 
+
 		// フレームレート計算
 		CFrameRate::Calc();
 

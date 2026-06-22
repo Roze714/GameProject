@@ -1,4 +1,4 @@
-#include"Enemy2.h"
+#include"Enemy3.h"
 #include<math.h>
 #include"../../System/SoundManager.h"
 #define DEBUG
@@ -6,15 +6,15 @@
 //定義関連-----------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 //移動速度
-float ENEMY2_SPEED = 2.0f;
+float ENEMY3_SPEED = 2.0f;
 //当たり判定
-float RADIUS2 = 3.0;
+float RADIUS3 = 3.0;
 //--------------------------------------
 
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-CEnemy2::CEnemy2()
+CEnemy3::CEnemy3()
 {
 	Init();
 	
@@ -23,7 +23,7 @@ CEnemy2::CEnemy2()
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
-CEnemy2::~CEnemy2()
+CEnemy3::~CEnemy3()
 {
 	Exit();			// 念のためモデルデータを破棄
 }
@@ -31,18 +31,18 @@ CEnemy2::~CEnemy2()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void CEnemy2::Init()
+void CEnemy3::Init()
 {
 	m_vPos = ZERO;
 	m_iHndl = -1;
-	m_Radius = RADIUS2;
+	m_Radius = RADIUS3;
 	m_isActive = false;			// 最初は表示しない
 }
 
 //------------------------------------------------
 //		ロード
 //------------------------------------------------
-void CEnemy2::Load(int orginHndl)
+void CEnemy3::Load(int orginHndl)
 {
 	if (m_iHndl == -1)
 	{
@@ -53,7 +53,7 @@ void CEnemy2::Load(int orginHndl)
 //------------------------------------------------
 //		終了時に破棄
 //------------------------------------------------
-void CEnemy2::Exit()
+void CEnemy3::Exit()
 {
 	if (m_iHndl != -1)
 	{
@@ -66,7 +66,7 @@ void CEnemy2::Exit()
 //------------------------------------------------
 //		毎フレーム呼ぶ処理
 //------------------------------------------------
-void CEnemy2::Step()
+void CEnemy3::Step()
 {
 	// 呼び出されていない場合は終了
 	if (!m_isActive)return;
@@ -86,7 +86,7 @@ void CEnemy2::Step()
 //------------------------------------------------
 //		モデルの更新
 //------------------------------------------------
-void CEnemy2::Updete()
+void CEnemy3::Updete()
 {
 	// 座標を設定する
 	MV1SetPosition(m_iHndl, m_vPos);
@@ -96,7 +96,7 @@ void CEnemy2::Updete()
 //------------------------------------------------
 //		描画
 //------------------------------------------------
-void CEnemy2::Draw()
+void CEnemy3::Draw()
 {
 	if (m_isActive)
 	{
@@ -117,7 +117,7 @@ void CEnemy2::Draw()
 //------------------------------------------------
 //		敵をリクエスト
 //------------------------------------------------
-bool CEnemy2::Request(const VECTOR& pos, const VECTOR& speed)
+bool CEnemy3::Request(const VECTOR& pos, const VECTOR& speed)
 {
 	// すでに発砲されている弾は失敗
 	if (m_isActive)return false;
@@ -133,7 +133,7 @@ bool CEnemy2::Request(const VECTOR& pos, const VECTOR& speed)
 //------------------------------------------------
 //		当たり判定の座標用
 //------------------------------------------------
-VECTOR CEnemy2::GetCenter()
+VECTOR CEnemy3::GetCenter()
 {
 	// 基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -147,7 +147,7 @@ VECTOR CEnemy2::GetCenter()
 //------------------------------------------------
 //		ヒット後の処理
 //------------------------------------------------
-void CEnemy2::HitCalc()
+void CEnemy3::HitCalc()
 {
 	// エネミー爆発音
 	CSoundManager::Play(CSoundManager::SE_EXPLOSION);

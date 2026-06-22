@@ -161,7 +161,7 @@
     <ClCompile Include="src\lib\Fade\Fade.cpp" />
     <ClCompile Include="src\lib\Frame\Frame.cpp" />
     <ClCompile Include="src\lib\Math\Collision.cpp" />
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game\Camera\CameraManager.h" />

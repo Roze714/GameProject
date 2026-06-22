@@ -1,25 +1,23 @@
 #pragma once
 
-// フレームレート管理用クラス
-class FrameRate {
-private:
-	static double	m_frameRate;				//フレームレート(画面表示用)
-	static int		m_count;					//フレーム数カウント
-	static int		m_updateFrameRateTime;		//フレームレート更新時間
-	static int		m_currentTime;				//現在のPC時間
-	static int		m_lastTime;					//1フレーム前のPC時間
+//===============
+//変数関連初期化
+//===============
+void InitFps();
 
-public:
-	//		フレームレート初期化
-	static void Init();
-	//		フレームを進めていいか判断
-	static bool CheckNext();
-	//		フレームレート計算
-	static void Calc();
-	//		FPS表示
-	static void PrintFps();
-};
+//--------------------------
+//次のフレームに進めていいか
+//--------------------------
+bool IsNextFrame();
 
+//----------------
+//FPS更新処理
+//---------------
+void StepFps();
 
+//-----------------
+//FPS表示関数
+//-----------------
+void PrintFps(void);
 
 

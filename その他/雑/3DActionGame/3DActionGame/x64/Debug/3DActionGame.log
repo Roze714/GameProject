@@ -1,43 +1,28 @@
-﻿  CameraManager.cpp
+﻿  Data.cpp
+  fade.cpp
+C:\Users\2409424\Desktop\3DActionGame\src\lib\fade\fade.cpp(70,30): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\2409424\Desktop\3DActionGame\src\lib\fade\fade.cpp(70,17): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  frame.cpp
+  input.cpp
+  collision.cpp
+  main.cpp
+  CameraManager.cpp
   DebugCamera.cpp
   PlayCamera.cpp
   CollisionManager.cpp
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\game\Collision\CollisionManager.cpp(64,39): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\game\Collision\CollisionManager.cpp(64,15): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\game\Collision\CollisionManager.cpp(88,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\game\Collision\CollisionManager.cpp(88,15): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   Enemy.cpp
-  Enemy2.cpp
-\src\game\Enemy\Enemy2.cpp(1,1): error C1083: ソース ファイルを開けません。'src\game\Enemy\Enemy2.cpp':No such file or directory
-  (ソース ファイル '/src/game/Enemy/Enemy2.cpp' をコンパイルしています)
-  
   EnemyManager.cpp
-  Enemy2Manager.cpp
-\src\game\Enemy\Enemy2Manager.cpp(1,1): error C1083: ソース ファイルを開けません。'src\game\Enemy\Enemy2Manager.cpp':No such file or directory
-  (ソース ファイル '/src/game/Enemy/Enemy2Manager.cpp' をコンパイルしています)
-  
   Field.cpp
   Goal.cpp
   Player.cpp
-  SceneGameClear.cpp
-  ScenePlay.cpp
-\src\game\Scene\ScenePlay.cpp(1,1): error C1083: ソース ファイルを開けません。'src\game\Scene\ScenePlay.cpp':No such file or directory
-  (ソース ファイル '/src/game/Scene/ScenePlay.cpp' をコンパイルしています)
-  
+  PlayScene.cpp
   SceneManager.cpp
-  SceneGameOver.cpp
+  SceneResult.cpp
   SceneTitle.cpp
-  SoundManager.cpp
-  Fade.cpp
-  Frame.cpp
-  Input.cpp
+  Shot.cpp
   コードを生成中...
   コンパイル中...
-  Collision.cpp
-  Main.cpp
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\Main.cpp(37,2): error C2065: 'SceneManager': 定義されていない識別子です。
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\Main.cpp(37,16): error C2146: 構文エラー: ';' が、識別子 'SceneManager' の前に必要です。
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\Main.cpp(37,16): error C2065: 'SceneManager': 定義されていない識別子です。
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\Main.cpp(66,3): error C2065: 'SceneManager': 定義されていない識別子です。
-C:\Users\2409424\Desktop\GitHub\GameProject\3DActionGame\src\Main.cpp(70,3): error C2065: 'SceneManager': 定義されていない識別子です。
+  ShotManager.cpp
+  SoundManager.cpp
   コードを生成中...
+  3DActionGame.vcxproj -> C:\Users\2409424\Desktop\3DActionGame\x64\Debug\3DActionGame.exe

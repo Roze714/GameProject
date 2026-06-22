@@ -2,7 +2,7 @@
 #include <DxLib.h>
 
 // 敵を管理するクラス
-class CEnemy2{
+class CEnemy3{
 private:
 	VECTOR	m_vPos;				//座標
 	VECTOR	m_vSpeed;			//移動速度
@@ -12,8 +12,8 @@ private:
 public:
 
 	// コンストラクタ・デストラクタ
-	CEnemy2();
-	~CEnemy2();
+	CEnemy3();
+	~CEnemy3();
 
 	// 初期化
 	// @vPos	:	座標

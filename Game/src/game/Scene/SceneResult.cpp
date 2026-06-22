@@ -146,3 +146,16 @@ int CSceneResult::Loop()
 	return result;
 }
 
+//-------------------------------------
+//		終了処理
+//-------------------------------------
+void CSceneResult::Exit()
+{
+	//画像データ削除
+	if (m_Hndl != -1)
+	{
+		DeleteGraph(m_Hndl);
+		m_Hndl = -1;
+	}
+}
+

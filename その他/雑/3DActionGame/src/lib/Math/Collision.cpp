@@ -132,4 +132,3 @@ bool  Collision::CheckHitSphereToSphere(VECTOR spherePos1, float radius1,
 	}
 	else return false;
 }
-	

@@ -5,6 +5,7 @@
 #include"../Camera/CameraManager.h"
 #include"../Enemy/Enemy1/EnemyManager.h"
 #include"../Enemy/Enemy2/EnemyManager2.h"
+#include"../Enemy/Enemy3/EnemyManager3.h"
 #include"../Field/Field.h"
 #include"../System/SoundManager.h"
 #include"../Shot/ShotManager.h"
@@ -32,6 +33,7 @@ private:
 	CShotManager	m_Shot;						// ’e
 	CEnemyManager	m_Enemy;					// “G
 	CEnemyManager2	m_Enemy2;					// “G2
+	CEnemyManager3	m_Enemy3;					// “G3
 	CCameraManager	m_CameraManager;			// ƒJƒƒ‰
 	CField			m_Field;					// ƒtƒB[ƒ‹ƒh
 	tagScene		m_SceneID;					// ƒV[ƒ“•Û‘¶

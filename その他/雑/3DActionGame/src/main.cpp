@@ -2,8 +2,7 @@
 #include <memory>
 #include "DxLib.h"
 #include<math.h>
-#include"game/Scene/SceneManager.h"
-#include"lib/Frame/Frame.h"
+#include"src/Scene/SceneManager.h"
 
 
 // プログラムは WinMain から始まります
@@ -30,9 +29,10 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
 
-	//FPS関連の初期化
-	FrameRate::Init();
+
 	
+	
+
 	//シーン
 	SceneManager  SceneManager;
 
@@ -43,37 +43,38 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	//ゲームメインループ
 	while (ProcessMessage() != -1)
 	{
-
-		Sleep(1);	//システムに処理を返す
-
 		//エスケープキーが押されたら終了
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1) break;
-		//フレームを進めていいか判断
-		if (!FrameRate::CheckNext()) continue;
-
 
 		ClearDrawScreen();	// 画面クリア
 
-		//フレームレート計算
-		FrameRate::Calc();
-
-
 		//ここにゲームの本体を書く
 		
-		//FPSの表示
-		FrameRate::PrintFps();
-
 		SceneManager.Loop();
 
+		// モデル表示
 		
 		
 		SceneManager.Draw();
 		
-		
+		XINPUT_STATE input;
+		// 入力状態を取得
+		GetJoypadXInputState(DX_INPUT_PAD1, &input);
+		// 画面に XINPUT_STATE の中身を描画
+		int Color = GetColor(0, 255, 255);
+		DrawFormatString(0, 0, Color, "LeftTrigger:%d RightTrigger:%d",
+			input.LeftTrigger, input.RightTrigger);
+		DrawFormatString(0, 16, Color, "ThumbLX:%d ThumbLY:%d",
+			input.ThumbLX, input.ThumbLY);
+		DrawFormatString(0, 32, Color, "ThumbRX:%d ThumbRY:%d",
+			input.ThumbRX, input.ThumbRY);
+		DrawString(0, 64, "Button", Color);
+		for (int i = 0; i < 16; i++)
+		{
+			DrawFormatString(64 + i % 8 * 64, 64 + i / 8 * 16, Color,
+				"%2d:%d", i, input.Buttons[i]);
+		}
 
-
-		//FPS表示
-		FrameRate::PrintFps();
 		
 		ScreenFlip();		// 描画切り替え
 

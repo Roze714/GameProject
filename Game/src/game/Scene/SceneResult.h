@@ -34,15 +34,11 @@ private:
 	// 初期化
 	void Init(void);
 
-	//// 終了処理
-	//void Exit();
+	// 終了処理
+	void Exit();
 
 	// 毎フレーム呼ぶ処理
 	int Step();
 };
-
-
-
-
 
 

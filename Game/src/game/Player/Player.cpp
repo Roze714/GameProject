@@ -81,7 +81,7 @@ void CPlayer::Step(CShotManager& shot)
 {
 	
 	// 弾の発射
-	if (CheckHitKey(KEY_INPUT_Z))
+	if (CheckHitKey(KEY_INPUT_E))
 	{
 		VECTOR speed;
 		// 移動速度を三角関数で計算する
@@ -94,12 +94,12 @@ void CPlayer::Step(CShotManager& shot)
 	// プレイヤーの移動
 	float speed = 0.0f;			// 実際の進む速度
 
-	// 前進
+	// 右移動
 	if (CheckHitKey(KEY_INPUT_D))
 	{
 		speed = -PL_SPEED;
 	}
-	// 後退
+	// 左移動
 	if (CheckHitKey(KEY_INPUT_A))
 	{
 		speed = PL_SPEED;

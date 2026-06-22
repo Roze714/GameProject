@@ -30,8 +30,10 @@ private:
 	void Init();
 	//キー入力情報更新
 	void Update();
+
 	//キー入力判定(通常判定) プレイヤー1
 	bool IsInputRep(unsigned int key);
+
 	//キー入力判定(トリガー判定) プレイヤー1
 	bool IsInputTrg(unsigned int key);
 

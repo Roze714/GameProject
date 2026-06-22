@@ -22,7 +22,7 @@ CEnemyManager2::CEnemyManager2()
 void CEnemyManager2::Init()
 {
 	for (int i = 0; i < ENEMY2_NUM; i++)
-		m_enemy2[i].Init();
+		m_Enemy2[i].Init();
 	m_waitCount = 0;
 }
 
@@ -32,7 +32,7 @@ void CEnemyManager2::Init()
 void  CEnemyManager2::Step()
 {
 	for (int i = 0; i < ENEMY2_NUM; i++)
-		m_enemy2[i].Step();
+		m_Enemy2[i].Step();
 	// 敵を出現する
 	m_waitCount--;
 	if (m_waitCount <= 0)
@@ -48,7 +48,7 @@ void  CEnemyManager2::Step()
 void CEnemyManager2::Updete()
 {
 	for (int i = 0; i < ENEMY2_NUM; i++)
-		m_enemy2[i].Updete();
+		m_Enemy2[i].Updete();
 }
 
 //------------------------------------------------
@@ -60,7 +60,7 @@ void CEnemyManager2::Load()
 	int iHndl = MV1LoadModel(ENEMY2_MODEL_PATH);
 	//	モデルを複製
 	for (int i = 0; i < ENEMY2_NUM; i++)
-		m_enemy2[i].Load(iHndl);
+		m_Enemy2[i].Load(iHndl);
 	
 	//	オリジナル削除
 	MV1DeleteModel(iHndl);
@@ -72,7 +72,7 @@ void CEnemyManager2::Load()
 void CEnemyManager2::Exit()
 {
 	for (int i = 0; i < ENEMY2_NUM; i++)
-		m_enemy2[i].Exit();
+		m_Enemy2[i].Exit();
 }
 
 //------------------------------------------------
@@ -81,7 +81,7 @@ void CEnemyManager2::Exit()
 void CEnemyManager2::Draw()
 {
 	for (int i = 0; i < ENEMY2_NUM; i++)
-		m_enemy2[i].Draw();
+		m_Enemy2[i].Draw();
 }
 
 //------------------------------------------------
@@ -96,7 +96,7 @@ void CEnemyManager2::Request()
 	for (int i = 0; i < ENEMY2_NUM; i++)
 	{
 		// 敵を発射
-		if (m_enemy2[i].Request(pos, speed))
+		if (m_Enemy2[i].Request(pos, speed))
 		{
 			// 一発発射が出来たら終了
 			break;

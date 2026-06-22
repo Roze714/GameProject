@@ -7,7 +7,7 @@ static const int ENEMY2_NUM = 150;
 // “G‘S‘Ì‚ğŠÇ—‚·‚éƒNƒ‰ƒX
 class CEnemyManager2 {
 private:
-	CEnemy2 m_enemy2[ENEMY2_NUM];		// “G
+	CEnemy2 m_Enemy2[ENEMY2_NUM];		// “G
 	int m_waitCount;					// “G‚ªo‚é‚Ü‚Å‚ÌŠÔ
 
 public:
@@ -38,7 +38,7 @@ public:
 
 	// “G1‘Ì•ª‚Ìî•ñ
 	// @id	:	”z—ñ”Ô†
-	CEnemy2& GetShot(int id) { return m_enemy2[id]; }
+	CEnemy2& GetShot(int id) { return m_Enemy2[id]; }
 };
 
 

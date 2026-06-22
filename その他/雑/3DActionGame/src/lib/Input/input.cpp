@@ -1,6 +1,5 @@
-#include "Input.h"
+#include "input.h"
 #include <DxLib.h>
-
 
 //ƒL[“ü—Í
 typedef struct {
@@ -27,6 +26,7 @@ Input::Input()
 //---------------------
 Input::~Input()
 {
+
 }
 
 //----------------------

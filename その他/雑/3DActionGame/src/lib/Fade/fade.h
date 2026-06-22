@@ -1,63 +1,47 @@
 #pragma once
 
-class CFade
+class Fade
 {
 public:
-	enum class FadeState {
-		FADE_NON,		//フェードなし
-		FADE_IN,		//フェードイン
-		FADE_OUT,		//フェードアウト
-	};
-private:
-	static CFade* m_instance;	//インスタンス
 	
-	float		m_cut;			//フェードのアルファ値
-	float		m_spd;			//フェード速度
-	FadeState	m_fade;			//フェードの状態
-	int			m_windowX;		//ウィンドウサイズ　横
-	int			m_windowY;		//ウィンドウサイズ　縦
+//フェードの各種の状態
+	enum tagFadeState {
+		FADE_NON,		//フェードなし
+		FADE_IN,		//フェードイン中(徐々に画面が出現)
+		FADE_OUT,		//フェードアウト中(徐々に画面が消える)
+		FADE_OUT_WAIT,	//フェードアウト後の真っ暗状態
+	};
+
+	//フェード処理用構造体
+	typedef struct {
+		tagFadeState m_state;		//現在のフェード状況
+		int m_count;				//フェード時間のカウント
+	}FADE_DATA;
+
+	FADE_DATA g_fade;
 
 
-public:
-	//シングルトン------------------------------------
-	//		インスタンス取得
-	static CFade*	GetInstance(void);
-
-	//		メモリ確保
-	static void		Alloc(void);
-	//		メモリ解放
-	static void		Release(void);
-	//------------------------------------------------
-
-	//フェード関連------------------------------------
-	//		フェード削除
-	void		Reset(void) { m_fade = FadeState::FADE_NON; }
-	//		フェードリクエスト
-	//	@speed		:	フェードの速度　0～255
-	//	@isFadeIn	:	true=フェードイン　else=フェードアウト
-	void		RequestFade(float	speed, bool isFadeIn);
-	//		更新処理
-	void		Update(void);
-	//		描画処理
-	void		Draw(void);
-	//		終了判定
-	//	@return :	true=終了	else=まだ終了ではない
-	bool		IsEnd(void);
-	//		現在のフェードの状態取得
-	FadeState	GetState(void) { return m_fade; }
-	//		ウィンドウサイズ設定
-	void		SetWindowSize(int x, int y) { m_windowX = x; }
-	//------------------------------------------------
-
+	//コンストラクタ・デストラクタ
+	Fade();
+	~Fade();
 
 private:
-	//		コンストラクタ・デストラクタ
-	CFade();
-	~CFade();
+//　フェードの初期化
+void InitFade();
+//　フェード処理関数
+void UpdateFade();
+//　フェード用の画像描画
+void DrawFade();
 
-	//		コピーコンストラクタ・代入演算子
-	CFade(const CFade& other);
-	CFade& operator= (const CFade& other);
+//フェードインリクエスト
+void RequestFadeIn();
+//フェードアウトリクエスト
+void RequestFadeOut();
+//フェードインが終了したか
+bool IsEndFadeIn();
+//フェードアウトが終了したか
+bool IsEndFadeOut();
+
 };
 
 

@@ -1,111 +1,119 @@
-#include"Fade.h"
+#include"fade.h"
 #include<DxLib.h>
 
-CFade* CFade::m_instance = nullptr;
+//定義関連-----------------------
+#define FADE_SPEED	(10)		//
+#define FADE_SIZE_X	(640.0f)	//画像サイズ(横)
+#define FADE_SIZE_Y	(480.0f)	//画像サイズ(縦)
+//-------------------------------
 
-
-//------------------------------------------------
-//		インスタンス取得
-//------------------------------------------------
-CFade*	CFade::GetInstance(void)
+Fade::Fade()
 {
-	Alloc();
-	return m_instance;
+	InitFade();
 }
 
-//------------------------------------------------
-//		メモリ確保
-//------------------------------------------------
-void	CFade::Alloc(void)
+Fade::~Fade()
 {
-	if (m_instance == nullptr)
+}
+
+//---------------------
+//フェードの初期化
+//---------------------
+void Fade::InitFade()
+{
+	g_fade.m_state = FADE_NON;
+	g_fade.m_count = 0;
+}
+
+//---------------------
+//フェード処理更新
+//---------------------
+void Fade::UpdateFade()
+{
+	switch (g_fade.m_state)
 	{
-		m_instance = new CFade;
-		m_instance->Reset();
-	}
-}
-
-//------------------------------------------------
-//		メモリ解放
-//------------------------------------------------
-void	CFade::Release(void)
-{
-	if (m_instance==nullptr)
-	{
-		delete m_instance;
-		m_instance = nullptr;
-	}
-}
-//------------------------------------------------
-//		コンストラクタ
-//------------------------------------------------
-CFade::CFade(void):m_cut(0.0f),m_spd(0.0f),m_fade(FadeState::FADE_NON),
-					m_windowX(1280),m_windowY(960)
-{
-}
-//------------------------------------------------
-//		デストラクタ
-//------------------------------------------------
-CFade::~CFade(void)
-{
-}
-
-//------------------------------------------------
-//		フェードリクエスト
-//------------------------------------------------
-void	CFade::RequestFade(float	speed, bool isFadeIn)
-{
-	m_spd = speed;
-	m_fade = isFadeIn ? FadeState::FADE_IN : FadeState::FADE_OUT;
-	m_cut = isFadeIn ? 255.0f : 0.0f;
-}
-
-
-//------------------------------------------------
-//		更新処理
-//------------------------------------------------
-void	CFade::Update(void)
-{
-	switch (m_fade)
-	{
-	case FadeState::FADE_IN:
-		m_cut -= m_spd;
-		if (m_cut < 0.0f)m_cut = 0.0f;
+	case FADE_IN:
+		//徐々に数字を減らして明るくする
+		g_fade.m_count -= FADE_SPEED;
+		if (g_fade.m_count <= 0)
+		{
+			g_fade.m_count = 0;
+			g_fade.m_state = FADE_NON;
+		}
 		break;
-	case FadeState::FADE_OUT:
-		m_cut += m_spd;
-		if (m_cut > 255.0f)m_cut = 0.0f;
+	case FADE_OUT:
+		//徐々に数字を増やして暗くする
+		g_fade.m_count += FADE_SPEED;
+		if (g_fade.m_count >= 255)
+		{
+			g_fade.m_count = 255;
+			g_fade.m_state = FADE_OUT_WAIT;
+		}
 		break;
 	}
 }
-//------------------------------------------------
-//		描画処理
-//------------------------------------------------
-void	CFade::Draw(void)
-{
-	if (m_fade == FadeState::FADE_NON)return;
 
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, (int)m_cut);
-	DrawBox(0, 0, m_windowX, m_windowY, GetColor(0, 0, 0), TRUE);
-	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-}
-//------------------------------------------------
-//		終了判定
-//------------------------------------------------
-bool	CFade::IsEnd(void)
+//---------------------
+//フェード用の画像描画
+//---------------------
+void Fade::DrawFade()
 {
-	bool	isRet = true;
-
-	switch (m_fade)
+	switch (g_fade.m_state)
 	{
-	case FadeState::FADE_IN:
-		if (m_cut > 0.0f)	isRet = false;
-		break;
-	case FadeState::FADE_OUT:
-		if (m_cut < 255.0f)	isRet = false;
-		break;
+	case FADE_IN:
+	case FADE_OUT:
+	case FADE_OUT_WAIT:
+		//まずはここでアルファ値をセットする
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, g_fade.m_count);
 
+		//フェード用の黒い四角を表示
+		DrawBox(0, 0, FADE_SIZE_X, FADE_SIZE_Y,
+			GetColor(0, 0, 0), TRUE);
+		
+		//ほかの画像に影響を出さないよう、初期設定に戻す
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+		break;
 	}
-
-	return isRet;
 }
+
+
+//フェードインリクエスト
+void Fade::RequestFadeIn()
+{
+	//徐々に明るくするので、最初はMAXに
+	g_fade.m_count = 255;
+	g_fade.m_state = FADE_IN;
+}
+
+//フェードアウトリクエスト
+void Fade::RequestFadeOut()
+{
+	//徐々に暗くするので、最初は透明の0に
+	g_fade.m_count = 0;
+	g_fade.m_state = FADE_OUT;
+}
+
+//フェードインが終了したか
+bool Fade::IsEndFadeIn()
+{
+	//フェードイン時はまだやっている
+	if (g_fade.m_state == FADE_IN)
+	{
+		return false;
+	}
+	//他はすべて少なくともフェードインではない
+	else return true;
+}
+
+//フェードアウトが終了したか
+bool Fade::IsEndFadeOut()
+{
+	//フェードアウト時はまだやっている
+	if (g_fade.m_state == FADE_OUT)
+	{
+		return false;
+	}
+	//他はすべて少なくともフェードアウトではない
+	else return true;
+}
+

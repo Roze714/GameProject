@@ -5,6 +5,7 @@
 //タイトルシーンを管理するクラス
 class CSceneTitle{
 private:
+
 	enum tagScene
 	{
 		INIT,		// 初期化
@@ -34,8 +35,8 @@ private:
 	// 初期化
 	void Init(void);
 
-	//// 終了処理
-	//void Exit();
+	// 終了処理
+	void Exit();
 	
 	// 毎フレーム呼ぶ処理
 	int Step();

@@ -26,7 +26,6 @@ void CSoundManager::Load()
 	{
 		int hndl = LoadSoundMem(filePath[i]);
 		m_hndl.push_back(hndl);
-
 	}
 }
 
@@ -54,7 +53,6 @@ bool CSoundManager::Play(tagID id,
 	int ret = PlaySoundMem(m_hndl[id], type, isStart);
 	if (ret == -1)return false;
 	else return true;
-	
 }
 
 //------------------------------------------------
@@ -86,5 +84,4 @@ void CSoundManager::StopAll()
 	 if (result == 1)return true;
 	 else return false;
 }
-
 

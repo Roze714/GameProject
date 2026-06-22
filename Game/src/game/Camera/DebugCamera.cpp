@@ -1,8 +1,6 @@
 #include "DebugCamera.h"
 #include<math.h>
 
-
-
 //’è‹`ŠÖ˜A-------------------------------------------------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 static const float MOVE_SPEED = 1.0f;

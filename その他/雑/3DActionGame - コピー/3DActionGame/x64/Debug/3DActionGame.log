@@ -1,0 +1,449 @@
+﻿  Fade.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\lib\fade\Fade.h(34,30): error C2065: 'FADE_NON': 定義されていない識別子です。
+  (ソース ファイル 'src/lib/fade/Fade.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\lib\fade\Fade.h(47,31): error C2440: 'return': 'CFade::FadeState' から 'int' に変換できません。
+  (ソース ファイル 'src/lib/fade/Fade.cpp' をコンパイルしています)
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\lib\fade\Fade.h(47,31):
+      この変換には明示的なキャスト (static_cast、C スタイル キャスト、またはかっこで囲まれた関数スタイル キャスト) が必要です
+  
+  Frame.cpp
+  Input.cpp
+  Collision.cpp
+  Main.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(34,2): error C2653: 'FrameRate': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(34,13): error C3861: 'Init': 識別子が見つかりませんでした
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(52,8): error C2653: 'FrameRate': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(52,19): error C3861: 'CheckNext': 識別子が見つかりませんでした
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(58,3): error C2653: 'FrameRate': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(58,14): error C3861: 'Calc': 識別子が見つかりませんでした
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(64,3): error C2653: 'FrameRate': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(64,14): error C3861: 'PrintFps': 識別子が見つかりませんでした
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(93,3): error C2653: 'FrameRate': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\Main.cpp(93,14): error C3861: 'PrintFps': 識別子が見つかりませんでした
+  CameraManager.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(18,13): error C3646: 'm_Play': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Camera/CameraManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(18,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Camera/CameraManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(19,14): error C3646: 'm_Debug': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Camera/CameraManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(19,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Camera/CameraManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.cpp(27,2): error C2065: 'm_Play': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.cpp(28,2): error C2065: 'm_Debug': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.cpp(29,2): error C2065: 'm_Play': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.cpp(41,3): error C2065: 'm_Play': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.cpp(45,3): error C2065: 'm_Debug': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.cpp(57,3): error C2065: 'm_Play': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.cpp(61,3): error C2065: 'm_Debug': 定義されていない識別子です。
+  DebugCamera.cpp
+  PlayCamera.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.cpp(63,18): error C2440: '<function-style-cast>': 'int' から 'CDebugCamera' に変換できません。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.cpp(63,18):
+      'CDebugCamera::CDebugCamera': オーバーロードされた関数ですべての引数の型を変換できませんでした
+          C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.h(28,1):
+          'CDebugCamera::CDebugCamera(CDebugCamera &&)' の可能性があります
+              C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.cpp(63,18):
+              'CDebugCamera::CDebugCamera(CDebugCamera &&)': 引数 1 を 'int' から 'CDebugCamera &&' へ変換できません。
+                  C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.cpp(63,19):
+                  理由: 'int' から 'CDebugCamera' へは変換できません。
+          C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.h(28,1):
+          または 'CDebugCamera::CDebugCamera(const CDebugCamera &)'
+              C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.cpp(63,18):
+              'CDebugCamera::CDebugCamera(const CDebugCamera &)': 引数 1 を 'int' から 'const CDebugCamera &' へ変換できません。
+                  C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.cpp(63,19):
+                  理由: 'int' から 'const CDebugCamera' へは変換できません。
+          C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\DebugCamera.cpp(63,18):
+          引数リスト '(int)' を一致させようとしているとき
+  
+  CollisionManager.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Collision/CollisionManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): warning C4183: 'ShotManager': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+  (ソース ファイル 'src/src/Collision/CollisionManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,6): error C2143: 構文エラー: ';' が '&' の前にありません。
+  (ソース ファイル 'src/src/Collision/CollisionManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Collision/CollisionManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,24): error C2334: '{' の前に予期しないトークンがありました。関数の本体は無視されます
+  (ソース ファイル 'src/src/Collision/CollisionManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.h(45,12): error C2061: 構文エラー: 識別子 'ShotManager'
+  (ソース ファイル 'src/src/Collision/CollisionManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.h(14,3): error C2061: 構文エラー: 識別子 'ShotManager'
+  (ソース ファイル 'src/src/Collision/CollisionManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(7,25): error C2761: 'void CCollisionManager::CheckHitShotToEnemy(void)': メンバーの再宣言はできません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(7,2): error C2065: 'ShotManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(7,15): error C2065: 'shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(7,35): error C2065: 'enemy': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(7,21): error C2275: 'EnemyManager': 型の代わりに式が必要です
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(9,1): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,2): error C2059: 構文エラー: 'for'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,21): error C2143: 構文エラー: ')' が ';' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,30): error C2143: 構文エラー: ';' が '<' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,23): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,30): error C2059: 構文エラー: '<'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,51): error C2143: 構文エラー: ';' が '++' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,45): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,45): error C2086: 'int shotID': 再定義されました。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,23):
+      'shotID' の宣言を確認してください
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,51): error C2059: 構文エラー: '++'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(10,53): error C2059: 構文エラー: ')'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(11,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(11,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(41,1): error C2059: 構文エラー: '}'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(41,1): error C2143: 構文エラー: ';' が '}' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(47,1): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.cpp(47,1): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+  Enemy.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Enemy\Enemy.cpp(153,2): error C2653: 'SoundManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Enemy\Enemy.cpp(153,21): error C2653: 'SoundManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Enemy\Enemy.cpp(153,35): error C2065: 'SE_EXPLOSION': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Enemy\Enemy.cpp(153,16): error C3861: 'Play': 識別子が見つかりませんでした
+  EnemyManager.cpp
+  Field.cpp
+  Goal.cpp
+  Item.cpp
+  Player.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Player/Player.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): warning C4183: 'ShotManager': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+  (ソース ファイル 'src/src/Player/Player.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,6): error C2143: 構文エラー: ';' が '&' の前にありません。
+  (ソース ファイル 'src/src/Player/Player.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Player/Player.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,24): error C2334: '{' の前に予期しないトークンがありました。関数の本体は無視されます
+  (ソース ファイル 'src/src/Player/Player.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.h(45,12): error C2061: 構文エラー: 識別子 'ShotManager'
+  (ソース ファイル 'src/src/Player/Player.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(81,14): error C2761: 'void Player::Step(void)': メンバーの再宣言はできません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(81,19): error C2065: 'ShotManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(81,32): error C2065: 'shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(82,1): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(85,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(86,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(86,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(97,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(98,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(98,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(109,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(110,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(110,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(113,2): error C2059: 構文エラー: 'else'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(114,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(114,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(124,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(125,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(125,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(129,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(130,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(130,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(135,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(136,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(136,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(140,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(141,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(141,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(146,2): error C3927: '->': 後続の戻り値の型は、関数以外の宣言子の後に許可されていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(146,10): error C3484: 構文エラー: 戻り値の型の前に '->' が必要です
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(146,11): error C3613: '->' の後に戻り型が指定されていません ('int' と見なされます)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(146,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(146,11): error C2146: 構文エラー: ';' が、識別子 'x' の前に必要です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(147,2): error C3927: '->': 後続の戻り値の型は、関数以外の宣言子の後に許可されていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(147,10): error C3484: 構文エラー: 戻り値の型の前に '->' が必要です
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(147,11): error C3613: '->' の後に戻り型が指定されていません ('int' と見なされます)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(147,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(147,2): error C2086: 'int m_vSpeed': 再定義されました。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(146,2):
+      'm_vSpeed' の宣言を確認してください
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(147,11): error C2146: 構文エラー: ';' が、識別子 'y' の前に必要です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(148,2): error C3927: '->': 後続の戻り値の型は、関数以外の宣言子の後に許可されていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(148,10): error C3484: 構文エラー: 戻り値の型の前に '->' が必要です
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(148,11): error C3613: '->' の後に戻り型が指定されていません ('int' と見なされます)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(148,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(148,2): error C2086: 'int m_vSpeed': 再定義されました。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(146,2):
+      'm_vSpeed' の宣言を確認してください
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(148,11): error C2146: 構文エラー: ';' が、識別子 'z' の前に必要です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,11): error C2664: 'DxLib::VECTOR DxLib::VAdd(const DxLib::VECTOR &,const DxLib::VECTOR &)': 引数 1 を 'int' から 'const DxLib::VECTOR &' へ変換できません。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+      理由: 'int' から 'const DxLib::VECTOR' へは変換できません。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+      'DxLib::tagVECTOR::tagVECTOR': オーバーロードされた関数ですべての引数の型を変換できませんでした
+          C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(1305,1):
+          'DxLib::tagVECTOR::tagVECTOR(DxLib::tagVECTOR &&)' の可能性があります
+              C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+              'DxLib::tagVECTOR::tagVECTOR(DxLib::tagVECTOR &&)': 引数 1 を 'int' から 'DxLib::tagVECTOR &&' へ変換できません。
+                  C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+                  理由: 'int' から 'DxLib::tagVECTOR' へは変換できません。
+                  C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+                  変換には 2 番目のユーザー定義変換演算子またはコンストラクターが必要です。
+          C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(1305,1):
+          または 'DxLib::tagVECTOR::tagVECTOR(const DxLib::tagVECTOR &)'
+              C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+              'DxLib::tagVECTOR::tagVECTOR(const DxLib::tagVECTOR &)': 引数 1 を 'int' から 'const DxLib::tagVECTOR &' へ変換できません。
+                  C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+                  理由: 'int' から 'const DxLib::tagVECTOR' へは変換できません。
+                  C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+                  変換には 2 番目のユーザー定義変換演算子またはコンストラクターが必要です。
+          C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,16):
+          引数リスト '(int)' を一致させようとしているとき
+      C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用\DxLib.h(4266,18):
+      'DxLib::VAdd' の宣言を確認してください
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,11):
+      引数リスト '(int, int)' を一致させようとしているとき
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,9): error C2440: '初期化中': '_T' から 'int' に変換できません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,9): error C2440:         with
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,9): error C2440:         [
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,9): error C2440:             _T=DxLib::VECTOR
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,9): error C2440:         ]
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,9):
+      この変換を実行可能なユーザー定義変換演算子がないか、または演算子を呼び出せません。
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(154,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(157,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(161,2): error C3927: '->': 後続の戻り値の型は、関数以外の宣言子の後に許可されていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(161,8): error C3484: 構文エラー: 戻り値の型の前に '->' が必要です
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(161,9): error C3613: '->' の後に戻り型が指定されていません ('int' と見なされます)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(161,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(161,2): error C2086: 'int m_vPos': 再定義されました。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(150,2):
+      'm_vPos' の宣言を確認してください
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(161,9): error C2146: 構文エラー: ';' が、識別子 'y' の前に必要です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(163,10): error C2143: 構文エラー: ';' が '-=' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(163,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(163,10): error C2059: 構文エラー: '-='
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(164,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(166,2): error C2059: 構文エラー: 'if'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(167,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(167,2): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(173,1): error C2059: 構文エラー: '}'
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(173,1): error C2143: 構文エラー: ';' が '}' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(179,1): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.cpp(179,1): error C2447: '{': 対応する関数ヘッダーがありません (旧形式の仮引数リスト?)
+  PlayScene.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): warning C4183: 'ShotManager': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,6): error C2143: 構文エラー: ';' が '&' の前にありません。
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,24): error C2334: '{' の前に予期しないトークンがありました。関数の本体は無視されます
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.h(45,12): error C2061: 構文エラー: 識別子 'ShotManager'
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(18,13): error C3646: 'm_Play': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(18,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(19,14): error C3646: 'm_Debug': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(19,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(26,10): error C3646: 'm_Input': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(26,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(27,15): error C3646: 'm_Shot': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(27,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(29,16): error C3646: 'm_CameraManager': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(29,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Collision\CollisionManager.h(14,3): error C2061: 構文エラー: 識別子 'ShotManager'
+  (ソース ファイル 'src/src/Scene/PlayScene.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(33,2): error C2065: 'm_CameraManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(36,2): error C2065: 'm_Shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(52,2): error C2065: 'm_Shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(67,6): error C2065: 'm_CameraManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(67,33): error C2653: 'CameraManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(67,48): error C2065: 'ID_PLAY': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(69,17): error C2065: 'm_Shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(70,3): error C2065: 'm_Shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(80,3): error C2065: 'm_CameraManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(80,32): error C2653: 'CameraManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(80,47): error C2065: 'ID_DEBUG': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(84,3): error C2065: 'm_CameraManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(84,32): error C2653: 'CameraManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(84,47): error C2065: 'ID_PLAY': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(88,2): error C2653: 'CollisionManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(88,40): error C2065: 'm_Shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(88,20): error C3861: 'CheckHitShotToEnemy': 識別子が見つかりませんでした
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(89,2): error C2653: 'CollisionManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(89,20): error C3861: 'CheckHitPlayerToEnemy': 識別子が見つかりませんでした
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(99,2): error C2065: 'm_Shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(105,2): error C2065: 'm_CameraManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(106,2): error C2065: 'm_CameraManager': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(120,2): error C2065: 'm_Shot': 定義されていない識別子です。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.cpp(134,2): error C2065: 'm_Shot': 定義されていない識別子です。
+  ClearScene.cpp
+  GameoverScene.cpp
+  SceneManager.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): warning C4183: 'ShotManager': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,6): error C2143: 構文エラー: ';' が '&' の前にありません。
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,24): error C2334: '{' の前に予期しないトークンがありました。関数の本体は無視されます
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Player\Player.h(45,12): error C2061: 構文エラー: 識別子 'ShotManager'
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(18,13): error C3646: 'm_Play': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(18,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(19,14): error C3646: 'm_Debug': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Camera\CameraManager.h(19,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(26,10): error C3646: 'm_Input': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(26,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(27,15): error C3646: 'm_Shot': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(27,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(29,16): error C3646: 'm_CameraManager': 不明なオーバーライド指定子です
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\PlayScene.h(29,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\lib\Fade\Fade.h(34,30): error C2065: 'FADE_NON': 定義されていない識別子です。
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\lib\Fade\Fade.h(47,31): error C2440: 'return': 'CFade::FadeState' から 'int' に変換できません。
+  (ソース ファイル 'src/src/Scene/SceneManager.cpp' をコンパイルしています)
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\lib\Fade\Fade.h(47,31):
+      この変換には明示的なキャスト (static_cast、C スタイル キャスト、またはかっこで囲まれた関数スタイル キャスト) が必要です
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(24,2): error C2653: 'SoundManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(25,2): error C2653: 'SoundManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(38,2): error C2653: 'SoundManager': 識別子がクラス名でも名前空間名でもありません。
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(109,16): error C2259: 'CGameoverScene': 抽象クラスをインスタンス化できません。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\GameoverScene.h(6,7):
+      'CGameoverScene' の宣言を確認してください
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(109,16):
+      次のメンバーが原因です:
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(109,16):
+      'void CSceneBase::Exit(void)': は抽象型です
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneBase.h(17,15):
+      'CSceneBase::Exit' の宣言を確認してください
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(109,12): error C2259: 'CGameoverScene': 抽象クラスをインスタンス化できません。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\GameoverScene.h(6,7):
+      'CGameoverScene' の宣言を確認してください
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(109,12):
+      次のメンバーが原因です:
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(109,12):
+      'void CSceneBase::Exit(void)': は抽象型です
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneBase.h(17,15):
+      'CSceneBase::Exit' の宣言を確認してください
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(112,16): error C2259: 'CClearScene': 抽象クラスをインスタンス化できません。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\ClearScene.h(6,7):
+      'CClearScene' の宣言を確認してください
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(112,16):
+      次のメンバーが原因です:
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(112,16):
+      'void CSceneBase::Exit(void)': は抽象型です
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneBase.h(17,15):
+      'CSceneBase::Exit' の宣言を確認してください
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(112,12): error C2259: 'CClearScene': 抽象クラスをインスタンス化できません。
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\ClearScene.h(6,7):
+      'CClearScene' の宣言を確認してください
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(112,12):
+      次のメンバーが原因です:
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneManager.cpp(112,12):
+      'void CSceneBase::Exit(void)': は抽象型です
+      C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Scene\SceneBase.h(17,15):
+      'CSceneBase::Exit' の宣言を確認してください
+  
+  TitleScene.cpp
+  コードを生成中...
+  コンパイル中...
+  Shot.cpp
+  ShotManager.cpp
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Shot/ShotManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(15,2): warning C4183: 'ShotManager': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+  (ソース ファイル 'src/src/Shot/ShotManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,6): error C2143: 構文エラー: ';' が '&' の前にありません。
+  (ソース ファイル 'src/src/Shot/ShotManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,2): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+  (ソース ファイル 'src/src/Shot/ShotManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.h(46,24): error C2334: '{' の前に予期しないトークンがありました。関数の本体は無視されます
+  (ソース ファイル 'src/src/Shot/ShotManager.cpp' をコンパイルしています)
+  
+C:\Users\2409424\Desktop\3DActionGame - コピー\src\src\Shot\ShotManager.cpp(11,15): error C2600: 'CShotManager::CShotManager': コンパイラで生成された特殊メンバー関数を定義できません (クラスで最初に宣言されなければなりません)
+  SoundManager.cpp
+  コードを生成中...

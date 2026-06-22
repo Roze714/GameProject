@@ -49,7 +49,6 @@ int CScenePlay::Loop()
 			
 	}
 	return result;
-
 }
 
 //------------------------------------------------
@@ -62,6 +61,7 @@ void CScenePlay::Draw()
 	m_Shot.Draw();
 	m_Enemy.Draw();
 	m_Enemy2.Draw();
+	m_Enemy3.Draw();
 }
 
 //------------------------------------------------
@@ -76,6 +76,7 @@ void CScenePlay::Init()
 	m_Shot.Init();
 	m_Enemy.Init();
 	m_Enemy2.Init();
+	m_Enemy3.Init();
 }
 
 //------------------------------------------------
@@ -85,6 +86,7 @@ void CScenePlay::Exit()
 {
 	m_Enemy.Exit();
 	m_Enemy2.Exit();
+	m_Enemy3.Exit();
 	m_Player.Exit();
 	m_Shot.Exit();
 	m_Field.Exit();
@@ -100,6 +102,7 @@ void CScenePlay::Load()
 	m_Shot.Load();
 	m_Enemy.Load();
 	m_Enemy2.Load();
+	m_Enemy3.Load();
 	m_Field.Load();
 }
 
@@ -115,6 +118,7 @@ void CScenePlay::Step()
 		m_Shot.Step();
 		m_Enemy.Step();
 		m_Enemy2.Step();
+		m_Enemy3.Step();
 		m_Field.Step();
 	}
 
@@ -135,6 +139,10 @@ void CScenePlay::Step()
 	CCollisionManager::CheckHitShotToEnemy2(m_Shot, m_Enemy2);
 	CCollisionManager::CheckHitPlayerToEnemy2(m_Player, m_Enemy2);
 
+	CCollisionManager::CheckHitShotToEnemy3(m_Shot, m_Enemy3);
+	CCollisionManager::CheckHitPlayerToEnemy3(m_Player, m_Enemy3);
+
+
 	
 	// プレイヤーの生存フラグが消えたら、ゲーム終了へ
 	if (m_Player.IsActive() == false)
@@ -145,6 +153,7 @@ void CScenePlay::Step()
 	m_Player.Updete();
 	m_Enemy.Updete();
 	m_Enemy2.Updete();
+	m_Enemy3.Updete();
 	m_Shot.Updete();
 	m_Field.Updete();
 

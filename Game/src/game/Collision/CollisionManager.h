@@ -2,6 +2,7 @@
 #include"../Player/Player.h"
 #include"../Enemy/Enemy1/EnemyManager.h"
 #include"../Enemy/Enemy2/EnemyManager2.h"
+#include"../Enemy/Enemy3/EnemyManager3.h"
 #include"../Shot/ShotManager.h"
 
 
@@ -24,6 +25,15 @@ public:
 	// プレイヤーと敵2の当たり判定
 	static void CheckHitPlayerToEnemy2(
 		CPlayer& player, CEnemyManager2& enemy2);
+
+
+	// プレイヤーの弾と敵3の当たり判定
+	static void CheckHitShotToEnemy3(
+		CShotManager& shot, CEnemyManager3& enemy3);
+
+	// プレイヤーと敵2の当たり判定
+	static void CheckHitPlayerToEnemy3(
+		CPlayer& player, CEnemyManager3& enemy3);
 
 };
 
