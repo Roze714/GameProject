@@ -61,6 +61,9 @@
     <Filter Include="ソース ファイル\game\Enemy\Enemy3">
       <UniqueIdentifier>{4176f4a2-ceac-4250-863d-656df4685a5b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\game\Enemy\Enemy4">
+      <UniqueIdentifier>{fc8f4282-4cb0-4de2-8088-f98379d948b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -132,6 +135,12 @@
     <ClCompile Include="src\game\Enemy\Enemy3\EnemyManager3.cpp">
       <Filter>ソース ファイル\game\Enemy\Enemy3</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy4\Enemy4.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy\Enemy4\EnemyManager4.cpp">
+      <Filter>ソース ファイル\game\Enemy\Enemy4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\lib\Fade\Fade.h">
@@ -199,6 +208,12 @@
     </ClInclude>
     <ClInclude Include="src\game\Enemy\Enemy3\EnemyManager3.h">
       <Filter>ソース ファイル\game\Enemy\Enemy3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy4\Enemy4.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy\Enemy4\EnemyManager4.h">
+      <Filter>ソース ファイル\game\Enemy\Enemy4</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

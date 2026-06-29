@@ -76,6 +76,8 @@ void CCollisionManager::CheckHitPlayerToEnemy(
 		}
 	}
 }
+//--------------------------------------------------------------------------------------------------
+
 
 //敵2-----------------------------------------------------------------------------------------------
 //------------------------------------------------
@@ -153,9 +155,10 @@ void CCollisionManager::CheckHitPlayerToEnemy2(
 	}
 
 }
+//--------------------------------------------------------------------------------------------------
+
 
 //敵3-----------------------------------------------------------------------------------------------
-
 //------------------------------------------------
 //		プレイヤーの弾と敵3の当たり判定
 //------------------------------------------------
@@ -231,4 +234,83 @@ void CCollisionManager::CheckHitPlayerToEnemy3(
 	}
 
 }
+//--------------------------------------------------------------------------------------------------
 
+
+//敵4-----------------------------------------------------------------------------------------------
+//------------------------------------------------
+//		プレイヤーの弾と敵4の当たり判定
+//------------------------------------------------
+void CCollisionManager::CheckHitShotToEnemy4(
+	CShotManager& shot, CEnemyManager4& enemy4)
+{
+	for (int shotID = 0; shotID < PL_SHOT_NUM; shotID++)
+	{
+		CShot& oneShot = shot.GetShot(shotID);
+		if (oneShot.IsActive() == false) continue;
+
+		// 敵の数だけループ
+		for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
+		{
+			// 敵１袋分の情報を取得し、生存確認
+			CEnemy3& oneEnemy3 = enemy3.GetShot(enemyID);
+			if (oneEnemy3.IsActive() == false)continue;
+
+			// それぞれの座標と半径を所得
+			VECTOR shotPos = oneShot.GetCenter();
+			float shotRadius = oneShot.GetRadius();
+			VECTOR enemyPos = oneEnemy3.GetCenter();
+			float enemyRadius = oneEnemy3.GetRadius();
+
+			// 当たり判定開始
+			bool isHIt = CCollision::CheckHitSphereToSphere(
+				shotPos, shotRadius, enemyPos, enemyRadius);
+
+			if (isHIt == true)
+			{
+				// お互い当たった!!
+				oneShot.HitCalc();
+				oneEnemy3.HitCalc();
+
+			}
+		}
+	}
+}
+
+//------------------------------------------------
+//		プレイヤーと敵3の当たり判定
+//------------------------------------------------
+void CCollisionManager::CheckHitPlayerToEnemy3(
+	CPlayer& player, CEnemyManager3& enemy3)
+{
+	// プレイヤーが死んでいたら何もしない
+	if (player.IsActive() == false)return;
+
+	// 敵の数だけループ
+	for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
+	{
+		// 敵１袋分の情報を取得し、生存確認
+		CEnemy3& oneEnemy3 = enemy3.GetShot(enemyID);
+		if (oneEnemy3.IsActive() == false)continue;
+
+		// それぞれの座標と半径を所得
+		VECTOR playerPos = player.GetCenter();
+		float playerRadius = player.GetRadius();
+		VECTOR enemyPos = oneEnemy3.GetCenter();
+		float enemyRadius = oneEnemy3.GetRadius();
+
+		// 当たり判定開始
+		bool isHIt = CCollision::CheckHitSphereToSphere(
+			playerPos, playerRadius, enemyPos, enemyRadius);
+
+		if (isHIt == true)
+		{
+			// お互い当たった!!
+			player.HitCalc();
+			oneEnemy3.HitCalc();
+
+		}
+	}
+
+}
+//--------------------------------------------------------------------------------------------------
