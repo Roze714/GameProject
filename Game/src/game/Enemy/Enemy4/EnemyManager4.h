@@ -2,17 +2,17 @@
 #include"Enemy4.h"
 
 // 敵の最大数
-static const int ENEMY3_NUM = 150;
+static const int ENEMY4_NUM = 150;
 
 // 敵全体を管理するクラス
 class CEnemyManager4 {
 private:
-	CEnemy3 m_Enemy3[ENEMY3_NUM];		// 敵
+	CEnemy4 m_Enemy4[ENEMY4_NUM];		// 敵
 	int m_waitCount;					// 敵が出るまでの時間
 
 public:
 	// コンストラクタ
-	CEnemyManager3();
+	CEnemyManager4();
 
 
 	// 初期化
@@ -38,7 +38,7 @@ public:
 
 	// 敵1体分の情報
 	// @id	:	配列番号
-	CEnemy3& GetShot(int id) { return m_Enemy3[id]; }
+	CEnemy4& GetShot(int id) { return m_Enemy4[id]; }
 };
 
 

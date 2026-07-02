@@ -137,6 +137,7 @@ int CSceneTitle::Loop()
 			m_Hndl = -1;
 		}
 	case END:
+		Exit();
 		m_SceneID = INIT;
 		result = 1;
 		break;

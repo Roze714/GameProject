@@ -17,7 +17,7 @@ void CSoundManager::Load()
 {
 	const char* filePath[SOUND_NUM] = {
 		"Data/Sound/bgm00.mp3",
-		"Data/Sound/se_plshot.mp3"
+		"Data/Sound/se_plshot.mp3",
 		"Data/Sound/se_explore.mp3"
 	};
 
@@ -50,6 +50,13 @@ void CSoundManager::Exit()
 bool CSoundManager::Play(tagID id,
 	int type,bool isStart)
 {
+
+	if (id < 0 || static_cast<size_t>(id) >= m_hndl.size())
+	{
+		return false;
+	}
+
+
 	int ret = PlaySoundMem(m_hndl[id], type, isStart);
 	if (ret == -1)return false;
 	else return true;

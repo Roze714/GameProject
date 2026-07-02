@@ -153,9 +153,9 @@
     <ClCompile Include="src\game\Enemy\Enemy4\EnemyManager4.cpp" />
     <ClCompile Include="src\game\Field\Field.cpp" />
     <ClCompile Include="src\game\Player\Player.cpp" />
-    <ClCompile Include="src\game\Scene\SceneResult.cpp" />
     <ClCompile Include="src\game\Scene\SceneManager.cpp" />
     <ClCompile Include="src\game\Scene\ScenePlay.cpp" />
+    <ClCompile Include="src\game\Scene\SceneResult.cpp" />
     <ClCompile Include="src\game\Scene\SceneTitle.cpp" />
     <ClCompile Include="src\game\Shot\Shot.cpp" />
     <ClCompile Include="src\game\Shot\ShotManager.cpp" />
@@ -180,9 +180,9 @@
     <ClInclude Include="src\game\Enemy\Enemy4\EnemyManager4.h" />
     <ClInclude Include="src\game\Field\Field.h" />
     <ClInclude Include="src\game\Player\Player.h" />
-    <ClInclude Include="src\game\Scene\SceneResult.h" />
     <ClInclude Include="src\game\Scene\SceneManager.h" />
     <ClInclude Include="src\game\Scene\ScenePlay.h" />
+    <ClInclude Include="src\game\Scene\SceneResult.h" />
     <ClInclude Include="src\game\Scene\SceneTitle.h" />
     <ClInclude Include="src\game\Shot\Shot.h" />
     <ClInclude Include="src\game\Shot\ShotManager.h" />

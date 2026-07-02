@@ -1,7 +1,6 @@
 #include "CollisionManager.h"
 #include"../../lib/math/collision.h"
 
-//敵1-----------------------------------------------------------------------------------------------
 //------------------------------------------------
 //		プレイヤーの弾と敵の当たり判定
 //------------------------------------------------
@@ -76,10 +75,8 @@ void CCollisionManager::CheckHitPlayerToEnemy(
 		}
 	}
 }
-//--------------------------------------------------------------------------------------------------
 
 
-//敵2-----------------------------------------------------------------------------------------------
 //------------------------------------------------
 //		プレイヤーの弾と敵2の当たり判定
 //------------------------------------------------
@@ -155,7 +152,6 @@ void CCollisionManager::CheckHitPlayerToEnemy2(
 	}
 
 }
-//--------------------------------------------------------------------------------------------------
 
 
 //敵3-----------------------------------------------------------------------------------------------
@@ -234,10 +230,8 @@ void CCollisionManager::CheckHitPlayerToEnemy3(
 	}
 
 }
-//--------------------------------------------------------------------------------------------------
 
 
-//敵4-----------------------------------------------------------------------------------------------
 //------------------------------------------------
 //		プレイヤーの弾と敵4の当たり判定
 //------------------------------------------------
@@ -253,14 +247,14 @@ void CCollisionManager::CheckHitShotToEnemy4(
 		for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
 		{
 			// 敵１袋分の情報を取得し、生存確認
-			CEnemy3& oneEnemy3 = enemy3.GetShot(enemyID);
-			if (oneEnemy3.IsActive() == false)continue;
+			CEnemy4& oneEnemy4 = enemy4.GetShot(enemyID);
+			if (oneEnemy4.IsActive() == false)continue;
 
 			// それぞれの座標と半径を所得
 			VECTOR shotPos = oneShot.GetCenter();
 			float shotRadius = oneShot.GetRadius();
-			VECTOR enemyPos = oneEnemy3.GetCenter();
-			float enemyRadius = oneEnemy3.GetRadius();
+			VECTOR enemyPos = oneEnemy4.GetCenter();
+			float enemyRadius = oneEnemy4.GetRadius();
 
 			// 当たり判定開始
 			bool isHIt = CCollision::CheckHitSphereToSphere(
@@ -270,7 +264,7 @@ void CCollisionManager::CheckHitShotToEnemy4(
 			{
 				// お互い当たった!!
 				oneShot.HitCalc();
-				oneEnemy3.HitCalc();
+				oneEnemy4.HitCalc();
 
 			}
 		}
@@ -280,8 +274,8 @@ void CCollisionManager::CheckHitShotToEnemy4(
 //------------------------------------------------
 //		プレイヤーと敵3の当たり判定
 //------------------------------------------------
-void CCollisionManager::CheckHitPlayerToEnemy3(
-	CPlayer& player, CEnemyManager3& enemy3)
+void CCollisionManager::CheckHitPlayerToEnemy4(
+	CPlayer& player, CEnemyManager4& enemy4)
 {
 	// プレイヤーが死んでいたら何もしない
 	if (player.IsActive() == false)return;
@@ -290,14 +284,14 @@ void CCollisionManager::CheckHitPlayerToEnemy3(
 	for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
 	{
 		// 敵１袋分の情報を取得し、生存確認
-		CEnemy3& oneEnemy3 = enemy3.GetShot(enemyID);
-		if (oneEnemy3.IsActive() == false)continue;
+		CEnemy4& oneEnemy4 = enemy4.GetShot(enemyID);
+		if (oneEnemy4.IsActive() == false)continue;
 
 		// それぞれの座標と半径を所得
 		VECTOR playerPos = player.GetCenter();
 		float playerRadius = player.GetRadius();
-		VECTOR enemyPos = oneEnemy3.GetCenter();
-		float enemyRadius = oneEnemy3.GetRadius();
+		VECTOR enemyPos = oneEnemy4.GetCenter();
+		float enemyRadius = oneEnemy4.GetRadius();
 
 		// 当たり判定開始
 		bool isHIt = CCollision::CheckHitSphereToSphere(
@@ -307,10 +301,11 @@ void CCollisionManager::CheckHitPlayerToEnemy3(
 		{
 			// お互い当たった!!
 			player.HitCalc();
-			oneEnemy3.HitCalc();
+			oneEnemy4.HitCalc();
 
 		}
 	}
 
 }
-//--------------------------------------------------------------------------------------------------
+
+

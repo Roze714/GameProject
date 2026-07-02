@@ -12,8 +12,8 @@ private:
 public:
 
 	// コンストラクタ・デストラクタ
-	CEnemy3();
-	~CEnemy3();
+	CEnemy4();
+	~CEnemy4();
 
 	// 初期化
 	// @vPos	:	座標

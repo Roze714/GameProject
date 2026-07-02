@@ -96,16 +96,10 @@
     <ClCompile Include="src\game\Player\Player.cpp">
       <Filter>ソース ファイル\game\Player</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\Scene\SceneResult.cpp">
-      <Filter>ソース ファイル\game\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\Scene\SceneManager.cpp">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\game\Scene\ScenePlay.cpp">
-      <Filter>ソース ファイル\game\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\Scene\SceneTitle.cpp">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\game\System\SoundManager.cpp">
@@ -141,6 +135,12 @@
     <ClCompile Include="src\game\Enemy\Enemy4\EnemyManager4.cpp">
       <Filter>ソース ファイル\game\Enemy\Enemy4</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneResult.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Scene\SceneTitle.cpp">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\lib\Fade\Fade.h">
@@ -170,16 +170,10 @@
     <ClInclude Include="src\game\Player\Player.h">
       <Filter>ソース ファイル\game\Player</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\Scene\SceneResult.h">
-      <Filter>ソース ファイル\game\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="src\game\Scene\SceneManager.h">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Scene\ScenePlay.h">
-      <Filter>ソース ファイル\game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Scene\SceneTitle.h">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\game\System\SoundManager.h">
@@ -214,6 +208,12 @@
     </ClInclude>
     <ClInclude Include="src\game\Enemy\Enemy4\EnemyManager4.h">
       <Filter>ソース ファイル\game\Enemy\Enemy4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneResult.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Scene\SceneTitle.h">
+      <Filter>ソース ファイル\game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

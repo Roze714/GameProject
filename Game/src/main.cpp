@@ -14,7 +14,11 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	// スクリーン設定
 	ChangeWindowMode(TRUE);			// フルスクリーンorウィンドウモード
-	SetGraphMode(1280, 720, 32);	// ウィンドウのサイズ
+	//元のサイズ
+	//SetGraphMode(1280, 720, 32);	// ウィンドウのサイズ
+
+	SetGraphMode(780, 720, 32);	// ウィンドウのサイズ
+
 
 #ifndef _DEBUG
 	// リリース版はログを出さない

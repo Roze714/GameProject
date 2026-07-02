@@ -43,7 +43,7 @@ public:
 		CShotManager& shot, CEnemyManager4& enemy4);
 
 	// ƒvƒŒƒCƒ„[‚Æ“G4‚Ì“–‚½‚è”»’è
-	static void CheckHitPlayerToEnemy3(
+	static void CheckHitPlayerToEnemy4(
 		CPlayer& player, CEnemyManager4& enemy4);
 
 };

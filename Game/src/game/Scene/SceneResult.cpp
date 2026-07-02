@@ -123,7 +123,7 @@ int CSceneResult::Loop()
 		m_SceneID = MAIN;
 		break;
 	case MAIN:
-		Step();
+		//Step();
 		// Œˆ’èƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚½‚çŽŸ‚Ö
 		if (CheckHitKey(KEY_INPUT_Z) == true)
 		{
@@ -138,6 +138,7 @@ int CSceneResult::Loop()
 			m_Hndl = -1;
 		}
 	case END:
+		Exit();
 		m_SceneID = INIT;
 		result = 1;
 		break;

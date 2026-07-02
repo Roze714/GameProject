@@ -6,15 +6,15 @@
 //定義関連-----------------------------
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 //移動速度
-float ENEMY3_SPEED = 2.0f;
+float ENEMY4_SPEED = 2.0f;
 //当たり判定
-float RADIUS3 = 3.0;
+float RADIUS4 = 3.0;
 //--------------------------------------
 
 //------------------------------------------------
 //		コンストラクタ
 //------------------------------------------------
-CEnemy3::CEnemy3()
+CEnemy4::CEnemy4()
 {
 	Init();
 	
@@ -23,7 +23,7 @@ CEnemy3::CEnemy3()
 //------------------------------------------------
 //		デストラクタ
 //------------------------------------------------
-CEnemy3::~CEnemy3()
+CEnemy4::~CEnemy4()
 {
 	Exit();			// 念のためモデルデータを破棄
 }
@@ -31,18 +31,18 @@ CEnemy3::~CEnemy3()
 //------------------------------------------------
 //		初期化
 //------------------------------------------------
-void CEnemy3::Init()
+void CEnemy4::Init()
 {
 	m_vPos = ZERO;
 	m_iHndl = -1;
-	m_Radius = RADIUS3;
+	m_Radius = RADIUS4;
 	m_isActive = false;			// 最初は表示しない
 }
 
 //------------------------------------------------
 //		ロード
 //------------------------------------------------
-void CEnemy3::Load(int orginHndl)
+void CEnemy4::Load(int orginHndl)
 {
 	if (m_iHndl == -1)
 	{
@@ -53,7 +53,7 @@ void CEnemy3::Load(int orginHndl)
 //------------------------------------------------
 //		終了時に破棄
 //------------------------------------------------
-void CEnemy3::Exit()
+void CEnemy4::Exit()
 {
 	if (m_iHndl != -1)
 	{
@@ -66,7 +66,7 @@ void CEnemy3::Exit()
 //------------------------------------------------
 //		毎フレーム呼ぶ処理
 //------------------------------------------------
-void CEnemy3::Step()
+void CEnemy4::Step()
 {
 	// 呼び出されていない場合は終了
 	if (!m_isActive)return;
@@ -86,7 +86,7 @@ void CEnemy3::Step()
 //------------------------------------------------
 //		モデルの更新
 //------------------------------------------------
-void CEnemy3::Updete()
+void CEnemy4::Updete()
 {
 	// 座標を設定する
 	MV1SetPosition(m_iHndl, m_vPos);
@@ -96,7 +96,7 @@ void CEnemy3::Updete()
 //------------------------------------------------
 //		描画
 //------------------------------------------------
-void CEnemy3::Draw()
+void CEnemy4::Draw()
 {
 	if (m_isActive)
 	{
@@ -117,7 +117,7 @@ void CEnemy3::Draw()
 //------------------------------------------------
 //		敵をリクエスト
 //------------------------------------------------
-bool CEnemy3::Request(const VECTOR& pos, const VECTOR& speed)
+bool CEnemy4::Request(const VECTOR& pos, const VECTOR& speed)
 {
 	// すでに発砲されている弾は失敗
 	if (m_isActive)return false;
@@ -133,7 +133,7 @@ bool CEnemy3::Request(const VECTOR& pos, const VECTOR& speed)
 //------------------------------------------------
 //		当たり判定の座標用
 //------------------------------------------------
-VECTOR CEnemy3::GetCenter()
+VECTOR CEnemy4::GetCenter()
 {
 	// 基本は物体の座標の位置
 	VECTOR res = m_vPos;
@@ -147,7 +147,7 @@ VECTOR CEnemy3::GetCenter()
 //------------------------------------------------
 //		ヒット後の処理
 //------------------------------------------------
-void CEnemy3::HitCalc()
+void CEnemy4::HitCalc()
 {
 	// エネミー爆発音
 	CSoundManager::Play(CSoundManager::SE_EXPLOSION);
