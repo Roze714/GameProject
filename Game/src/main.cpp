@@ -15,9 +15,9 @@ int  WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	// スクリーン設定
 	ChangeWindowMode(TRUE);			// フルスクリーンorウィンドウモード
 	//元のサイズ
-	//SetGraphMode(1280, 720, 32);	// ウィンドウのサイズ
+	SetGraphMode(1280, 720, 32);	// ウィンドウのサイズ
 
-	SetGraphMode(780, 720, 32);	// ウィンドウのサイズ
+	
 
 
 #ifndef _DEBUG

@@ -38,13 +38,7 @@ public:
 		CPlayer& player, CEnemyManager3& enemy3);
 
 
-	// プレイヤーの弾と敵4の当たり判定
-	static void CheckHitShotToEnemy4(
-		CShotManager& shot, CEnemyManager4& enemy4);
 
-	// プレイヤーと敵4の当たり判定
-	static void CheckHitPlayerToEnemy4(
-		CPlayer& player, CEnemyManager4& enemy4);
 
 };
 

@@ -92,7 +92,7 @@ void CEnemyManager::Request()
 	// 横はランダム、奥行きは固定
 	VECTOR pos = { (float)GetRand(200) - 100.0f,0.0f,200.0f };
 	// 速度は手前に進むだけ
-	VECTOR speed = { 0.0f,0.0f,-2.5f };
+	VECTOR speed = { 0.0f,0.0f,-4.0f };
 	for (int i = 0; i < ENEMY_NUM; i++)
 	{
 		// 敵を発射

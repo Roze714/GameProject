@@ -90,9 +90,9 @@ void CEnemyManager3::Draw()
 void CEnemyManager3::Request()
 {
 	// 横はランダム、奥行きは固定
-	VECTOR pos = { (float)GetRand(200) - 200.0f,0.0f,000.0f };
+	VECTOR pos = { (float)GetRand(200) - 150.0f,0.0f,200.0f };
 	// 速度は手前に進むだけ
-	VECTOR speed = { 3.5f,0.0f,3.5f };
+	VECTOR speed = { 2.0,0.0f,-4.0f };
 	for (int i = 0; i < ENEMY3_NUM; i++)
 	{
 		// 敵を発射

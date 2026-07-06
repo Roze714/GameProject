@@ -26,10 +26,10 @@ void CCollisionManager::CheckHitShotToEnemy
 			float enemyRadius = oneEnemy.GetRadius();
 
 			// 当たり判定開始
-			bool isHIt = CCollision::CheckHitSphereToSphere(
+			bool isHit = CCollision::CheckHitSphereToSphere(
 				shotPos, shotRadius, enemyPos, enemyRadius);
 
-			if (isHIt == true)
+			if (isHit == true)
 			{
 				// お互い当たった!!
 				oneShot.HitCalc();
@@ -63,10 +63,10 @@ void CCollisionManager::CheckHitPlayerToEnemy(
 		float enemyRadius = oneEnemy.GetRadius();
 
 		// 当たり判定開始
-		bool isHIt = CCollision::CheckHitSphereToSphere(
+		bool isHit = CCollision::CheckHitSphereToSphere(
 			playerPos, playerRadius, enemyPos, enemyRadius);
 
-		if (isHIt == true)
+		if (isHit == true)
 		{
 			// お互い当たった!!
 			player.HitCalc();
@@ -102,10 +102,10 @@ void CCollisionManager::CheckHitShotToEnemy2(
 			float enemyRadius = oneEnemy2.GetRadius();
 
 			// 当たり判定開始
-			bool isHIt = CCollision::CheckHitSphereToSphere(
+			bool isHit = CCollision::CheckHitSphereToSphere(
 				shotPos, shotRadius, enemyPos, enemyRadius);
 
-			if (isHIt == true)
+			if (isHit == true)
 			{
 				// お互い当たった!!
 				oneShot.HitCalc();
@@ -139,10 +139,10 @@ void CCollisionManager::CheckHitPlayerToEnemy2(
 		float enemyRadius = oneEnemy2.GetRadius();
 
 		// 当たり判定開始
-		bool isHIt = CCollision::CheckHitSphereToSphere(
+		bool isHit = CCollision::CheckHitSphereToSphere(
 			playerPos, playerRadius, enemyPos, enemyRadius);
 
-		if (isHIt == true)
+		if (isHit == true)
 		{
 			// お互い当たった!!
 			player.HitCalc();
@@ -154,7 +154,6 @@ void CCollisionManager::CheckHitPlayerToEnemy2(
 }
 
 
-//敵3-----------------------------------------------------------------------------------------------
 //------------------------------------------------
 //		プレイヤーの弾と敵3の当たり判定
 //------------------------------------------------
@@ -180,10 +179,10 @@ void CCollisionManager::CheckHitShotToEnemy3(
 			float enemyRadius = oneEnemy3.GetRadius();
 
 			// 当たり判定開始
-			bool isHIt = CCollision::CheckHitSphereToSphere(
+			bool isHit = CCollision::CheckHitSphereToSphere(
 				shotPos, shotRadius, enemyPos, enemyRadius);
 
-			if (isHIt == true)
+			if (isHit == true)
 			{
 				// お互い当たった!!
 				oneShot.HitCalc();
@@ -217,10 +216,10 @@ void CCollisionManager::CheckHitPlayerToEnemy3(
 		float enemyRadius = oneEnemy3.GetRadius();
 
 		// 当たり判定開始
-		bool isHIt = CCollision::CheckHitSphereToSphere(
+		bool isHit = CCollision::CheckHitSphereToSphere(
 			playerPos, playerRadius, enemyPos, enemyRadius);
 
-		if (isHIt == true)
+		if (isHit == true)
 		{
 			// お互い当たった!!
 			player.HitCalc();
@@ -231,81 +230,5 @@ void CCollisionManager::CheckHitPlayerToEnemy3(
 
 }
 
-
-//------------------------------------------------
-//		プレイヤーの弾と敵4の当たり判定
-//------------------------------------------------
-void CCollisionManager::CheckHitShotToEnemy4(
-	CShotManager& shot, CEnemyManager4& enemy4)
-{
-	for (int shotID = 0; shotID < PL_SHOT_NUM; shotID++)
-	{
-		CShot& oneShot = shot.GetShot(shotID);
-		if (oneShot.IsActive() == false) continue;
-
-		// 敵の数だけループ
-		for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
-		{
-			// 敵１袋分の情報を取得し、生存確認
-			CEnemy4& oneEnemy4 = enemy4.GetShot(enemyID);
-			if (oneEnemy4.IsActive() == false)continue;
-
-			// それぞれの座標と半径を所得
-			VECTOR shotPos = oneShot.GetCenter();
-			float shotRadius = oneShot.GetRadius();
-			VECTOR enemyPos = oneEnemy4.GetCenter();
-			float enemyRadius = oneEnemy4.GetRadius();
-
-			// 当たり判定開始
-			bool isHIt = CCollision::CheckHitSphereToSphere(
-				shotPos, shotRadius, enemyPos, enemyRadius);
-
-			if (isHIt == true)
-			{
-				// お互い当たった!!
-				oneShot.HitCalc();
-				oneEnemy4.HitCalc();
-
-			}
-		}
-	}
-}
-
-//------------------------------------------------
-//		プレイヤーと敵3の当たり判定
-//------------------------------------------------
-void CCollisionManager::CheckHitPlayerToEnemy4(
-	CPlayer& player, CEnemyManager4& enemy4)
-{
-	// プレイヤーが死んでいたら何もしない
-	if (player.IsActive() == false)return;
-
-	// 敵の数だけループ
-	for (int enemyID = 0; enemyID < ENEMY_NUM; enemyID++)
-	{
-		// 敵１袋分の情報を取得し、生存確認
-		CEnemy4& oneEnemy4 = enemy4.GetShot(enemyID);
-		if (oneEnemy4.IsActive() == false)continue;
-
-		// それぞれの座標と半径を所得
-		VECTOR playerPos = player.GetCenter();
-		float playerRadius = player.GetRadius();
-		VECTOR enemyPos = oneEnemy4.GetCenter();
-		float enemyRadius = oneEnemy4.GetRadius();
-
-		// 当たり判定開始
-		bool isHIt = CCollision::CheckHitSphereToSphere(
-			playerPos, playerRadius, enemyPos, enemyRadius);
-
-		if (isHIt == true)
-		{
-			// お互い当たった!!
-			player.HitCalc();
-			oneEnemy4.HitCalc();
-
-		}
-	}
-
-}
 
 
