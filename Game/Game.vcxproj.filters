@@ -61,6 +61,9 @@
     <Filter Include="ソース ファイル\game\Enemy\Enemy3">
       <UniqueIdentifier>{4176f4a2-ceac-4250-863d-656df4685a5b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\lib\Effekseer">
+      <UniqueIdentifier>{37615f54-d22a-4a9e-9f21-f4c3cec05f79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
@@ -132,6 +135,9 @@
     <ClCompile Include="src\game\Scene\SceneTitle.cpp">
       <Filter>ソース ファイル\game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\Effekseer\Effekseer.cpp">
+      <Filter>ソース ファイル\lib\Effekseer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\lib\Fade\Fade.h">
@@ -199,6 +205,9 @@
     </ClInclude>
     <ClInclude Include="src\game\Scene\SceneTitle.h">
       <Filter>ソース ファイル\game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Effekseer\Effekseer.h">
+      <Filter>ソース ファイル\lib\Effekseer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
