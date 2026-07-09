@@ -75,7 +75,7 @@ void CEnemy::Step()
 	m_vPos = VAdd(m_vPos, m_vSpeed);
 
 	// ”ÍˆÍŠO‚Éo‚½‚ç“G‚ğíœ
-	float length = 500.0f;
+	float length = 300.0f;
 	if (m_vPos.x<-length || m_vPos.x>length
 		|| m_vPos.z<-length || m_vPos.z>length)
 	{

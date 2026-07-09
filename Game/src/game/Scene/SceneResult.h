@@ -2,7 +2,7 @@
 #include<DxLib.h>
 
 
-// ゲームオーバー管理用クラス
+// リザルト管理用クラス
 class CSceneResult {
 private:
 	enum tagScene

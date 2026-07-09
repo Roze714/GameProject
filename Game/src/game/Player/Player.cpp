@@ -45,7 +45,6 @@ void CPlayer::Init()
 	m_Radius = 3.0f;
 	m_iHndl = -1;
 	//float jumpPow = 0.0f;
-	m_vPos = ZERO;
 	m_vRot = { 0.0f, 3.1459265f, 0.0f };	// 南向きに設定
 	
 }
@@ -89,6 +88,16 @@ void CPlayer::Step(CShotManager& shot)
 		speed.y = 0.0f;
 		speed.z = cosf(m_vRot.y) * -SHOT_SPEED;
 		shot.RequestPlayerShot(m_vPos, speed);
+	}
+
+	//プレイヤーの回転処理
+	if (CheckHitKey(KEY_INPUT_RIGHT))
+	{
+		m_vRot.y += ROTATE_SPEED;
+	}
+	else if (CheckHitKey(KEY_INPUT_LEFT))
+	{
+		m_vRot.y -= ROTATE_SPEED;
 	}
 
 	// プレイヤーの移動

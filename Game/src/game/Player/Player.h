@@ -1,7 +1,6 @@
 #pragma once
 #include <DxLib.h>
 #include"../Shot/ShotManager.h"
-#include"../../lib/Input/Input.h"
 
 // プレイヤーを管理するクラス
 class CPlayer{

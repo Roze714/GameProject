@@ -31,11 +31,9 @@ void CCollisionManager::CheckHitPlayerToEnemy(
 
 		if (isHit == true)
 		{
-			 printfDx("HITÇµÇ‹ÇµÇΩÅI\n");
 			// Ç®å›Ç¢ìñÇΩÇ¡ÇΩ!!
 			player.HitCalc();
 			oneEnemy.HitCalc();
-
 		}
 	}
 }
