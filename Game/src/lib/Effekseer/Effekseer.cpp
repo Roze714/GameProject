@@ -624,3 +624,4 @@ void	CEffekseerCtrl::DeviceRestoreFunction(void* data)
 	// デバイスが復帰するときに呼ぶ
 	if (m_renderer9 != NULL) m_renderer9->OnResetDevice();
 }
+

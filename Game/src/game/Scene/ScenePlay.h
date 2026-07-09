@@ -10,6 +10,7 @@
 #include"../System/SoundManager.h"
 #include"../Shot/ShotManager.h"
 
+
 //プレイシーンを管理するクラス
 class CScenePlay{
 private:

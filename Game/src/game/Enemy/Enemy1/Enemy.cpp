@@ -1,6 +1,7 @@
 #include"Enemy.h"
 #include<math.h>
 #include"../../System/SoundManager.h"
+#include"../../lib/Effekseer/Effekseer.h"
 #define DEBUG
 
 //’è‹`ŠÖ˜A-----------------------------
@@ -17,7 +18,6 @@ float RADIUS = 3.0;
 CEnemy::CEnemy()
 {
 	Init();
-	
 }
 
 //------------------------------------------------

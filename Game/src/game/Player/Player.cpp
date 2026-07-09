@@ -93,7 +93,6 @@ void CPlayer::Step(CShotManager& shot)
 
 	// プレイヤーの移動
 	float speed = 0.0f;			// 実際の進む速度
-
 	// 右移動
 	if (CheckHitKey(KEY_INPUT_D))
 	{

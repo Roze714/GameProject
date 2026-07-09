@@ -160,3 +160,5 @@ public:
 	//	ƒ‹[ƒvî•ñæ“¾
 	inline bool	IsLoop(void) { return m_isLoop; }
 };
+
+
