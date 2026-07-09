@@ -9,7 +9,7 @@ static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 
 // 試しプレイヤーのモデルパス
 static const char PLAYER_MODEL_PATH[] =
-{ "data/model/character/character-a.mv1" };
+{ "data/model/character/character-a.mv1a" };
 
 //// プレイヤーのモデルパス
 //static const char PLAYER_MODEL_PATH[] =
