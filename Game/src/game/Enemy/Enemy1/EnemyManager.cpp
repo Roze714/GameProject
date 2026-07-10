@@ -5,8 +5,9 @@
 //static const char ENEMY_MODEL_PATH[]
 //= { "data/model/enemy/SphereChanBig.x" };
  
-static const char ENEMY_MODEL_PATH[] 
-= { "data/model/enemy/enemy.pmx" };
+static const char ENEMY_MODEL_PATH[] = 
+{ "data/model/Character/Enemy1/character-l.mv1" };
+
 
 //	敵再出現時間
 static const int WAIME_TIME = 10;
@@ -65,7 +66,6 @@ void CEnemyManager::Load()
 	//	モデルを複製
 	for (int i = 0; i < ENEMY_NUM; i++)
 		m_Enemy[i].Load(iHndl);
-	
 	//	オリジナル削除
 	MV1DeleteModel(iHndl);
 }

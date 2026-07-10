@@ -2,8 +2,13 @@
 
 //定義関連--------------
 //	敵のモデルパス
-static const char ENEMY2_MODEL_PATH[]
-= { "data/model/enemy/SphereChanBig.x" };
+static const char ENEMY2_MODEL_PATH[] =
+{ "data/model/Character/Enemy1/character-l.mv1" };
+
+////	敵のモデルパス
+//static const char ENEMY2_MODEL_PATH[]
+//= { "data/model/enemy/SphereChanBig.x" };
+//
 //	敵再出現時間
 static const int WAIME_TIME = 10;
 //----------------------

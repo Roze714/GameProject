@@ -47,6 +47,7 @@ void CEnemy3::Load(int orginHndl)
 	if (m_iHndl == -1)
 	{
 		m_iHndl = MV1DuplicateModel(orginHndl);
+		MV1SetScale(m_iHndl, VGet(0.05f, 0.05f, 0.05f));	//モデルサイズ変更
 	}
 }
 

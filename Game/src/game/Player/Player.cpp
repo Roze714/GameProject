@@ -9,8 +9,7 @@ static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 
 // 試しプレイヤーのモデルパス
 static const char PLAYER_MODEL_PATH[] =
-{ "data/model/character/character-a.mv1a" };
-
+{ "data/model/Character/Player/character-a.mv1" };
 //// プレイヤーのモデルパス
 //static const char PLAYER_MODEL_PATH[] =
 //{ "data/model/player/player.pmx" };
@@ -20,6 +19,7 @@ static const float PL_SPEED = 1.0f;
 static const float ROTATE_SPEED = 0.05f;
 // 弾の移動速度
 static const float SHOT_SPEED = 1.0f;
+
 //------------------------------------------------
 
 //------------------------------------------------
@@ -52,6 +52,9 @@ void CPlayer::Init()
 	m_iHndl = -1;
 	//float jumpPow = 0.0f;
 	m_vRot = { 0.0f, 3.1459265f, 0.0f };	// 南向きに設定
+
+	
+
 	
 }
 
@@ -63,6 +66,7 @@ void CPlayer::Load()
 	if (m_iHndl == -1)
 	{
 		m_iHndl = MV1LoadModel(PLAYER_MODEL_PATH);
+		MV1SetScale(m_iHndl, VGet(0.05f, 0.05f, 0.05f));	//モデルサイズ変更
 	}
 }
 
