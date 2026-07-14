@@ -7,12 +7,9 @@
 static const VECTOR ZERO = { 0.0f,0.0f ,0.0f };
 
 
-// 試しプレイヤーのモデルパス
+// プレイヤーのモデルパス
 static const char PLAYER_MODEL_PATH[] =
-{ "data/model/Character/Player/character-a.mv1" };
-//// プレイヤーのモデルパス
-//static const char PLAYER_MODEL_PATH[] =
-//{ "data/model/player/player.pmx" };
+{ "data/model/Character/Player/character-n.x" };
 // 移動速度
 static const float PL_SPEED = 1.0f;
 // 回転角度
@@ -146,7 +143,7 @@ void CPlayer::Updete()
 //------------------------------------------------
 void CPlayer::Draw()
 {
-
+	if (m_isActive == false)return;
 	MV1DrawModel(m_iHndl);
 
 #ifdef DEBUG

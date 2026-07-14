@@ -146,7 +146,7 @@ void CScenePlay::Step()
 	// プレイヤーの生存フラグが消えたら、ゲーム終了へ
 	if (m_Player.IsActive() == false)
 	{
-		m_SceneID = END;
+		m_Scene = END;
 	}
 
 	m_Player.Updete();

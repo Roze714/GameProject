@@ -2,9 +2,6 @@
 
 //定義関連--------------
 //	敵のモデルパス
-//static const char ENEMY_MODEL_PATH[]
-//= { "data/model/enemy/SphereChanBig.x" };
- 
 static const char ENEMY_MODEL_PATH[] = 
 { "data/model/Character/Enemy1/character-l.mv1" };
 
